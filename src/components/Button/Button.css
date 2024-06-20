@@ -1,3 +1,24 @@
 .button {
 cursor: pointer;
 }
+.button:hover {
+}
+/* Style */
+.button-primary{}
+
+.button-secondary{}
+
+.button-tertiary{}
+
+
+/* Style--Loading */
+.button-primary--loading{}
+
+.button-secondary--loading{}
+
+.button-tertiary--loading{}
+
+/* Size */
+.button-medium {}
+.button-big {}
+.button-small {}
