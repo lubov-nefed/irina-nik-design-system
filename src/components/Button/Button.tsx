@@ -5,7 +5,10 @@ function Button(props: {
   size: "medium" | "big" | "small";
   style: "primary" | "secondary" | "tertiary";
   loading: boolean;
+  disabled: boolean;
   onClick: () => void;
+  leftIcon;
+  rightIcon;
 }) {
   const className =
     `button button-${props.size} ` +
@@ -13,7 +16,11 @@ function Button(props: {
       ? `button-${props.style}--loading`
       : `button-${props.style}`);
   return (
-    <button className={className} onClick={props.onClick}>
+    <button
+      className={className}
+      onClick={props.onClick}
+      disabled={props.disabled}
+    >
       {props.text}
     </button>
   );

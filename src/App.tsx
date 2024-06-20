@@ -8,13 +8,35 @@ function App() {
     <>
       App
       <Button
-        text={"Load"}
+        text={"M Default"}
         size="medium"
         style="primary"
-        loading={isLoading}
-        onClick={() => setIsLoading(!isLoading)}
+        loading={false}
+        disabled={false}
+        /* onClick={() => setIsLoading(!isLoading)} */
       />
-      <Button text={"Click"} size="big" style="secondary" loading={isLoading} />
+      <Button
+        text={"M Default"}
+        size="medium"
+        style="primary"
+        loading={true}
+        disabled={false}
+      />
+      <Button
+        text={"M Default"}
+        size="medium"
+        style="primary"
+        loading={false}
+        disabled={true}
+      />
+      <br />
+      <Button
+        text={"Big Default"}
+        size="big"
+        style="secondary"
+        loading={isLoading}
+        disabled={true}
+      />
       <Button
         text={"Add to Cart"}
         size="small"

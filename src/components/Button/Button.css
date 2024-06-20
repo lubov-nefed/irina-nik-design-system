@@ -1,24 +1,51 @@
 .button {
 cursor: pointer;
+border: none;
+border-radius: 8px;
 }
-.button:hover {
-}
+
 /* Style */
-.button-primary{}
+.button-primary{
+  background-color: var(--brand-color-600);
+  color: var(--white-color);
+  /* body text-base font-semibold */
+}
 
-.button-secondary{}
+/* Style:hover */
+.button-primary:hover {
+  background-color: var(--brand-color-700);
+}
 
-.button-tertiary{}
+.button-secondary:hover{}
+
+.button-tertiary:hover{}
 
 
-/* Style--Loading */
-.button-primary--loading{}
+/* Style:disabled */
+.button-primary:disabled, .button-secondary:disabled {
+  background-color: var(--neutral-color-100);
+  color: var(--neutral-color-400);
+}
+
+{}
+
+.button-tertiary:disabled{}
+
+
+
+/* Style--loading */
+.button-primary--loading{  
+  background-color: var(--brand-color-400);
+  color: var(--white-color);
+}
 
 .button-secondary--loading{}
 
 .button-tertiary--loading{}
 
 /* Size */
-.button-medium {}
+.button-medium {
+  height: 44px;
+  padding: 0 16px;}
 .button-big {}
 .button-small {}
