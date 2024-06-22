@@ -18,7 +18,7 @@ interface IButtonProps {
           text: string;
         };
       }
-    | { iconOnly: { iconSrc: string } };
+    | { iconOnly: { iconSrc: string; tooltip: string } };
   loading: boolean;
   disabled: boolean;
   onClick: () => void;
@@ -41,11 +41,13 @@ const Button: React.FC<IButtonProps> = (props) => {
   const buttonText =
     ("noIcon" in props.type && props.type.noIcon.text) ||
     ("withIcon" in props.type && props.type.withIcon.text);
+  const tooltip = "iconOnly" in props.type ? props.type.iconOnly.tooltip : "";
   return (
     <button
       className={className}
       onClick={props.onClick}
       disabled={props.disabled}
+      title={tooltip}
     >
       {"withIcon" in props.type &&
         props.type.withIcon.iconPosition === "left" &&

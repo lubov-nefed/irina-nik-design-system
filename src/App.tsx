@@ -58,7 +58,12 @@ function App() {
         style={"primary"}
         loading={false}
         disabled={false}
-        type={{ iconOnly: { iconSrc: iconSettings } }}
+        type={{
+          iconOnly: {
+            iconSrc: iconSettings,
+            tooltip: "Tooltip for the icon button",
+          },
+        }}
         onClick={() => {}}
       />
       <br />
@@ -105,7 +110,12 @@ function App() {
         style={"primary"}
         loading={true}
         disabled={false}
-        type={{ iconOnly: { iconSrc: iconSettings } }}
+        type={{
+          iconOnly: {
+            iconSrc: iconSettings,
+            tooltip: "Tooltip for the icon button",
+          },
+        }}
         onClick={() => {}}
       />
       <br />
@@ -152,7 +162,12 @@ function App() {
         style={"primary"}
         loading={false}
         disabled={true}
-        type={{ iconOnly: { iconSrc: iconSettingsDisabled } }}
+        type={{
+          iconOnly: {
+            iconSrc: iconSettingsDisabled,
+            tooltip: "Tooltip for the icon button",
+          },
+        }}
         onClick={() => {}}
       />
       <br />
@@ -200,7 +215,12 @@ function App() {
         style={"primary"}
         loading={false}
         disabled={false}
-        type={{ iconOnly: { iconSrc: iconSettings } }}
+        type={{
+          iconOnly: {
+            iconSrc: iconSettings,
+            tooltip: "Tooltip for the icon button",
+          },
+        }}
         onClick={() => {}}
       />
       <br />
@@ -247,7 +267,12 @@ function App() {
         style={"primary"}
         loading={true}
         disabled={false}
-        type={{ iconOnly: { iconSrc: iconSettings } }}
+        type={{
+          iconOnly: {
+            iconSrc: iconSettings,
+            tooltip: "Tooltip for the icon button",
+          },
+        }}
         onClick={() => {}}
       />
       <br />
@@ -294,7 +319,12 @@ function App() {
         style={"primary"}
         loading={false}
         disabled={true}
-        type={{ iconOnly: { iconSrc: iconSettingsDisabled } }}
+        type={{
+          iconOnly: {
+            iconSrc: iconSettingsDisabled,
+            tooltip: "Tooltip for the icon button",
+          },
+        }}
         onClick={() => {}}
       />
       <br />
@@ -342,7 +372,12 @@ function App() {
         style={"primary"}
         loading={false}
         disabled={false}
-        type={{ iconOnly: { iconSrc: iconSettings } }}
+        type={{
+          iconOnly: {
+            iconSrc: iconSettings,
+            tooltip: "Tooltip for the icon button",
+          },
+        }}
         onClick={() => {}}
       />
       <br />
@@ -389,7 +424,12 @@ function App() {
         style={"primary"}
         loading={true}
         disabled={false}
-        type={{ iconOnly: { iconSrc: iconSettings } }}
+        type={{
+          iconOnly: {
+            iconSrc: iconSettings,
+            tooltip: "Tooltip for the icon button",
+          },
+        }}
         onClick={() => {}}
       />
       <br />
@@ -436,7 +476,12 @@ function App() {
         style={"primary"}
         loading={false}
         disabled={true}
-        type={{ iconOnly: { iconSrc: iconSettingsDisabled } }}
+        type={{
+          iconOnly: {
+            iconSrc: iconSettingsDisabled,
+            tooltip: "Tooltip for the icon button",
+          },
+        }}
         onClick={() => {}}
       />
     </>
