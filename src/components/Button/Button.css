@@ -4,6 +4,22 @@ border: none;
 border-radius: 8px;
 }
 
+.button:disabled, .button-primary--loading,
+.button-secondary--loading, .button-tertiary--loading {
+  cursor: auto;
+}
+
+.button-icon, .button-text {
+  vertical-align: middle;
+}
+
+.button-icon--left {
+  margin-right: 8px;
+}
+.button-icon--right {
+  margin-left: 8px;
+}
+
 /* Style */
 .button-primary{
   background-color: var(--brand-color-600);
@@ -46,6 +62,15 @@ border-radius: 8px;
 /* Size */
 .button-medium {
   height: 44px;
-  padding: 0 16px;}
-.button-big {}
-.button-small {}
+  padding: 0 16px;
+}
+
+.button-big {
+  height: 56px;
+  padding: 0 16px;
+}
+
+.button-small {
+  height: 36px;
+  padding: 0 12px;  
+}
