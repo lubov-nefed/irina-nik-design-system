@@ -5,8 +5,13 @@ import iconLeftAdd from "../src/assets/icons/icon-left-add.svg";
 import iconRightArrow from "../src/assets/icons/icon-right-arrow.svg";
 import iconSettings from "../src/assets/icons/icon-settings.svg";
 
+import iconLeftAddDisabled from "../src/assets/icons/icon-left-add--disabled.svg";
+import iconRightArrowDisabled from "../src/assets/icons/icon-right-arrow--disabled.svg";
+import iconSettingsDisabled from "../src/assets/icons/icon-settings--disabled.svg";
+
 function App() {
   const [isLoading, setIsLoading] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   return (
     <>
       App
@@ -15,8 +20,8 @@ function App() {
       <Button
         size={"medium"}
         style={"primary"}
-        loading={false}
-        disabled={false}
+        loading={isLoading} //using state
+        disabled={isDisabled} //using state
         type={{ noIcon: { text: "M Default" } }}
         onClick={() => {}}
         /* onClick={() => setIsLoading(!isLoading)} */
@@ -29,7 +34,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAdd,
+            iconSrc: isDisabled ? iconLeftAddDisabled : iconLeftAdd,
             text: "M Default",
           },
         }}
@@ -55,6 +60,100 @@ function App() {
         loading={false}
         disabled={false}
         type={{ iconOnly: { iconSrc: iconSettings } }}
+        onClick={() => {}}
+      />
+      <br />
+      {/* primary loading*/}
+      <Button
+        size={"medium"}
+        style={"primary"}
+        loading={true}
+        disabled={false}
+        type={{ noIcon: { text: "M Default" } }}
+        onClick={() => {}}
+        /* onClick={() => setIsLoading(!isLoading)} */
+      />
+      <Button
+        size="medium"
+        style="primary"
+        loading={true}
+        disabled={false}
+        type={{
+          withIcon: {
+            iconPosition: "left",
+            iconSrc: iconLeftAdd,
+            text: "M Default",
+          },
+        }}
+        onClick={() => {}}
+      />
+      <Button
+        size="medium"
+        style="primary"
+        loading={true}
+        disabled={false}
+        type={{
+          withIcon: {
+            iconPosition: "right",
+            iconSrc: iconRightArrow,
+            text: "M Default",
+          },
+        }}
+        onClick={() => {}}
+      />
+      <Button
+        size="medium"
+        style="primary"
+        loading={true}
+        disabled={false}
+        type={{ iconOnly: { iconSrc: iconSettings } }}
+        onClick={() => {}}
+      />
+      <br />
+      {/* primary disabled*/}
+      <Button
+        size={"medium"}
+        style={"primary"}
+        loading={false}
+        disabled={true}
+        type={{ noIcon: { text: "M Default" } }}
+        onClick={() => {}}
+        /* onClick={() => setIsLoading(!isLoading)} */
+      />
+      <Button
+        size="medium"
+        style="primary"
+        loading={false}
+        disabled={true}
+        type={{
+          withIcon: {
+            iconPosition: "left",
+            iconSrc: iconLeftAddDisabled,
+            text: "M Default",
+          },
+        }}
+        onClick={() => {}}
+      />
+      <Button
+        size="medium"
+        style="primary"
+        loading={false}
+        disabled={true}
+        type={{
+          withIcon: {
+            iconPosition: "right",
+            iconSrc: iconRightArrowDisabled,
+            text: "M Default",
+          },
+        }}
+        onClick={() => {}}
+      />
+      <Button
+        size="medium"
+        style="primary"
+        loading={false}
+        disabled={true}
+        type={{ iconOnly: { iconSrc: iconSettingsDisabled } }}
         onClick={() => {}}
       />
       <br />

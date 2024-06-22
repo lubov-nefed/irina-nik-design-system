@@ -9,7 +9,7 @@ border-radius: 8px;
   cursor: auto;
 }
 
-.button-icon, .button-text {
+.button-icon, .button-text, .loader {
   vertical-align: middle;
 }
 
@@ -59,6 +59,22 @@ border-radius: 8px;
 
 .button-tertiary--loading{}
 
+.loader {
+  margin-left: 8px;
+  animation-name: spin;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
 /* Size */
 .button-medium {
   height: 44px;
@@ -74,3 +90,5 @@ border-radius: 8px;
   height: 36px;
   padding: 0 12px;  
 }
+
+/* Loa */

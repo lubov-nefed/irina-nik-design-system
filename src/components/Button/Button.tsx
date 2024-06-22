@@ -1,4 +1,5 @@
 import "./Button.css";
+import loader from "../../assets/icons/icon-loading-circle-white.svg";
 
 interface IButtonIconProps {
   position: "left" | "right";
@@ -59,6 +60,7 @@ const Button: React.FC<IButtonProps> = (props) => {
       {"iconOnly" in props.type && (
         <img className="button-icon" src={props.type.iconOnly.iconSrc} />
       )}
+      {props.loading && <img className="loader" src={loader}></img>}
     </button>
   );
 };
