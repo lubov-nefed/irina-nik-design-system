@@ -35,10 +35,9 @@ const ButtonIcon: React.FC<IButtonIconProps> = (props) => {
 
 const Button: React.FC<IButtonProps> = (props) => {
   const className =
-    `button button-${props.size} ` +
-    (props.loading
-      ? `button-${props.style}--loading`
-      : `button-${props.style}`);
+    `button button-${props.size} button-${props.style}` +
+    (props.loading ? ` button--loading` : ``) +
+    ("iconOnly" in props.type ? ` button--icon-only` : ``);
   const buttonText =
     ("noIcon" in props.type && props.type.noIcon.text) ||
     ("withIcon" in props.type && props.type.withIcon.text);
@@ -49,15 +48,17 @@ const Button: React.FC<IButtonProps> = (props) => {
       disabled={props.disabled}
     >
       {"withIcon" in props.type &&
-        props.type.withIcon.iconPosition === "left" && (
+        props.type.withIcon.iconPosition === "left" &&
+        !props.loading && (
           <ButtonIcon position={"left"} src={props.type.withIcon.iconSrc} />
         )}
-      <span className="button-text">{buttonText}</span>
+      {buttonText && <span className="button-text">{buttonText}</span>}
       {"withIcon" in props.type &&
-        props.type.withIcon.iconPosition === "right" && (
+        props.type.withIcon.iconPosition === "right" &&
+        !props.loading && (
           <ButtonIcon position={"right"} src={props.type.withIcon.iconSrc} />
         )}
-      {"iconOnly" in props.type && (
+      {"iconOnly" in props.type && !props.loading && (
         <img className="button-icon" src={props.type.iconOnly.iconSrc} />
       )}
       {props.loading && <img className="loader" src={loader}></img>}
