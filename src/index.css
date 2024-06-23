@@ -1,51 +1,50 @@
+@import "./typography.css";
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color: #242424 ;
+  color: #242424;
   background-color: rgba(255, 255, 255, 0.87);
 
-  
   /* === Color Variables === */
 
-  /* Neutral Colors */  
+  /* Neutral Colors */
   --neutral-color-900: #111827;
-  --neutral-color-800: #1F2937;
+  --neutral-color-800: #1f2937;
   --neutral-color-700: #374151;
-  --neutral-color-600: #4B5563;
-  --neutral-color-500: #6B7280;
-  --neutral-color-400: #94A3B8;
-  --neutral-color-300: #CBD5E1;
-  --neutral-color-200: #E5E7EB;
-  --neutral-color-100: #F3F4F6;
-  --neutral-color-50: #F8FAFC;
+  --neutral-color-600: #4b5563;
+  --neutral-color-500: #6b7280;
+  --neutral-color-400: #94a3b8;
+  --neutral-color-300: #cbd5e1;
+  --neutral-color-200: #e5e7eb;
+  --neutral-color-100: #f3f4f6;
+  --neutral-color-50: #f8fafc;
 
   /* Basic Colors */
-  --black-color: #000000;  
-  --white-color: #FFFFFF;
+  --black-color: #000000;
+  --white-color: #ffffff;
 
   /* Status Colors */
-  --rose-color-600: #E11D48;
-  --rose-color-400: #FB7185;
-  --rose-color-50: #FFF1F2;
-  --amber-color-600: #D97706;
-  --amber-color-400: #F59E0B;
-  --amber-color-100: #FEF3C7;
-  --teal-color-600: #0D9488;
-  --teal-color-400: #2DD4BF;
-  --teal-color-50: #F0FDFA;
+  --rose-color-600: #e11d48;
+  --rose-color-400: #fb7185;
+  --rose-color-50: #fff1f2;
+  --amber-color-600: #d97706;
+  --amber-color-400: #f59e0b;
+  --amber-color-100: #fef3c7;
+  --teal-color-600: #0d9488;
+  --teal-color-400: #2dd4bf;
+  --teal-color-50: #f0fdfa;
 
   /* Brand Colors */
-  --brand-color-900: #312E81;
-  --brand-color-800: #3730A3;
-  --brand-color-700: #4338CA;
-  --brand-color-600: #4F46E5;
+  --brand-color-900: #312e81;
+  --brand-color-800: #3730a3;
+  --brand-color-700: #4338ca;
+  --brand-color-600: #4f46e5;
   --brand-color-500: #6366f1;
-  --brand-color-400: #818CF8;
-  --brand-color-300: #A5B4FC;
-  --brand-color-200: #C7D2FE;
-  --brand-color-100: #E0E7FF;
-  --brand-color-50: #EEF2FF;
-
+  --brand-color-400: #818cf8;
+  --brand-color-300: #a5b4fc;
+  --brand-color-200: #c7d2fe;
+  --brand-color-100: #e0e7ff;
+  --brand-color-50: #eef2ff;
 }
