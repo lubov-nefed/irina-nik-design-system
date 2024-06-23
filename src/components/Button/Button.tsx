@@ -1,5 +1,5 @@
 import "./Button.css";
-import loader from "../../assets/icons/icon-loading-circle-white.svg";
+import loader from "../../assets/icons/button-icons/icon-secondary-loading-circle-dark.svg";
 
 interface IButtonIconProps {
   position: "left" | "right" | "icon-only";

@@ -1,14 +1,17 @@
 .button {
-cursor: pointer;
-border: none;
-border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
 }
 
-.button:disabled, .button--loading {
+.button:disabled,
+.button--loading {
   cursor: auto;
 }
 
-.button-icon, .button-text, .loader {
+.button-icon,
+.button-text,
+.loader {
   vertical-align: middle;
 }
 
@@ -36,7 +39,7 @@ border-radius: 8px;
 
 .button-small {
   height: 36px;
-  padding: 0 12px;  
+  padding: 0 12px;
 }
 
 .button-small.button--icon-only {
@@ -44,10 +47,15 @@ border-radius: 8px;
 }
 
 /* Style */
-.button-primary{
+.button-primary {
   background-color: var(--brand-color-600);
   color: var(--white-color);
   /* body text-base font-semibold */
+}
+
+.button-secondary {
+  background-color: var(--neutral-color-100);
+  color: var(--neutral-color-900);
 }
 
 /* Style:hover */
@@ -55,30 +63,36 @@ border-radius: 8px;
   background-color: var(--brand-color-700);
 }
 
-.button-secondary:hover{}
+.button-secondary:hover {
+  background-color: var(--neutral-color-200);
+}
 
-.button-tertiary:hover{}
-
+.button-tertiary:hover {
+}
 
 /* Style:disabled */
-.button-primary:disabled, .button-secondary:disabled {
+.button-primary:disabled,
+.button-secondary:disabled {
   background-color: var(--neutral-color-100);
   color: var(--neutral-color-400);
 }
 
-.button-tertiary:disabled{}
-
-
+.button-tertiary:disabled {
+}
 
 /* Style--loading */
-.button-primary.button--loading{  
+.button-primary.button--loading {
   background-color: var(--brand-color-400);
   color: var(--white-color);
 }
 
-.button-secondary--loading{}
+.button-secondary.button--loading {
+  background-color: var(--neutral-color-100);
+  color: var(--neutral-color-600);
+}
 
-.button-tertiary--loading{}
+.button-tertiary.button--loading {
+}
 
 .loader {
   margin-left: 8px;
@@ -89,13 +103,13 @@ border-radius: 8px;
 }
 @keyframes spin {
   0% {
-    transform: rotate(0)
+    transform: rotate(0);
   }
   100% {
-    transform: rotate(360deg)
+    transform: rotate(360deg);
   }
 }
 
-.button--loading.button--icon-only .loader{
- margin: 0;
+.button--loading.button--icon-only .loader {
+  margin: 0;
 }
