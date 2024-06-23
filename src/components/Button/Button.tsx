@@ -13,6 +13,14 @@ const ButtonIcon: React.FC<IButtonIconProps> = (props) => {
       : "button-icon";
   return <img className={className} src={props.src} />;
 };
+interface ButtonTextProps {
+  text: string;
+}
+const ButtonText: React.FC<ButtonTextProps> = (props) => {
+  return (
+    <span className="button-text text-base font-semibold">{props.text}</span>
+  );
+};
 
 interface IButtonProps {
   size: "medium" | "big" | "small";
@@ -39,9 +47,6 @@ const Button: React.FC<IButtonProps> = (props) => {
     `button button-${props.size} button-${props.style}` +
     (props.loading ? ` button--loading` : ``) +
     ("iconOnly" in props.type ? ` button--icon-only` : ``);
-  const buttonText =
-    ("noIcon" in props.type && props.type.noIcon.text) ||
-    ("withIcon" in props.type && props.type.withIcon.text);
   const tooltip = "iconOnly" in props.type ? props.type.iconOnly.tooltip : "";
 
   if (!props.loading) {
@@ -52,7 +57,7 @@ const Button: React.FC<IButtonProps> = (props) => {
           onClick={props.onClick}
           disabled={props.disabled}
         >
-          <span className="button-text">{buttonText}</span>
+          <ButtonText text={props.type.noIcon.text} />
         </button>
       );
     }
@@ -66,7 +71,7 @@ const Button: React.FC<IButtonProps> = (props) => {
           {props.type.withIcon.iconPosition === "left" && (
             <ButtonIcon position={"left"} src={props.type.withIcon.iconSrc} />
           )}
-          <span className="button-text">{buttonText}</span>
+          <ButtonText text={props.type.withIcon.text} />
           {props.type.withIcon.iconPosition === "right" && (
             <ButtonIcon position={"right"} src={props.type.withIcon.iconSrc} />
           )}
@@ -92,13 +97,17 @@ const Button: React.FC<IButtonProps> = (props) => {
 
   if (props.loading) {
     if ("noIcon" in props.type || "withIcon" in props.type) {
+      const buttonText =
+        "noIcon" in props.type
+          ? props.type.noIcon.text
+          : props.type.withIcon.text;
       return (
         <button
           className={className}
           onClick={props.onClick}
           disabled={props.disabled}
         >
-          <span className="button-text">{buttonText}</span>
+          <ButtonText text={buttonText} />
           <img className="loader" src={loader} />
         </button>
       );
