@@ -2,13 +2,23 @@ import "./Button.css";
 import loader from "../../assets/icons/icon-loading-circle-white.svg";
 
 interface IButtonIconProps {
-  position: "left" | "right";
+  position: "left" | "right" | "icon-only";
   src: string;
 }
+
+const ButtonIcon: React.FC<IButtonIconProps> = (props) => {
+  const className =
+    props.position === "left" || "right"
+      ? `button-icon button-icon--${props.position}`
+      : "button-icon";
+  return <img className={className} src={props.src} />;
+};
 
 interface IButtonProps {
   size: "medium" | "big" | "small";
   style: "primary" | "secondary" | "tertiary";
+
+  /* === There are three types of button: noIcon, withIcon and iconOnly === */
   type:
     | { noIcon: { text: string } }
     | {
@@ -24,15 +34,6 @@ interface IButtonProps {
   onClick: () => void;
 }
 
-const ButtonIcon: React.FC<IButtonIconProps> = (props) => {
-  return (
-    <img
-      className={`button-icon button-icon--${props.position}`}
-      src={props.src}
-    />
-  );
-};
-
 const Button: React.FC<IButtonProps> = (props) => {
   const className =
     `button button-${props.size} button-${props.style}` +
@@ -42,30 +43,80 @@ const Button: React.FC<IButtonProps> = (props) => {
     ("noIcon" in props.type && props.type.noIcon.text) ||
     ("withIcon" in props.type && props.type.withIcon.text);
   const tooltip = "iconOnly" in props.type ? props.type.iconOnly.tooltip : "";
-  return (
-    <button
-      className={className}
-      onClick={props.onClick}
-      disabled={props.disabled}
-      title={tooltip}
-    >
-      {"withIcon" in props.type &&
-        props.type.withIcon.iconPosition === "left" &&
-        !props.loading && (
-          <ButtonIcon position={"left"} src={props.type.withIcon.iconSrc} />
-        )}
-      {buttonText && <span className="button-text">{buttonText}</span>}
-      {"withIcon" in props.type &&
-        props.type.withIcon.iconPosition === "right" &&
-        !props.loading && (
-          <ButtonIcon position={"right"} src={props.type.withIcon.iconSrc} />
-        )}
-      {"iconOnly" in props.type && !props.loading && (
-        <img className="button-icon" src={props.type.iconOnly.iconSrc} />
-      )}
-      {props.loading && <img className="loader" src={loader}></img>}
-    </button>
-  );
+
+  if (!props.loading) {
+    if ("noIcon" in props.type) {
+      return (
+        <button
+          className={className}
+          onClick={props.onClick}
+          disabled={props.disabled}
+        >
+          <span className="button-text">{buttonText}</span>
+        </button>
+      );
+    }
+    if ("withIcon" in props.type) {
+      return (
+        <button
+          className={className}
+          onClick={props.onClick}
+          disabled={props.disabled}
+        >
+          {props.type.withIcon.iconPosition === "left" && (
+            <ButtonIcon position={"left"} src={props.type.withIcon.iconSrc} />
+          )}
+          <span className="button-text">{buttonText}</span>
+          {props.type.withIcon.iconPosition === "right" && (
+            <ButtonIcon position={"right"} src={props.type.withIcon.iconSrc} />
+          )}
+        </button>
+      );
+    }
+    if ("iconOnly" in props.type) {
+      return (
+        <button
+          className={className}
+          onClick={props.onClick}
+          disabled={props.disabled}
+          title={tooltip}
+        >
+          <ButtonIcon
+            position={"icon-only"}
+            src={props.type.iconOnly.iconSrc}
+          />
+        </button>
+      );
+    }
+  }
+
+  if (props.loading) {
+    if ("noIcon" in props.type || "withIcon" in props.type) {
+      return (
+        <button
+          className={className}
+          onClick={props.onClick}
+          disabled={props.disabled}
+        >
+          <span className="button-text">{buttonText}</span>
+          <img className="loader" src={loader} />
+        </button>
+      );
+    }
+
+    if ("iconOnly" in props.type) {
+      return (
+        <button
+          className={className}
+          onClick={props.onClick}
+          disabled={props.disabled}
+          title={tooltip}
+        >
+          <img className="loader" src={loader} />
+        </button>
+      );
+    }
+  }
 };
 
 export { Button };

@@ -28,7 +28,7 @@ function App() {
       <Button
         size={"medium"}
         style={"primary"}
-        loading={false}
+        loading={isLoading}
         disabled={false}
         type={{
           withIcon: {
@@ -42,7 +42,7 @@ function App() {
       <Button
         size={"medium"}
         style={"primary"}
-        loading={false}
+        loading={isLoading}
         disabled={false}
         type={{
           withIcon: {
@@ -56,7 +56,7 @@ function App() {
       <Button
         size={"medium"}
         style={"primary"}
-        loading={false}
+        loading={isLoading}
         disabled={false}
         type={{
           iconOnly: {
