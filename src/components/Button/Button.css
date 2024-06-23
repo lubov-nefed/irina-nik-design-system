@@ -58,6 +58,11 @@
   color: var(--neutral-color-900);
 }
 
+.button-tertiary {
+  background-color: transparent;
+  color: var(--neutral-color-600);
+}
+
 /* Style:hover */
 .button-primary:hover {
   background-color: var(--brand-color-700);
@@ -68,6 +73,7 @@
 }
 
 .button-tertiary:hover {
+  background-color: var(--neutral-color-100);
 }
 
 /* Style:disabled */
