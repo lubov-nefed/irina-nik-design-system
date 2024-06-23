@@ -67,7 +67,7 @@ function App() {
         onClick={() => {}}
       />
       <br />
-      {/* primary loading*/}
+      {/* loading*/}
       <Button
         size={"medium"}
         style={"tertiary"}
@@ -119,7 +119,7 @@ function App() {
         onClick={() => {}}
       />
       <br />
-      {/* primary disabled*/}
+      {/* disabled*/}
       <Button
         size={"medium"}
         style={"tertiary"}
@@ -224,7 +224,7 @@ function App() {
         onClick={() => {}}
       />
       <br />
-      {/* primary loading*/}
+      {/* loading*/}
       <Button
         size={"big"}
         style={"tertiary"}
@@ -276,7 +276,7 @@ function App() {
         onClick={() => {}}
       />
       <br />
-      {/* primary disabled*/}
+      {/* disabled*/}
       <Button
         size={"big"}
         style={"tertiary"}
@@ -381,7 +381,7 @@ function App() {
         onClick={() => {}}
       />
       <br />
-      {/* primary loading*/}
+      {/* loading*/}
       <Button
         size={"small"}
         style={"tertiary"}
@@ -433,7 +433,7 @@ function App() {
         onClick={() => {}}
       />
       <br />
-      {/* primary disabled*/}
+      {/* disabled*/}
       <Button
         size={"small"}
         style={"tertiary"}
