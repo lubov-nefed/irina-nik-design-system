@@ -18,7 +18,7 @@ function App() {
       <br />
       <Button
         size={"medium"}
-        style={"tertiary"}
+        style={"primary"}
         loading={isLoading} //using state
         disabled={isDisabled} //using state
         type={{ noIcon: { text: "M Default" } }}
@@ -27,7 +27,7 @@ function App() {
       />
       <Button
         size={"medium"}
-        style={"tertiary"}
+        style={"primary"}
         loading={isLoading}
         disabled={false}
         type={{
@@ -41,7 +41,7 @@ function App() {
       />
       <Button
         size={"medium"}
-        style={"tertiary"}
+        style={"primary"}
         loading={isLoading}
         disabled={false}
         type={{
@@ -55,7 +55,7 @@ function App() {
       />
       <Button
         size={"medium"}
-        style={"tertiary"}
+        style={"primary"}
         loading={isLoading}
         disabled={false}
         type={{
@@ -70,7 +70,7 @@ function App() {
       {/* loading*/}
       <Button
         size={"medium"}
-        style={"tertiary"}
+        style={"primary"}
         loading={true}
         disabled={false}
         type={{ noIcon: { text: "M Loading" } }}
@@ -79,7 +79,7 @@ function App() {
       />
       <Button
         size={"medium"}
-        style={"tertiary"}
+        style={"primary"}
         loading={true}
         disabled={false}
         type={{
@@ -93,7 +93,7 @@ function App() {
       />
       <Button
         size={"medium"}
-        style={"tertiary"}
+        style={"primary"}
         loading={true}
         disabled={false}
         type={{
@@ -107,7 +107,7 @@ function App() {
       />
       <Button
         size={"medium"}
-        style={"tertiary"}
+        style={"primary"}
         loading={true}
         disabled={false}
         type={{
@@ -122,7 +122,7 @@ function App() {
       {/* disabled*/}
       <Button
         size={"medium"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={true}
         type={{ noIcon: { text: "M Disabled" } }}
@@ -131,7 +131,7 @@ function App() {
       />
       <Button
         size={"medium"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={true}
         type={{
@@ -145,7 +145,7 @@ function App() {
       />
       <Button
         size={"medium"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={true}
         type={{
@@ -159,7 +159,7 @@ function App() {
       />
       <Button
         size={"medium"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={true}
         type={{
@@ -175,7 +175,7 @@ function App() {
       <br />
       <Button
         size={"big"}
-        style={"tertiary"}
+        style={"primary"}
         loading={isLoading} //using state
         disabled={isDisabled} //using state
         type={{ noIcon: { text: "Big Default" } }}
@@ -184,7 +184,7 @@ function App() {
       />
       <Button
         size={"big"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={false}
         type={{
@@ -198,7 +198,7 @@ function App() {
       />
       <Button
         size={"big"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={false}
         type={{
@@ -212,7 +212,7 @@ function App() {
       />
       <Button
         size={"big"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={false}
         type={{
@@ -227,7 +227,7 @@ function App() {
       {/* loading*/}
       <Button
         size={"big"}
-        style={"tertiary"}
+        style={"primary"}
         loading={true}
         disabled={false}
         type={{ noIcon: { text: "Big Loading" } }}
@@ -236,7 +236,7 @@ function App() {
       />
       <Button
         size={"big"}
-        style={"tertiary"}
+        style={"primary"}
         loading={true}
         disabled={false}
         type={{
@@ -250,7 +250,7 @@ function App() {
       />
       <Button
         size={"big"}
-        style={"tertiary"}
+        style={"primary"}
         loading={true}
         disabled={false}
         type={{
@@ -264,7 +264,7 @@ function App() {
       />
       <Button
         size={"big"}
-        style={"tertiary"}
+        style={"primary"}
         loading={true}
         disabled={false}
         type={{
@@ -279,7 +279,7 @@ function App() {
       {/* disabled*/}
       <Button
         size={"big"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={true}
         type={{ noIcon: { text: "Big Disabled" } }}
@@ -288,7 +288,7 @@ function App() {
       />
       <Button
         size={"big"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={true}
         type={{
@@ -302,7 +302,7 @@ function App() {
       />
       <Button
         size={"big"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={true}
         type={{
@@ -316,7 +316,7 @@ function App() {
       />
       <Button
         size={"big"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={true}
         type={{
@@ -332,7 +332,7 @@ function App() {
       <br />
       <Button
         size={"small"}
-        style={"tertiary"}
+        style={"primary"}
         loading={isLoading} //using state
         disabled={isDisabled} //using state
         type={{ noIcon: { text: "S Default" } }}
@@ -341,7 +341,7 @@ function App() {
       />
       <Button
         size={"small"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={false}
         type={{
@@ -355,7 +355,7 @@ function App() {
       />
       <Button
         size={"small"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={false}
         type={{
@@ -369,7 +369,7 @@ function App() {
       />
       <Button
         size={"small"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={false}
         type={{
@@ -384,7 +384,7 @@ function App() {
       {/* loading*/}
       <Button
         size={"small"}
-        style={"tertiary"}
+        style={"primary"}
         loading={true}
         disabled={false}
         type={{ noIcon: { text: "S Loading" } }}
@@ -393,7 +393,7 @@ function App() {
       />
       <Button
         size={"small"}
-        style={"tertiary"}
+        style={"primary"}
         loading={true}
         disabled={false}
         type={{
@@ -407,7 +407,7 @@ function App() {
       />
       <Button
         size={"small"}
-        style={"tertiary"}
+        style={"primary"}
         loading={true}
         disabled={false}
         type={{
@@ -421,7 +421,7 @@ function App() {
       />
       <Button
         size={"small"}
-        style={"tertiary"}
+        style={"primary"}
         loading={true}
         disabled={false}
         type={{
@@ -436,7 +436,7 @@ function App() {
       {/* disabled*/}
       <Button
         size={"small"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={true}
         type={{ noIcon: { text: "S Disabled" } }}
@@ -445,7 +445,7 @@ function App() {
       />
       <Button
         size={"small"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={true}
         type={{
@@ -459,7 +459,7 @@ function App() {
       />
       <Button
         size={"small"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={true}
         type={{
@@ -473,7 +473,7 @@ function App() {
       />
       <Button
         size={"small"}
-        style={"tertiary"}
+        style={"primary"}
         loading={false}
         disabled={true}
         type={{
