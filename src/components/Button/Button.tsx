@@ -8,7 +8,7 @@ interface IButtonIconProps {
 
 const ButtonIcon: React.FC<IButtonIconProps> = (props) => {
   const className =
-    props.position === "left" || "right"
+    props.position !== "icon-only"
       ? `button-icon button-icon--${props.position}`
       : "button-icon";
   return <img className={className} src={props.src} />;
