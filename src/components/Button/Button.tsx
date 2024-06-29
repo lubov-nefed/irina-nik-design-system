@@ -1,34 +1,14 @@
 import "./Button.css";
 import loader from "../../assets/icons/button-icons/icon-secondary-loading-circle-dark.svg";
-
-interface IButtonIconProps {
-  position: "left" | "right" | "icon-only";
-  src: string;
-}
-
-const ButtonIcon: React.FC<IButtonIconProps> = (props) => {
-  const className =
-    props.position !== "icon-only"
-      ? `button-icon button-icon--${props.position}`
-      : "button-icon";
-  return <img className={className} src={props.src} />;
-};
-interface ButtonTextProps {
-  text: string;
-}
-const ButtonText: React.FC<ButtonTextProps> = (props) => {
-  return (
-    <span className="button-text text-base font-semibold">{props.text}</span>
-  );
-};
+import { ButtonIcon } from "./ButtonIcon";
+import { ButtonText } from "./ButtonText";
+import { LoaderSVG } from "./ButtonLoader/Loader.tsx";
 
 interface IButtonProps {
   size: "medium" | "big" | "small";
   style: "primary" | "secondary" | "tertiary";
-
-  /* === There are three types of button: noIcon, withIcon and iconOnly === */
-  type:
-    | { noIcon: { text: string } }
+  type: /* === There are three types of button: noIcon, withIcon and iconOnly === */
+  | { noIcon: { text: string } }
     | {
         withIcon: {
           iconPosition: "left" | "right";
@@ -48,6 +28,8 @@ const Button: React.FC<IButtonProps> = (props) => {
     (props.loading ? ` button--loading` : ``) +
     ("iconOnly" in props.type ? ` button--icon-only` : ``);
   const tooltip = "iconOnly" in props.type ? props.type.iconOnly.tooltip : "";
+  const loaderSize = "icon-only" in props.type ? "big" : "small";
+  const loaderColor = props.style === "primary" ? "white" : "dark";
 
   if (!props.loading) {
     if ("noIcon" in props.type) {
@@ -108,6 +90,7 @@ const Button: React.FC<IButtonProps> = (props) => {
           disabled={props.disabled}
         >
           <ButtonText text={buttonText} />
+          <LoaderSVG size={loaderSize} color={loaderColor} />
           <img className="loader" src={loader} />
         </button>
       );
@@ -121,6 +104,7 @@ const Button: React.FC<IButtonProps> = (props) => {
           disabled={props.disabled}
           title={tooltip}
         >
+          <LoaderSVG size={loaderSize} color={loaderColor} />
           <img className="loader" src={loader} />
         </button>
       );
