@@ -1,4 +1,7 @@
 @import "./typography.css";
+@import "./shadows.css";
+@import "./border-radius.css";
+
 * {
   font-family: Inter, sans-serif;
 }
