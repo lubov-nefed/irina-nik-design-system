@@ -15,6 +15,10 @@
   vertical-align: middle;
 }
 
+.button-primary .button-icon {
+  fill: var(--white-color);
+}
+
 .button-icon--left {
   margin-right: 8px;
 }

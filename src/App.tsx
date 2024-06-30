@@ -1,13 +1,30 @@
 import { useState } from "react";
 import "./App.css";
 import { Button } from "./components/Button/Button";
-import iconLeftAdd from "../src/assets/icons/button-icons/icon-tertiary-left-add.svg";
-import iconRightArrow from "../src/assets/icons/button-icons/icon-tertiary-right-arrow.svg";
-import iconSettings from "../src/assets/icons/button-icons/icon-tertiary-settings.svg";
+/* === Primary Button Icons === */
+import iconPrimaryLeftAdd from "../src/assets/icons/button-icons/icon-primary-left-add.svg";
+import iconPrimaryRightArrow from "../src/assets/icons/button-icons/icon-primary-right-arrow.svg";
+import iconPrimarySettings from "../src/assets/icons/button-icons/icon-primary-settings.svg";
 
-import iconLeftAddDisabled from "../src/assets/icons/button-icons/icon-tertiary-left-add--disabled.svg";
-import iconRightArrowDisabled from "../src/assets/icons/button-icons/icon-tertiary-right-arrow--disabled.svg";
-import iconSettingsDisabled from "../src/assets/icons/button-icons/icon-tertiary-settings--disabled.svg";
+import iconPrimaryLeftAddDisabled from "../src/assets/icons/button-icons/icon-primary-left-add--disabled.svg";
+import iconPrimaryRightArrowDisabled from "../src/assets/icons/button-icons/icon-primary-right-arrow--disabled.svg";
+import iconPrimarySettingsDisabled from "../src/assets/icons/button-icons/icon-primary-settings--disabled.svg";
+/* === Secondary Button Icons === */
+import iconSecondaryLeftAdd from "../src/assets/icons/button-icons/icon-secondary-left-add.svg";
+import iconSecondaryRightArrow from "../src/assets/icons/button-icons/icon-secondary-right-arrow.svg";
+import iconSecondarySettings from "../src/assets/icons/button-icons/icon-secondary-settings.svg";
+
+import iconSecondaryLeftAddDisabled from "../src/assets/icons/button-icons/icon-secondary-left-add--disabled.svg";
+import iconSecondaryRightArrowDisabled from "../src/assets/icons/button-icons/icon-secondary-right-arrow--disabled.svg";
+import iconSecondarySettingsDisabled from "../src/assets/icons/button-icons/icon-secondary-settings--disabled.svg";
+/* === Tertiary Button Icons === */
+import iconTertiaryLeftAdd from "../src/assets/icons/button-icons/icon-tertiary-left-add.svg";
+import iconTertiaryRightArrow from "../src/assets/icons/button-icons/icon-tertiary-right-arrow.svg";
+import iconTertiarySettings from "../src/assets/icons/button-icons/icon-tertiary-settings.svg";
+
+import iconTertiaryLeftAddDisabled from "../src/assets/icons/button-icons/icon-tertiary-left-add--disabled.svg";
+import iconTertiaryRightArrowDisabled from "../src/assets/icons/button-icons/icon-tertiary-right-arrow--disabled.svg";
+import iconTertiarySettingsDisabled from "../src/assets/icons/button-icons/icon-tertiary-settings--disabled.svg";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -33,7 +50,9 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: isDisabled ? iconLeftAddDisabled : iconLeftAdd,
+            iconSrc: isDisabled
+              ? iconPrimaryLeftAddDisabled
+              : iconPrimaryLeftAdd,
             text: "M Default",
           },
         }}
@@ -47,7 +66,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconPrimaryRightArrow,
             text: "M Default",
           },
         }}
@@ -60,7 +79,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconPrimarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -85,7 +104,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAdd,
+            iconSrc: iconPrimaryLeftAdd,
             text: "M Loading",
           },
         }}
@@ -99,7 +118,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconPrimaryRightArrow,
             text: "M Loading",
           },
         }}
@@ -112,7 +131,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconPrimarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -137,7 +156,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAddDisabled,
+            iconSrc: iconPrimaryLeftAddDisabled,
             text: "M Disabled",
           },
         }}
@@ -151,7 +170,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrowDisabled,
+            iconSrc: iconPrimaryRightArrowDisabled,
             text: "M Disabled",
           },
         }}
@@ -164,7 +183,7 @@ function App() {
         disabled={true}
         type={{
           iconOnly: {
-            iconSrc: iconSettingsDisabled,
+            iconSrc: iconPrimarySettingsDisabled,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -190,7 +209,9 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: isDisabled ? iconLeftAddDisabled : iconLeftAdd,
+            iconSrc: isDisabled
+              ? iconPrimaryLeftAddDisabled
+              : iconPrimaryLeftAdd,
             text: "Big Default",
           },
         }}
@@ -204,7 +225,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconPrimaryRightArrow,
             text: "Big Default",
           },
         }}
@@ -217,7 +238,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconPrimarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -242,7 +263,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAdd,
+            iconSrc: iconPrimaryLeftAdd,
             text: "Big Loading",
           },
         }}
@@ -256,7 +277,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconPrimaryRightArrow,
             text: "Big Loading",
           },
         }}
@@ -269,7 +290,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconPrimarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -294,7 +315,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAddDisabled,
+            iconSrc: iconPrimaryLeftAddDisabled,
             text: "Big Disabled",
           },
         }}
@@ -308,7 +329,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrowDisabled,
+            iconSrc: iconPrimaryRightArrowDisabled,
             text: "Big Disabled",
           },
         }}
@@ -321,7 +342,7 @@ function App() {
         disabled={true}
         type={{
           iconOnly: {
-            iconSrc: iconSettingsDisabled,
+            iconSrc: iconPrimarySettingsDisabled,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -347,7 +368,9 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: isDisabled ? iconLeftAddDisabled : iconLeftAdd,
+            iconSrc: isDisabled
+              ? iconPrimaryLeftAddDisabled
+              : iconPrimaryLeftAdd,
             text: "S Default",
           },
         }}
@@ -361,7 +384,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconPrimaryRightArrow,
             text: "S Default",
           },
         }}
@@ -374,7 +397,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconPrimarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -399,7 +422,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAdd,
+            iconSrc: iconPrimaryLeftAdd,
             text: "S Loading",
           },
         }}
@@ -413,7 +436,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconPrimaryRightArrow,
             text: "S Loading",
           },
         }}
@@ -426,7 +449,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconPrimarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -451,7 +474,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAddDisabled,
+            iconSrc: iconPrimaryLeftAddDisabled,
             text: "S Disabled",
           },
         }}
@@ -465,7 +488,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrowDisabled,
+            iconSrc: iconPrimaryRightArrowDisabled,
             text: "S Disabled",
           },
         }}
@@ -478,7 +501,7 @@ function App() {
         disabled={true}
         type={{
           iconOnly: {
-            iconSrc: iconSettingsDisabled,
+            iconSrc: iconPrimarySettingsDisabled,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -503,7 +526,9 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: isDisabled ? iconLeftAddDisabled : iconLeftAdd,
+            iconSrc: isDisabled
+              ? iconSecondaryLeftAddDisabled
+              : iconSecondaryLeftAdd,
             text: "M Default",
           },
         }}
@@ -517,7 +542,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconSecondaryRightArrow,
             text: "M Default",
           },
         }}
@@ -530,7 +555,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconSecondarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -554,7 +579,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAdd,
+            iconSrc: iconSecondaryLeftAdd,
             text: "M Loading",
           },
         }}
@@ -568,7 +593,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconSecondaryRightArrow,
             text: "M Loading",
           },
         }}
@@ -581,7 +606,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconSecondarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -605,7 +630,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAddDisabled,
+            iconSrc: iconSecondaryLeftAddDisabled,
             text: "M Disabled",
           },
         }}
@@ -619,7 +644,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrowDisabled,
+            iconSrc: iconSecondaryRightArrowDisabled,
             text: "M Disabled",
           },
         }}
@@ -632,7 +657,7 @@ function App() {
         disabled={true}
         type={{
           iconOnly: {
-            iconSrc: iconSettingsDisabled,
+            iconSrc: iconSecondarySettingsDisabled,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -657,7 +682,9 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: isDisabled ? iconLeftAddDisabled : iconLeftAdd,
+            iconSrc: isDisabled
+              ? iconSecondaryLeftAddDisabled
+              : iconSecondaryLeftAdd,
             text: "Big Default",
           },
         }}
@@ -671,7 +698,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconSecondaryRightArrow,
             text: "Big Default",
           },
         }}
@@ -684,7 +711,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconSecondarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -708,7 +735,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAdd,
+            iconSrc: iconSecondaryLeftAdd,
             text: "Big Loading",
           },
         }}
@@ -722,7 +749,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconSecondaryRightArrow,
             text: "Big Loading",
           },
         }}
@@ -735,7 +762,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconSecondarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -759,7 +786,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAddDisabled,
+            iconSrc: iconSecondaryLeftAddDisabled,
             text: "Big Disabled",
           },
         }}
@@ -773,7 +800,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrowDisabled,
+            iconSrc: iconSecondaryRightArrowDisabled,
             text: "Big Disabled",
           },
         }}
@@ -786,7 +813,7 @@ function App() {
         disabled={true}
         type={{
           iconOnly: {
-            iconSrc: iconSettingsDisabled,
+            iconSrc: iconSecondarySettingsDisabled,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -811,7 +838,9 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: isDisabled ? iconLeftAddDisabled : iconLeftAdd,
+            iconSrc: isDisabled
+              ? iconSecondaryLeftAddDisabled
+              : iconSecondaryLeftAdd,
             text: "S Default",
           },
         }}
@@ -825,7 +854,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconSecondaryRightArrow,
             text: "S Default",
           },
         }}
@@ -838,7 +867,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconSecondarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -862,7 +891,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAdd,
+            iconSrc: iconSecondaryLeftAdd,
             text: "S Loading",
           },
         }}
@@ -876,7 +905,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconSecondaryRightArrow,
             text: "S Loading",
           },
         }}
@@ -889,7 +918,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconSecondarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -913,7 +942,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAddDisabled,
+            iconSrc: iconSecondaryLeftAddDisabled,
             text: "S Disabled",
           },
         }}
@@ -927,7 +956,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrowDisabled,
+            iconSrc: iconSecondaryRightArrowDisabled,
             text: "S Disabled",
           },
         }}
@@ -940,7 +969,7 @@ function App() {
         disabled={true}
         type={{
           iconOnly: {
-            iconSrc: iconSettingsDisabled,
+            iconSrc: iconSecondarySettingsDisabled,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -965,7 +994,9 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: isDisabled ? iconLeftAddDisabled : iconLeftAdd,
+            iconSrc: isDisabled
+              ? iconTertiaryLeftAddDisabled
+              : iconTertiaryLeftAdd,
             text: "M Default",
           },
         }}
@@ -979,7 +1010,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconTertiaryRightArrow,
             text: "M Default",
           },
         }}
@@ -992,7 +1023,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconTertiarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -1016,7 +1047,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAdd,
+            iconSrc: iconTertiaryLeftAdd,
             text: "M Loading",
           },
         }}
@@ -1030,7 +1061,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconTertiaryRightArrow,
             text: "M Loading",
           },
         }}
@@ -1043,7 +1074,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconTertiarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -1067,7 +1098,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAddDisabled,
+            iconSrc: iconTertiaryLeftAddDisabled,
             text: "M Disabled",
           },
         }}
@@ -1081,7 +1112,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrowDisabled,
+            iconSrc: iconTertiaryRightArrowDisabled,
             text: "M Disabled",
           },
         }}
@@ -1094,7 +1125,7 @@ function App() {
         disabled={true}
         type={{
           iconOnly: {
-            iconSrc: iconSettingsDisabled,
+            iconSrc: iconTertiarySettingsDisabled,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -1119,7 +1150,9 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: isDisabled ? iconLeftAddDisabled : iconLeftAdd,
+            iconSrc: isDisabled
+              ? iconTertiaryLeftAddDisabled
+              : iconTertiaryLeftAdd,
             text: "Big Default",
           },
         }}
@@ -1133,7 +1166,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconTertiaryRightArrow,
             text: "Big Default",
           },
         }}
@@ -1146,7 +1179,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconTertiarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -1170,7 +1203,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAdd,
+            iconSrc: iconTertiaryLeftAdd,
             text: "Big Loading",
           },
         }}
@@ -1184,7 +1217,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconTertiaryRightArrow,
             text: "Big Loading",
           },
         }}
@@ -1197,7 +1230,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconTertiarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -1221,7 +1254,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAddDisabled,
+            iconSrc: iconTertiaryLeftAddDisabled,
             text: "Big Disabled",
           },
         }}
@@ -1235,7 +1268,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrowDisabled,
+            iconSrc: iconTertiaryRightArrowDisabled,
             text: "Big Disabled",
           },
         }}
@@ -1248,7 +1281,7 @@ function App() {
         disabled={true}
         type={{
           iconOnly: {
-            iconSrc: iconSettingsDisabled,
+            iconSrc: iconTertiarySettingsDisabled,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -1273,7 +1306,9 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: isDisabled ? iconLeftAddDisabled : iconLeftAdd,
+            iconSrc: isDisabled
+              ? iconTertiaryLeftAddDisabled
+              : iconTertiaryLeftAdd,
             text: "S Default",
           },
         }}
@@ -1287,7 +1322,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconTertiaryRightArrow,
             text: "S Default",
           },
         }}
@@ -1300,7 +1335,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconTertiarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -1324,7 +1359,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAdd,
+            iconSrc: iconTertiaryLeftAdd,
             text: "S Loading",
           },
         }}
@@ -1338,7 +1373,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrow,
+            iconSrc: iconTertiaryRightArrow,
             text: "S Loading",
           },
         }}
@@ -1351,7 +1386,7 @@ function App() {
         disabled={false}
         type={{
           iconOnly: {
-            iconSrc: iconSettings,
+            iconSrc: iconTertiarySettings,
             tooltip: "Tooltip for the icon button",
           },
         }}
@@ -1375,7 +1410,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "left",
-            iconSrc: iconLeftAddDisabled,
+            iconSrc: iconTertiaryLeftAddDisabled,
             text: "S Disabled",
           },
         }}
@@ -1389,7 +1424,7 @@ function App() {
         type={{
           withIcon: {
             iconPosition: "right",
-            iconSrc: iconRightArrowDisabled,
+            iconSrc: iconTertiaryRightArrowDisabled,
             text: "S Disabled",
           },
         }}
@@ -1402,7 +1437,7 @@ function App() {
         disabled={true}
         type={{
           iconOnly: {
-            iconSrc: iconSettingsDisabled,
+            iconSrc: iconTertiarySettingsDisabled,
             tooltip: "Tooltip for the icon button",
           },
         }}
