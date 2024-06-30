@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import { Button } from "./components/Button/Button";
 /* === Primary Button Icons === */
 import iconPrimaryLeftAdd from "../src/assets/icons/button-icons/icon-primary-left-add.svg";
@@ -26,7 +25,7 @@ import iconTertiaryLeftAddDisabled from "../src/assets/icons/button-icons/icon-t
 import iconTertiaryRightArrowDisabled from "../src/assets/icons/button-icons/icon-tertiary-right-arrow--disabled.svg";
 import iconTertiarySettingsDisabled from "../src/assets/icons/button-icons/icon-tertiary-settings--disabled.svg";
 
-function App() {
+function Buttons() {
   const [isLoading, setIsLoading] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
   return (
@@ -1447,4 +1446,4 @@ function App() {
   );
 }
 
-export default App;
+export default Buttons;
