@@ -4,6 +4,7 @@ interface LoaderSVGProps {
   size: "small" | "big";
   color: "white" | "dark";
 }
+
 function getLoaderId(loaderProps: LoaderSVGProps): string {
   const loaderType = `${loaderProps.size}-${loaderProps.color}`;
   switch (loaderType) {

@@ -1,5 +1,4 @@
 import "./Button.css";
-import loader from "../../assets/icons/button-icons/icon-secondary-loading-circle-dark.svg";
 import { ButtonIcon } from "./ButtonIcon";
 import { ButtonText } from "./ButtonText";
 import { LoaderSVG } from "./ButtonLoader/Loader.tsx";
@@ -28,7 +27,7 @@ const Button: React.FC<IButtonProps> = (props) => {
     (props.loading ? ` button--loading` : ``) +
     ("iconOnly" in props.type ? ` button--icon-only` : ``);
   const tooltip = "iconOnly" in props.type ? props.type.iconOnly.tooltip : "";
-  const loaderSize = "icon-only" in props.type ? "big" : "small";
+  const loaderSize = "iconOnly" in props.type ? "big" : "small";
   const loaderColor = props.style === "primary" ? "white" : "dark";
 
   if (!props.loading) {
@@ -91,7 +90,6 @@ const Button: React.FC<IButtonProps> = (props) => {
         >
           <ButtonText text={buttonText} />
           <LoaderSVG size={loaderSize} color={loaderColor} />
-          <img className="loader" src={loader} />
         </button>
       );
     }
@@ -105,7 +103,6 @@ const Button: React.FC<IButtonProps> = (props) => {
           title={tooltip}
         >
           <LoaderSVG size={loaderSize} color={loaderColor} />
-          <img className="loader" src={loader} />
         </button>
       );
     }
