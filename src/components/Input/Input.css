@@ -49,6 +49,7 @@
 
 .input-validation-container {
   width: 200px;
+  position: relative;
   margin: 0 auto;
 }
 
@@ -60,3 +61,45 @@
   color: var(--rose-color-600);
   text-align: left;
 }
+
+.input-container {
+ display: inline-block;
+ position: relative;
+}
+
+.input-icon {
+  position: absolute;
+}
+
+.input-icon--left {
+  left: 10px;
+}
+
+.input-container--medium .input-icon--left {
+  top: 12px;
+}
+.input-container--big .input-icon--left {
+  top: 18px;
+}
+.input-container--small .input-icon--left {
+  top: 8px;
+}
+
+.input-icon--left+.input-medium, .input-icon--left+.input-big, .input-icon--left+.input-small {
+  padding-left: 38px;
+}
+
+.input-icon--right {
+  right: 8px;
+}
+
+.input-container--medium .input-icon--right {
+  top: 12px;
+}
+.input-container--big .input-icon--right {
+  top: 18px;
+}
+.input-container--small .input-icon--right {
+  top: 8px;
+}
+

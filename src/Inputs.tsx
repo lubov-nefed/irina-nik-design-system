@@ -8,6 +8,8 @@ function Inputs() {
     <>
       Inputs
       <br />
+      No Icons Valid
+      <br />
       <Input
         size="medium"
         type="noIcon"
@@ -28,6 +30,8 @@ function Inputs() {
         placeholder="Placeholder"
         isValid={true}
       />
+      <br />
+      No Icons Invalid
       <br />
       <Input
         size="medium"
@@ -50,10 +54,32 @@ function Inputs() {
         isValid={false}
       />
       {/* === Icons === */}
+      One Icon Valid
       <br />
       <Input
         size="medium"
         type={{ oneIcon: { iconPosition: "left", iconSrc: iconSearch } }}
+        placeholder="Placeholder"
+        isValid={true}
+      />
+      <br />
+      <Input
+        size="big"
+        type={{ oneIcon: { iconPosition: "left", iconSrc: iconSearch } }}
+        placeholder="Placeholder"
+        isValid={true}
+      />
+      <br />
+      <Input
+        size="small"
+        type={{ oneIcon: { iconPosition: "left", iconSrc: iconSearch } }}
+        placeholder="Placeholder"
+        isValid={true}
+      />
+      <br />
+      <Input
+        size="medium"
+        type={{ oneIcon: { iconPosition: "right", iconSrc: iconEye } }}
         placeholder="Placeholder"
         isValid={true}
       />
@@ -67,10 +93,12 @@ function Inputs() {
       <br />
       <Input
         size="small"
-        type={{ twoIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        type={{ oneIcon: { iconPosition: "right", iconSrc: iconEye } }}
         placeholder="Placeholder"
         isValid={true}
       />
+      <br />
+      One Icon Invalid
       <br />
       <Input
         size="medium"
@@ -81,7 +109,116 @@ function Inputs() {
       <br />
       <Input
         size="big"
+        type={{ oneIcon: { iconPosition: "left", iconSrc: iconSearch } }}
+        placeholder="Placeholder"
+        isValid={false}
+      />
+      <br />
+      <Input
+        size="small"
+        type={{ oneIcon: { iconPosition: "left", iconSrc: iconSearch } }}
+        placeholder="Placeholder"
+        isValid={false}
+      />
+      <br />
+      <Input
+        size="medium"
         type={{ oneIcon: { iconPosition: "right", iconSrc: iconEye } }}
+        placeholder="Placeholder"
+        isValid={false}
+      />
+      <br />
+      <Input
+        size="big"
+        type={{ oneIcon: { iconPosition: "right", iconSrc: iconEye } }}
+        placeholder="Placeholder"
+        isValid={false}
+      />
+      <br />
+      <Input
+        size="small"
+        type={{ oneIcon: { iconPosition: "right", iconSrc: iconEye } }}
+        placeholder="Placeholder"
+        isValid={false}
+      />
+      <br />
+      Two Icons Valid
+      <br />
+      <Input
+        size="small"
+        type={{ twoIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        placeholder="Placeholder"
+        isValid={true}
+      />
+      <br />
+      <Input
+        size="medium"
+        type={{ twoIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        placeholder="Placeholder"
+        isValid={true}
+      />
+      <br />
+      <Input
+        size="big"
+        type={{ twoIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        placeholder="Placeholder"
+        isValid={true}
+      />
+      <br />
+      <Input
+        size="medium"
+        type={{ twoIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        placeholder="Placeholder"
+        isValid={true}
+      />
+      <br />
+      <Input
+        size="big"
+        type={{ twoIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        placeholder="Placeholder"
+        isValid={true}
+      />
+      <br />
+      <Input
+        size="small"
+        type={{ twoIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        placeholder="Placeholder"
+        isValid={true}
+      />
+      <br />
+      Two Icons Invalid
+      <br />
+      <Input
+        size="small"
+        type={{ twoIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        placeholder="Placeholder"
+        isValid={false}
+      />
+      <br />
+      <Input
+        size="medium"
+        type={{ twoIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        placeholder="Placeholder"
+        isValid={false}
+      />
+      <br />
+      <Input
+        size="big"
+        type={{ twoIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        placeholder="Placeholder"
+        isValid={false}
+      />
+      <br />
+      <Input
+        size="medium"
+        type={{ twoIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        placeholder="Placeholder"
+        isValid={false}
+      />
+      <br />
+      <Input
+        size="big"
+        type={{ twoIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
         placeholder="Placeholder"
         isValid={false}
       />
