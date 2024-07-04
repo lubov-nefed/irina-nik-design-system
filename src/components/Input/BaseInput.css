@@ -47,12 +47,6 @@
   line-height: 20px;
 }
 
-.input-validation-container {
-  width: 200px;
-  position: relative;
-  margin: 0 auto;
-}
-
 .input--non-valid {
   border: solid 1px var(--rose-color-400);
 }
