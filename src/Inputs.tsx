@@ -6,6 +6,7 @@ import iconX from "./assets/icons/input-icons/icon-x.svg";
 function Inputs() {
   return (
     <>
+      <br />
       Inputs
       <br />
       No Icons Valid

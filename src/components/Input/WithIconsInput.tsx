@@ -4,7 +4,9 @@ interface IWithIconsInputProps {
   className: string;
 }
 
-function WithIconsInput(props: IWithIconsInputProps) {
+const WithIconsInput: React.FC<IWithIconsInputProps> = (
+  props: IWithIconsInputProps
+) => {
   return (
     <>
       {"leftIconSrc" in props.icons && (
@@ -24,6 +26,6 @@ function WithIconsInput(props: IWithIconsInputProps) {
       )}
     </>
   );
-}
+};
 
 export { WithIconsInput };

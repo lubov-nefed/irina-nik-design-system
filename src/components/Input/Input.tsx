@@ -1,6 +1,7 @@
 import "./Input.css";
 import { NoIconInput } from "./NoIconInput";
 import { WithIconsInput } from "./WithIconsInput";
+import { InputLabel } from "./InputLabel";
 
 interface IInputProps {
   size: "medium" | "big" | "small";
@@ -18,34 +19,31 @@ const Input: React.FC<IInputProps> = (props) => {
     ? `input input-${props.size} ${textSize} font-normal`
     : `input input-${props.size} input--non-valid ${textSize} font-normal`;
 
-  if (props.label) {
-    return (
-      <label htmlFor={props.label.labelFor}>{props.label.labelText}</label>
-    );
-  }
-
   if (props.isValid) {
-    if ("noIcon" === props.type) {
-      return (
-        <NoIconInput placeholder={props.placeholder} className={className} />
-      );
-    }
-    if ("withIcons" in props.type) {
-      return (
-        <div className={`input-container input-container--${props.size}`}>
-          <WithIconsInput
-            icons={props.type.withIcons}
-            placeholder={props.placeholder}
-            className={className}
-          />
-        </div>
-      );
-    }
+    return (
+      <>
+        {props.label && <InputLabel {...props.label} />}
+        {"noIcon" === props.type && (
+          <NoIconInput placeholder={props.placeholder} className={className} />
+        )}
+        {typeof props.type === "object" && (
+          <div className={`input-container input-container--${props.size}`}>
+            {props.label && <InputLabel {...props.label} />}
+            <WithIconsInput
+              icons={props.type.withIcons}
+              placeholder={props.placeholder}
+              className={className}
+            />
+          </div>
+        )}
+      </>
+    );
   }
   if (!props.isValid) {
     if ("noIcon" === props.type) {
       return (
         <div className="input-validation-container">
+          {props.label && <InputLabel {...props.label} />}
           <NoIconInput placeholder={props.placeholder} className={className} />
           <p className="input-validation-text text-xs font-normal">
             Validation text
@@ -56,6 +54,7 @@ const Input: React.FC<IInputProps> = (props) => {
     if ("withIcons" in props.type) {
       return (
         <div className={`input-container input-container--${props.size}`}>
+          {props.label && <InputLabel {...props.label} />}
           <WithIconsInput
             icons={props.type.withIcons}
             placeholder={props.placeholder}
