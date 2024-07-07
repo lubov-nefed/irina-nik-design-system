@@ -1,4 +1,4 @@
-import { Input } from "./components/Input/BaseInput";
+import { BaseInput } from "./components/Input/BaseInput";
 import iconSearch from "./assets/icons/input-icons/icon-search.svg";
 import iconEye from "./assets/icons/input-icons/icon-eye.svg";
 import iconX from "./assets/icons/input-icons/icon-x.svg";
@@ -9,253 +9,292 @@ function InputsWithLabels() {
       <br />
       Input With Label
       <br />
-      <Input
+      No Icons Valid
+      <br />
+      <BaseInput
         size="medium"
-        type="noIcon"
         placeholder="Placeholder"
-        isValid={true}
+        validation={{ isValid: true, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="big"
-        type="noIcon"
         placeholder="Placeholder"
-        isValid={true}
+        validation={{ isValid: true, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="small"
-        type="noIcon"
         placeholder="Placeholder"
-        isValid={true}
+        validation={{ isValid: true, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      No Icons Invalid
+      No icons Invalid
       <br />
-      <Input
+      <BaseInput
         size="medium"
-        type="noIcon"
         placeholder="Placeholder"
-        isValid={false}
+        validation={{ isValid: false, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="big"
-        type="noIcon"
         placeholder="Placeholder"
-        isValid={false}
+        validation={{ isValid: false, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="small"
-        type="noIcon"
         placeholder="Placeholder"
-        isValid={false}
+        validation={{ isValid: false, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
-      {/* === Icons === */}
-      One Icon Valid
       <br />
-      <Input
+      {/* === icons === */}
+      One icon Valid
+      <br />
+      <BaseInput
         size="medium"
-        type={{ withIcons: { leftIconSrc: iconSearch } }}
+        icons={{ leftIconSrc: iconSearch }}
         placeholder="Placeholder"
-        isValid={true}
+        validation={{ isValid: true, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="big"
-        type={{ withIcons: { leftIconSrc: iconSearch } }}
+        icons={{ leftIconSrc: iconSearch }}
         placeholder="Placeholder"
-        isValid={true}
+        validation={{ isValid: true, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="small"
-        type={{ withIcons: { leftIconSrc: iconSearch } }}
+        icons={{ leftIconSrc: iconSearch }}
         placeholder="Placeholder"
-        isValid={true}
+        validation={{ isValid: true, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="medium"
-        type={{ withIcons: { rightIconSrc: iconEye } }}
+        icons={{ rightIconSrc: iconEye }}
         placeholder="Placeholder"
-        isValid={true}
+        validation={{ isValid: true, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="big"
-        type={{ withIcons: { rightIconSrc: iconEye } }}
+        icons={{ rightIconSrc: iconEye }}
         placeholder="Placeholder"
-        isValid={true}
+        validation={{ isValid: true, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="small"
-        type={{ withIcons: { rightIconSrc: iconEye } }}
+        icons={{ rightIconSrc: iconEye }}
         placeholder="Placeholder"
-        isValid={true}
+        validation={{ isValid: true, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      One Icon Invalid
+      One icon Invalid
       <br />
-      <Input
+      <BaseInput
         size="medium"
-        type={{ withIcons: { leftIconSrc: iconSearch } }}
+        icons={{ leftIconSrc: iconSearch }}
         placeholder="Placeholder"
-        isValid={false}
+        validation={{ isValid: false, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="big"
-        type={{ withIcons: { leftIconSrc: iconSearch } }}
+        icons={{ leftIconSrc: iconSearch }}
         placeholder="Placeholder"
-        isValid={false}
+        validation={{ isValid: false, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="small"
-        type={{ withIcons: { leftIconSrc: iconSearch } }}
+        icons={{ leftIconSrc: iconSearch }}
         placeholder="Placeholder"
-        isValid={false}
+        validation={{ isValid: false, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="medium"
-        type={{ withIcons: { rightIconSrc: iconEye } }}
+        icons={{
+          rightIconSrc: iconEye,
+        }}
         placeholder="Placeholder"
-        isValid={false}
+        validation={{ isValid: false, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="big"
-        type={{ withIcons: { rightIconSrc: iconEye } }}
+        icons={{
+          rightIconSrc: iconEye,
+        }}
         placeholder="Placeholder"
-        isValid={false}
+        validation={{ isValid: false, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="small"
-        type={{ withIcons: { rightIconSrc: iconEye } }}
+        icons={{
+          rightIconSrc: iconEye,
+        }}
         placeholder="Placeholder"
-        isValid={false}
+        validation={{ isValid: false, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      Two Icons Valid
+      Two icons Valid
       <br />
-      <Input
+      <BaseInput
         size="small"
-        type={{ withIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        icons={{
+          leftIconSrc: iconSearch,
+          rightIconSrc: iconX,
+        }}
         placeholder="Placeholder"
-        isValid={true}
+        validation={{ isValid: true, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="medium"
-        type={{ withIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        icons={{
+          leftIconSrc: iconSearch,
+          rightIconSrc: iconX,
+        }}
         placeholder="Placeholder"
-        isValid={true}
+        validation={{ isValid: true, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="big"
-        type={{ withIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        icons={{
+          leftIconSrc: iconSearch,
+          rightIconSrc: iconX,
+        }}
         placeholder="Placeholder"
-        isValid={true}
+        validation={{ isValid: true, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="medium"
-        type={{ withIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        icons={{
+          leftIconSrc: iconSearch,
+          rightIconSrc: iconX,
+        }}
         placeholder="Placeholder"
-        isValid={true}
+        validation={{ isValid: true, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="big"
-        type={{ withIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        icons={{
+          leftIconSrc: iconSearch,
+          rightIconSrc: iconX,
+        }}
         placeholder="Placeholder"
-        isValid={true}
+        validation={{ isValid: true, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="small"
-        type={{ withIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        icons={{
+          leftIconSrc: iconSearch,
+          rightIconSrc: iconX,
+        }}
         placeholder="Placeholder"
-        isValid={true}
+        validation={{ isValid: true, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      Two Icons Invalid
+      Two iconss Invalid
       <br />
-      <Input
+      <BaseInput
         size="small"
-        type={{ withIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        icons={{
+          leftIconSrc: iconSearch,
+          rightIconSrc: iconX,
+        }}
         placeholder="Placeholder"
-        isValid={false}
+        validation={{ isValid: false, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="medium"
-        type={{ withIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        icons={{
+          leftIconSrc: iconSearch,
+          rightIconSrc: iconX,
+        }}
         placeholder="Placeholder"
-        isValid={false}
+        validation={{ isValid: false, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="big"
-        type={{ withIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        icons={{
+          leftIconSrc: iconSearch,
+          rightIconSrc: iconX,
+        }}
         placeholder="Placeholder"
-        isValid={false}
+        validation={{ isValid: false, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="medium"
-        type={{ withIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        icons={{
+          leftIconSrc: iconSearch,
+          rightIconSrc: iconX,
+        }}
         placeholder="Placeholder"
-        isValid={false}
+        validation={{ isValid: false, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="big"
-        type={{ withIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        icons={{
+          leftIconSrc: iconSearch,
+          rightIconSrc: iconX,
+        }}
         placeholder="Placeholder"
-        isValid={false}
+        validation={{ isValid: false, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />
-      <Input
+      <BaseInput
         size="small"
-        type={{ withIcons: { leftIconSrc: iconSearch, rightIconSrc: iconX } }}
+        icons={{
+          leftIconSrc: iconSearch,
+          rightIconSrc: iconX,
+        }}
         placeholder="Placeholder"
-        isValid={false}
+        validation={{ isValid: false, validationText: "validationText" }}
         label={{ labelText: "Comment below", labelFor: "comment" }}
       />
       <br />

@@ -103,3 +103,15 @@
   margin: 0 auto;
   text-align: left;
 }
+
+.input-container--medium .input-label+.input-icon--left, .input-label+.input-medium+.input-icon--right, .input-label+.input-icon--left+.input-medium+.input-icon--right {
+ top: 32px;
+}
+
+.input-container--big .input-label+.input-icon--left, .input-label+.input-big+.input-icon--right, .input-label+.input-icon--left+.input-big+.input-icon--right {
+  top: 38px;
+ }
+
+.input-container--small .input-label+.input-icon--left, .input-label+.input-small+.input-icon--right, .input-label+.input-icon--left+.input-small+.input-icon--right {
+  top: 28px;
+}
