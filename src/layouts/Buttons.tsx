@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "./components/Button/Button";
+import { Button } from "../components/Button/Button";
 /* === Primary Button Icons === */
 import iconPrimaryLeftAdd from "../src/assets/icons/button-icons/icon-primary-left-add.svg";
 import iconPrimaryRightArrow from "../src/assets/icons/button-icons/icon-primary-right-arrow.svg";

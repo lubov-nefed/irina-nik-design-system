@@ -1,7 +1,7 @@
-import { BaseInput } from "./components/Input/BaseInput";
-import iconSearch from "./assets/icons/input-icons/icon-search.svg";
-import iconEye from "./assets/icons/input-icons/icon-eye.svg";
-import iconX from "./assets/icons/input-icons/icon-x.svg";
+import { BaseInput } from "../components/Input/BaseInput";
+import iconSearch from "../assets/icons/input-icons/icon-search.svg";
+import iconEye from "../assets/icons/input-icons/icon-eye.svg";
+import iconX from "../assets/icons/input-icons/icon-x.svg";
 
 function InputsWithLabels() {
   return (
