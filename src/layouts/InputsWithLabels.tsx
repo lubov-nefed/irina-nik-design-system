@@ -15,21 +15,21 @@ function InputsWithLabels() {
         size="medium"
         placeholder="Placeholder"
         validation={{ isValid: true, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment1" }}
       />
       <br />
       <BaseInput
         size="big"
         placeholder="Placeholder"
         validation={{ isValid: true, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment2" }}
       />
       <br />
       <BaseInput
         size="small"
         placeholder="Placeholder"
         validation={{ isValid: true, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment3" }}
       />
       <br />
       No icons Invalid
@@ -38,21 +38,21 @@ function InputsWithLabels() {
         size="medium"
         placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment4" }}
       />
       <br />
       <BaseInput
         size="big"
         placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment5" }}
       />
       <br />
       <BaseInput
         size="small"
         placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment6" }}
       />
       <br />
       {/* === icons === */}
@@ -63,7 +63,7 @@ function InputsWithLabels() {
         icons={{ leftIconSrc: iconSearch }}
         placeholder="Placeholder"
         validation={{ isValid: true, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment7" }}
       />
       <br />
       <BaseInput
@@ -71,7 +71,7 @@ function InputsWithLabels() {
         icons={{ leftIconSrc: iconSearch }}
         placeholder="Placeholder"
         validation={{ isValid: true, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment8" }}
       />
       <br />
       <BaseInput
@@ -79,7 +79,7 @@ function InputsWithLabels() {
         icons={{ leftIconSrc: iconSearch }}
         placeholder="Placeholder"
         validation={{ isValid: true, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment9" }}
       />
       <br />
       <BaseInput
@@ -87,7 +87,7 @@ function InputsWithLabels() {
         icons={{ rightIconSrc: iconEye }}
         placeholder="Placeholder"
         validation={{ isValid: true, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment10" }}
       />
       <br />
       <BaseInput
@@ -95,7 +95,7 @@ function InputsWithLabels() {
         icons={{ rightIconSrc: iconEye }}
         placeholder="Placeholder"
         validation={{ isValid: true, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment11" }}
       />
       <br />
       <BaseInput
@@ -103,7 +103,7 @@ function InputsWithLabels() {
         icons={{ rightIconSrc: iconEye }}
         placeholder="Placeholder"
         validation={{ isValid: true, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment12" }}
       />
       <br />
       One icon Invalid
@@ -113,7 +113,7 @@ function InputsWithLabels() {
         icons={{ leftIconSrc: iconSearch }}
         placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment13" }}
       />
       <br />
       <BaseInput
@@ -121,7 +121,7 @@ function InputsWithLabels() {
         icons={{ leftIconSrc: iconSearch }}
         placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment14" }}
       />
       <br />
       <BaseInput
@@ -129,7 +129,7 @@ function InputsWithLabels() {
         icons={{ leftIconSrc: iconSearch }}
         placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment15" }}
       />
       <br />
       <BaseInput
@@ -139,7 +139,7 @@ function InputsWithLabels() {
         }}
         placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment16" }}
       />
       <br />
       <BaseInput
@@ -149,7 +149,7 @@ function InputsWithLabels() {
         }}
         placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment17" }}
       />
       <br />
       <BaseInput
@@ -159,7 +159,7 @@ function InputsWithLabels() {
         }}
         placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment18" }}
       />
       <br />
       Two icons Valid
@@ -172,7 +172,7 @@ function InputsWithLabels() {
         }}
         placeholder="Placeholder"
         validation={{ isValid: true, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment19" }}
       />
       <br />
       <BaseInput
@@ -183,7 +183,7 @@ function InputsWithLabels() {
         }}
         placeholder="Placeholder"
         validation={{ isValid: true, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment20" }}
       />
       <br />
       <BaseInput
@@ -194,7 +194,7 @@ function InputsWithLabels() {
         }}
         placeholder="Placeholder"
         validation={{ isValid: true, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment21" }}
       />
       <br />
       <BaseInput
@@ -205,7 +205,7 @@ function InputsWithLabels() {
         }}
         placeholder="Placeholder"
         validation={{ isValid: true, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment22" }}
       />
       <br />
       <BaseInput
@@ -216,7 +216,7 @@ function InputsWithLabels() {
         }}
         placeholder="Placeholder"
         validation={{ isValid: true, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment23" }}
       />
       <br />
       <BaseInput
@@ -227,7 +227,7 @@ function InputsWithLabels() {
         }}
         placeholder="Placeholder"
         validation={{ isValid: true, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment24" }}
       />
       <br />
       Two iconss Invalid
@@ -240,7 +240,7 @@ function InputsWithLabels() {
         }}
         placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment25" }}
       />
       <br />
       <BaseInput
@@ -251,7 +251,7 @@ function InputsWithLabels() {
         }}
         placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment26" }}
       />
       <br />
       <BaseInput
@@ -262,7 +262,7 @@ function InputsWithLabels() {
         }}
         placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment27" }}
       />
       <br />
       <BaseInput
@@ -273,7 +273,7 @@ function InputsWithLabels() {
         }}
         placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment28" }}
       />
       <br />
       <BaseInput
@@ -284,7 +284,7 @@ function InputsWithLabels() {
         }}
         placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment29" }}
       />
       <br />
       <BaseInput
@@ -295,7 +295,7 @@ function InputsWithLabels() {
         }}
         placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
-        label={{ labelText: "Comment below", labelFor: "comment" }}
+        label={{ labelText: "Comment below", labelFor: "comment30" }}
       />
       <br />
     </>

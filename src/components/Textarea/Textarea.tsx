@@ -6,9 +6,16 @@ interface ITextareaProps {
   cols?: number;
   rows?: number;
   maxLength?: number;
+  isRequired?: boolean;
 }
 
-const Textarea: React.FC<ITextareaProps> = (props) => {
+const Textarea: React.FC<ITextareaProps> = ({
+  placeholder,
+  cols,
+  rows,
+  maxLength,
+  isRequired = true,
+}) => {
   const [textareaValue, setTextareaValue] = useState("");
   const handleInput = (e: React.BaseSyntheticEvent) => {
     setTextareaValue(e.target.value);
@@ -16,17 +23,18 @@ const Textarea: React.FC<ITextareaProps> = (props) => {
   return (
     <div className="textarea-container">
       <textarea
-        cols={props.cols}
-        rows={props.rows}
-        maxLength={props.maxLength}
-        placeholder={props.placeholder}
+        cols={cols}
+        rows={rows}
+        maxLength={maxLength}
+        placeholder={placeholder}
         onInput={handleInput}
         value={textareaValue}
         className="textarea text-base font-normal"
+        required={isRequired}
       />
-      {props.maxLength && (
+      {maxLength && (
         <p className="textarea-length text-xs font-normal">
-          {textareaValue.length}/{props.maxLength}
+          {textareaValue.length}/{maxLength}
         </p>
       )}
     </div>

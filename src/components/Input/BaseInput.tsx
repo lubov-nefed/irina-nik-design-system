@@ -19,24 +19,48 @@ const BaseInput: React.FC<IBaseInputProps> = (props) => {
   if (props.validation.isValid) {
     return (
       <div className={`input-container input-container--${props.size}`}>
-        {props.label && <InputLabel {...props.label} />}
-        <Input
-          icons={props.icons}
-          placeholder={props.placeholder}
-          className={className}
-        />
+        {props.label && (
+          <>
+            <InputLabel {...props.label} />
+            <Input
+              icons={props.icons}
+              placeholder={props.placeholder}
+              className={className}
+              id={props.label.labelFor}
+            />
+          </>
+        )}
+        {!props.label && (
+          <Input
+            icons={props.icons}
+            placeholder={props.placeholder}
+            className={className}
+          />
+        )}
       </div>
     );
   }
   if (!props.validation.isValid) {
     return (
       <div className={`input-container input-container--${props.size}`}>
-        {props.label && <InputLabel {...props.label} />}
-        <Input
-          icons={props.icons}
-          placeholder={props.placeholder}
-          className={className}
-        />
+        {props.label && (
+          <>
+            <InputLabel {...props.label} />
+            <Input
+              icons={props.icons}
+              placeholder={props.placeholder}
+              className={className}
+              id={props.label.labelFor}
+            />
+          </>
+        )}
+        {!props.label && (
+          <Input
+            icons={props.icons}
+            placeholder={props.placeholder}
+            className={className}
+          />
+        )}
         <p className="input-validation-text text-xs font-normal">
           {props.validation.validationText}
         </p>

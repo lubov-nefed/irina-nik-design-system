@@ -1,7 +1,7 @@
 import { BaseInput } from "../components/Input/BaseInput";
-import iconSearch from "./assets/icons/input-icons/icon-search.svg";
-import iconEye from "./assets/icons/input-icons/icon-eye.svg";
-import iconX from "./assets/icons/input-icons/icon-x.svg";
+import iconSearch from "../assets/icons/input-icons/icon-search.svg";
+import iconEye from "../assets/icons/input-icons/icon-eye.svg";
+import iconX from "../assets/icons/input-icons/icon-x.svg";
 import { useState } from "react";
 
 function Inputs() {

@@ -2,6 +2,7 @@ interface IInputProps {
   icons?: { leftIconSrc?: string; rightIconSrc?: string };
   placeholder: string;
   className: string;
+  id?: string;
 }
 
 const Input: React.FC<IInputProps> = (props: IInputProps) => {
@@ -14,7 +15,16 @@ const Input: React.FC<IInputProps> = (props: IInputProps) => {
           alt="Input icon"
         />
       )}
-      <input placeholder={props.placeholder} className={props.className} />
+      {props.id && (
+        <input
+          id={props.id}
+          placeholder={props.placeholder}
+          className={props.className}
+        />
+      )}
+      {!props.id && (
+        <input placeholder={props.placeholder} className={props.className} />
+      )}
       {props.icons && props.icons.rightIconSrc !== undefined && (
         <img
           className="input-icon input-icon--right"
