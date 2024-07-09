@@ -1,9 +1,9 @@
 import { Dropdown } from "../components/Dropdown/Dropdown";
 const fruits = [
-  { id: 1, value: "Apples" },
-  { id: 2, value: "Bananas" },
-  { id: 3, value: "Oranges" },
-  { id: 4, value: "Peaches" },
+  { id: "1", value: "Apples" },
+  { id: "2", value: "Bananas" },
+  { id: "3", value: "Oranges" },
+  { id: "4", value: "Peaches" },
 ];
 
 function Dropdowns() {

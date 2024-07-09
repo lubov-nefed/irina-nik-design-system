@@ -5,14 +5,14 @@ import { useState } from "react";
 
 interface IDropdownProps {
   size: "medium" | "big" | "small";
-  values: { id: number; value: string }[];
+  values: { id: string; value: string }[];
   placeholder: string;
   validation: { isValid: boolean; validationText: string };
 }
 
 const Dropdown: React.FC<IDropdownProps> = (props) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [activeOption, setActiveOption] = useState({});
+  const [activeOption, setActiveOption] = useState({ id: "", value: "" });
   return (
     <div
       className="dropdown-container"
@@ -23,7 +23,8 @@ const Dropdown: React.FC<IDropdownProps> = (props) => {
         icons={{ rightIconSrc: iconChevronDown }}
         placeholder={props.placeholder}
         validation={{ isValid: true, validationText: "Validation Text" }}
-        isDisabled={true}
+        value={activeOption.value}
+        onInput={() => {}}
       />
       {isDropdownOpen && (
         <ul className="dropdown-ul text-base font-normal shadow-xl">

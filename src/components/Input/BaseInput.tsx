@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent, useState } from "react";
+import { BaseSyntheticEvent } from "react";
 import "./BaseInput.css";
 import { Input } from "./Input";
 import { InputLabel } from "./InputLabel";
@@ -11,15 +11,14 @@ interface IBaseInputProps {
   label?: { labelText: string; labelFor: string };
   value?: string;
   isDisabled?: boolean;
+  onInput?: (e: BaseSyntheticEvent) => void;
 }
 
 const BaseInput: React.FC<IBaseInputProps> = (props) => {
-  const [inputValue, setInputValue] = useState("");
   const textSize = props.size === "small" ? "text-sm" : "text-base";
   const className = props.validation.isValid
     ? `input input-${props.size} ${textSize} font-normal`
     : `input input-${props.size} input--non-valid ${textSize} font-normal`;
-  const handleInput = (e: BaseSyntheticEvent) => setInputValue(e.target.value);
 
   return (
     <div className={`input-container input-container--${props.size}`}>
@@ -29,7 +28,8 @@ const BaseInput: React.FC<IBaseInputProps> = (props) => {
         placeholder={props.placeholder}
         className={className}
         value={props.value}
-        onInput={handleInput}
+        onInput={props.onInput}
+        isDisabled={props.isDisabled}
         id={props.label?.labelFor}
       />
       {!props.validation.isValid && (

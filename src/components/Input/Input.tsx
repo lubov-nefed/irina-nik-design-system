@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent } from "react";
+import { BaseSyntheticEvent, useState } from "react";
 
 interface IInputProps {
   placeholder: string;
@@ -6,11 +6,15 @@ interface IInputProps {
   id?: string;
   icons?: { leftIconSrc?: string; rightIconSrc?: string };
   value?: string;
-  onInput: (e: BaseSyntheticEvent) => void;
+  onInput?: (e: BaseSyntheticEvent) => void;
   isDisabled?: boolean;
 }
 
 const Input: React.FC<IInputProps> = (props: IInputProps) => {
+  const [inputValue, setInputValue] = useState("");
+  const value = props.value || inputValue;
+  const handleInput = (e: BaseSyntheticEvent) => setInputValue(e.target.value);
+  const onInputFn = props.onInput || handleInput;
   return (
     <>
       {props.icons && props.icons.leftIconSrc && (
@@ -24,8 +28,8 @@ const Input: React.FC<IInputProps> = (props: IInputProps) => {
         id={props.id}
         placeholder={props.placeholder}
         className={props.className}
-        value={props.value}
-        onInput={props.onInput}
+        value={value}
+        onInput={onInputFn}
         disabled={props.isDisabled}
       />
       {props.icons && props.icons.rightIconSrc && (
