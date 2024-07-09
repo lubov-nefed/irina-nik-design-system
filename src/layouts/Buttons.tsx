@@ -1,29 +1,29 @@
 import { useState } from "react";
 import { Button } from "../components/Button/Button";
 /* === Primary Button Icons === */
-import iconPrimaryLeftAdd from "../src/assets/icons/button-icons/icon-primary-left-add.svg";
-import iconPrimaryRightArrow from "../src/assets/icons/button-icons/icon-primary-right-arrow.svg";
-import iconPrimarySettings from "../src/assets/icons/button-icons/icon-primary-settings.svg";
+import iconPrimaryLeftAdd from "../assets/icons/button-icons/icon-primary-left-add.svg";
+import iconPrimaryRightArrow from "../assets/icons/button-icons/icon-primary-right-arrow.svg";
+import iconPrimarySettings from "../assets/icons/button-icons/icon-primary-settings.svg";
 
-import iconPrimaryLeftAddDisabled from "../src/assets/icons/button-icons/icon-primary-left-add--disabled.svg";
-import iconPrimaryRightArrowDisabled from "../src/assets/icons/button-icons/icon-primary-right-arrow--disabled.svg";
-import iconPrimarySettingsDisabled from "../src/assets/icons/button-icons/icon-primary-settings--disabled.svg";
+import iconPrimaryLeftAddDisabled from "../assets/icons/button-icons/icon-primary-left-add--disabled.svg";
+import iconPrimaryRightArrowDisabled from "../assets/icons/button-icons/icon-primary-right-arrow--disabled.svg";
+import iconPrimarySettingsDisabled from "../assets/icons/button-icons/icon-primary-settings--disabled.svg";
 /* === Secondary Button Icons === */
-import iconSecondaryLeftAdd from "../src/assets/icons/button-icons/icon-secondary-left-add.svg";
-import iconSecondaryRightArrow from "../src/assets/icons/button-icons/icon-secondary-right-arrow.svg";
-import iconSecondarySettings from "../src/assets/icons/button-icons/icon-secondary-settings.svg";
+import iconSecondaryLeftAdd from "../assets/icons/button-icons/icon-secondary-left-add.svg";
+import iconSecondaryRightArrow from "../assets/icons/button-icons/icon-secondary-right-arrow.svg";
+import iconSecondarySettings from "../assets/icons/button-icons/icon-secondary-settings.svg";
 
-import iconSecondaryLeftAddDisabled from "../src/assets/icons/button-icons/icon-secondary-left-add--disabled.svg";
-import iconSecondaryRightArrowDisabled from "../src/assets/icons/button-icons/icon-secondary-right-arrow--disabled.svg";
-import iconSecondarySettingsDisabled from "../src/assets/icons/button-icons/icon-secondary-settings--disabled.svg";
+import iconSecondaryLeftAddDisabled from "../assets/icons/button-icons/icon-secondary-left-add--disabled.svg";
+import iconSecondaryRightArrowDisabled from "../assets/icons/button-icons/icon-secondary-right-arrow--disabled.svg";
+import iconSecondarySettingsDisabled from "../assets/icons/button-icons/icon-secondary-settings--disabled.svg";
 /* === Tertiary Button Icons === */
-import iconTertiaryLeftAdd from "../src/assets/icons/button-icons/icon-tertiary-left-add.svg";
-import iconTertiaryRightArrow from "../src/assets/icons/button-icons/icon-tertiary-right-arrow.svg";
-import iconTertiarySettings from "../src/assets/icons/button-icons/icon-tertiary-settings.svg";
+import iconTertiaryLeftAdd from "../assets/icons/button-icons/icon-tertiary-left-add.svg";
+import iconTertiaryRightArrow from "../assets/icons/button-icons/icon-tertiary-right-arrow.svg";
+import iconTertiarySettings from "../assets/icons/button-icons/icon-tertiary-settings.svg";
 
-import iconTertiaryLeftAddDisabled from "../src/assets/icons/button-icons/icon-tertiary-left-add--disabled.svg";
-import iconTertiaryRightArrowDisabled from "../src/assets/icons/button-icons/icon-tertiary-right-arrow--disabled.svg";
-import iconTertiarySettingsDisabled from "../src/assets/icons/button-icons/icon-tertiary-settings--disabled.svg";
+import iconTertiaryLeftAddDisabled from "../assets/icons/button-icons/icon-tertiary-left-add--disabled.svg";
+import iconTertiaryRightArrowDisabled from "../assets/icons/button-icons/icon-tertiary-right-arrow--disabled.svg";
+import iconTertiarySettingsDisabled from "../assets/icons/button-icons/icon-tertiary-settings--disabled.svg";
 
 function Buttons() {
   const [isLoading, setIsLoading] = useState(false);
@@ -1446,4 +1446,4 @@ function Buttons() {
   );
 }
 
-export default Buttons;
+export { Buttons };

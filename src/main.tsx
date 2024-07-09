@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-import { Dropdowns } from "./layouts/Dropdowns";
+import { Buttons } from "./layouts/Buttons";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Dropdowns />
+    <Buttons />
   </React.StrictMode>
 );
