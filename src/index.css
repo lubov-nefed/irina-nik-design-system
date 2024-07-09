@@ -56,3 +56,7 @@
   --brand-color-100: #e0e7ff;
   --brand-color-50: #eef2ff;
 }
+
+ul {
+  list-style: none;
+}

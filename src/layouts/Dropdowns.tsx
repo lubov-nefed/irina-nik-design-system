@@ -9,7 +9,7 @@ const fruits = [
 function Dropdowns() {
   return (
     <>
-      Inputs
+      Dropdowns
       <br />
       No Icons Valid
       <br />
@@ -20,7 +20,7 @@ function Dropdowns() {
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
       <br />
-      <Dropdown
+      {/* <Dropdown
         size="big"
         values={fruits}
         placeholder="Choose fruits"
@@ -169,7 +169,7 @@ function Dropdowns() {
         placeholder="Choose fruits"
         validation={{ isValid: false, validationText: "Validation Text" }}
       />
-      <br />
+      <br /> */}
     </>
   );
 }
