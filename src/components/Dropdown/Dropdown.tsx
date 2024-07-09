@@ -9,12 +9,16 @@ interface IDropdownProps {
 
 const Dropdown: React.FC<IDropdownProps> = (props) => {
   return (
-    <select className="dropdown">
-      <option className="dropdown-placeholder" defaultValue={props.placeholder}>
+    <select className="dropdown text-base font-normal">
+      <option
+        className="dropdown-placeholder"
+        defaultValue={props.placeholder}
+        hidden
+      >
         {props.placeholder}
       </option>
       {props.values.map((item) => (
-        <option key={item.id} className="dropdown-option">
+        <option key={item.id} className="dropdown-option text-sm font-normal">
           {item.value}
         </option>
       ))}

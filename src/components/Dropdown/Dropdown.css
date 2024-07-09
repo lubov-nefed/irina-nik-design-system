@@ -1,0 +1,19 @@
+.dropdown {  
+  border: solid 1px var(--neutral-color-400);
+  border-radius: 8px;
+  width: 200px;
+  background-color: var(--white-color);
+  color: var(--neutral-color-400);
+}
+
+.dropdown:hover {
+  border: solid 1px var(--neutral-color-500);
+}
+
+.dropdown:active, .dropdown:focus, .dropdown:focus-visible {
+  outline: solid 2px var(--brand-color-500);
+}
+
+.dropdown-option {
+  color: var(--neutral-color-900);
+}
