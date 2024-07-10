@@ -45,3 +45,16 @@
 .grouped-li {
   padding-left: 42px;
 }
+
+.dropdown-tag {
+  display: inline-block;
+  color: var(--neutral-color-600);
+  padding: 6px 8px;
+  background-color: var(--neutral-color-100);
+  border-radius: 26px;
+}
+
+.close-tag-img {
+  vertical-align: middle;
+  margin-left: 4px;
+}
