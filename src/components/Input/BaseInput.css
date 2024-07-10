@@ -10,7 +10,7 @@
   border: solid 1px var(--neutral-color-500);
 }
 
-.input:active, .input:focus, .input:focus-visible {
+.input:active, .input:focus, .input:focus-visible, .input--active {
   outline: solid 2px var(--brand-color-500);
 }
 

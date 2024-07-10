@@ -12,13 +12,17 @@ interface IBaseInputProps {
   value?: string;
   isDisabled?: boolean;
   onInput?: (e: BaseSyntheticEvent) => void;
+  active?: boolean;
 }
 
 const BaseInput: React.FC<IBaseInputProps> = (props) => {
   const textSize = props.size === "small" ? "text-sm" : "text-base";
-  const className = props.validation.isValid
+  let className = props.validation.isValid
     ? `input input-${props.size} ${textSize} font-normal`
     : `input input-${props.size} input--non-valid ${textSize} font-normal`;
+  if (props.active) {
+    className += " input--active";
+  }
 
   return (
     <div className={`input-container input-container--${props.size}`}>

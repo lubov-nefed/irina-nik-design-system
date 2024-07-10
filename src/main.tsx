@@ -9,7 +9,7 @@ import { InputsWithLabels } from "./layouts/InputsWithLabels";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Dropdowns />
-    <Inputs />
-    <InputsWithLabels />
+    {/* <Inputs />
+    <InputsWithLabels /> */}
   </React.StrictMode>
 );

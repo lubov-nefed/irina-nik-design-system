@@ -32,3 +32,16 @@
   background-color: var(--brand-color-100);
   cursor: pointer;
 }
+
+.dropdown-group-title {
+  text-align: left;
+  color: var(--neutral-color-500);
+  padding-left: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  cursor: pointer;
+}
+
+.grouped-li {
+  padding-left: 42px;
+}
