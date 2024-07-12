@@ -46,7 +46,17 @@ const Dropdown: React.FC<IDropdownProps> = (props) => {
     setActiveSingleOption(item);
   };
   const handleMultiPick = (item: dropdownValue) => {
-    if (activeMultiOptions.includes(item)) return;
+    if (activeMultiOptions.includes(item)) {
+      if (
+        props.type.key === "multiNoTags" ||
+        props.type.key === "multiWithGroups"
+      ) {
+        setActiveMultiOptions(
+          activeMultiOptions.filter((option) => option.id !== item.id)
+        );
+      }
+      return;
+    }
     setActiveMultiOptions([...activeMultiOptions, item]);
   };
   const isMultiselect = props.type.key !== "simple";
@@ -57,7 +67,6 @@ const Dropdown: React.FC<IDropdownProps> = (props) => {
       className="dropdown-container"
       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
     >
-      {/*TODO?: {props.type.key === "simple" && <SimpleDropdown />} */}
       <DropdownInput
         type={props.type.key}
         size={props.size}
@@ -77,7 +86,6 @@ const Dropdown: React.FC<IDropdownProps> = (props) => {
         }
         isDropdownOpen={isDropdownOpen}
       />
-      {/* === Render Tags for Multiselect WithTags === */}
       {props.type.key === "multiWithTags" && (
         <div className="tags-container">
           {activeMultiOptions.map((item) => (
