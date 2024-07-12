@@ -128,6 +128,7 @@ function Dropdowns() {
         type={{
           key: "multiNoTags",
           values: fruits,
+          listName: "fruits",
         }}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
@@ -138,6 +139,7 @@ function Dropdowns() {
         type={{
           key: "multiNoTags",
           values: fruits,
+          listName: "fruits",
         }}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
@@ -148,6 +150,7 @@ function Dropdowns() {
         type={{
           key: "multiNoTags",
           values: fruits,
+          listName: "fruits",
         }}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
@@ -157,21 +160,33 @@ function Dropdowns() {
       <br />
       <Dropdown
         size="medium"
-        type={{ key: "multiWithGroups", values: fruitsWithGroups }}
+        type={{
+          key: "multiWithGroups",
+          values: fruitsWithGroups,
+          listName: "fruits",
+        }}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
       <br />
       <Dropdown
         size="big"
-        type={{ key: "multiWithGroups", values: fruitsWithGroups }}
+        type={{
+          key: "multiWithGroups",
+          values: fruitsWithGroups,
+          listName: "fruits",
+        }}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
       <br />
       <Dropdown
         size="small"
-        type={{ key: "multiWithGroups", values: fruitsWithGroups }}
+        type={{
+          key: "multiWithGroups",
+          values: fruitsWithGroups,
+          listName: "fruits",
+        }}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />

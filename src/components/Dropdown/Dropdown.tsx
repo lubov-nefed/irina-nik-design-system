@@ -1,22 +1,27 @@
 import "./Dropdown.css";
-import { BaseInput } from "../Input/BaseInput";
 import iconChevronDown from "../../assets/icons/input-icons/icon-chevron-down.svg";
 import { useState } from "react";
-import { DropdownGroupTitle } from "./DropdownGroupTitle";
+import { DropdownList } from "./DropdownList";
 import { DropdownTag } from "./DropdownTag";
-
-type dropdownValue = { id: string; value: string };
+import { type dropdownValue } from "./dropdownValue";
+import { DropdownInput } from "./DropdownInput";
 
 interface IDropdownProps {
   size: "medium" | "big" | "small";
   type:
     | {
-        key: "simple" | "multiWithTags" | "multiNoTags";
+        key: "simple" | "multiWithTags";
         values: dropdownValue[];
+      }
+    | {
+        key: "multiNoTags";
+        values: dropdownValue[];
+        listName: string;
       }
     | {
         key: "multiWithGroups";
         values: { popular: dropdownValue[]; others: dropdownValue[] };
+        listName: string;
       };
   placeholder: string;
   validation: { isValid: boolean; validationText: string };
@@ -25,21 +30,26 @@ interface IDropdownProps {
 
 const Dropdown: React.FC<IDropdownProps> = (props) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [activeOption, setActiveOption] = useState({ id: "", value: "" });
+  const [activeSingleOption, setActiveSingleOption] = useState({
+    id: "",
+    value: "",
+  });
+  const [activeMultiOptions, setActiveMultiOptions] = useState<dropdownValue[]>(
+    []
+  );
+
   const icons = props.leftIcon
     ? { leftIconSrc: props.leftIcon, rightIconSrc: iconChevronDown }
     : { rightIconSrc: iconChevronDown };
 
-  const isMultiselect = props.type.key !== "simple";
-  const [multiselect, setMultiselect] = useState<dropdownValue[]>([]);
-
   const handleSinglePick = (item: dropdownValue) => {
-    setActiveOption(item);
+    setActiveSingleOption(item);
   };
   const handleMultiPick = (item: dropdownValue) => {
-    if (multiselect.includes(item)) return;
-    setMultiselect([...multiselect, item]);
+    if (activeMultiOptions.includes(item)) return;
+    setActiveMultiOptions([...activeMultiOptions, item]);
   };
+  const isMultiselect = props.type.key !== "simple";
   const handlePick = isMultiselect ? handleMultiPick : handleSinglePick;
 
   return (
@@ -47,7 +57,9 @@ const Dropdown: React.FC<IDropdownProps> = (props) => {
       className="dropdown-container"
       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
     >
-      <BaseInput
+      {/*TODO?: {props.type.key === "simple" && <SimpleDropdown />} */}
+      <DropdownInput
+        type={props.type.key}
         size={props.size}
         icons={icons}
         placeholder={props.placeholder}
@@ -55,63 +67,31 @@ const Dropdown: React.FC<IDropdownProps> = (props) => {
           isValid: props.validation.isValid,
           validationText: props.validation.validationText,
         }}
-        value={activeOption.value}
-        onInput={() => {}}
-        active={isDropdownOpen}
+        activeSingleOption={activeSingleOption}
+        activeMultiOptions={activeMultiOptions}
+        listName={
+          props.type.key === "multiNoTags" ||
+          props.type.key === "multiWithGroups"
+            ? props.type.listName
+            : undefined
+        }
+        isDropdownOpen={isDropdownOpen}
       />
       {/* === Render Tags for Multiselect WithTags === */}
       {props.type.key === "multiWithTags" && (
         <div className="tags-container">
-          {multiselect.map((item) => (
+          {activeMultiOptions.map((item) => (
             <DropdownTag key={item.value} text={item.value} />
           ))}
         </div>
       )}
-      {/* === Render List If it is not Multi With Groupes === */}
-      {isDropdownOpen && Array.isArray(props.type.values) && (
-        <ul className="dropdown-ul text-base font-normal shadow-xl">
-          {props.type.values.map((item) => (
-            <li
-              key={item.id}
-              className="dropdown-li text-sm font-normal"
-              onClick={() => handlePick(item)}
-            >
-              {isMultiselect &&
-                props.type.key !== "multiWithTags" &&
-                multiselect.includes(item) && <div>picked</div>}
-              {item.value}
-            </li>
-          ))}
-        </ul>
-      )}
-      {/* === Render List With Groupes === */}
-      {isDropdownOpen && !Array.isArray(props.type.values) && (
-        <ul className="dropdown-ul text-base font-normal shadow-xl">
-          <DropdownGroupTitle title="Popular" />
-          {props.type.values.popular.map((item) => (
-            <li
-              key={item.id}
-              className="dropdown-li grouped-li text-sm font-normal"
-              onClick={() => handlePick(item)}
-            >
-              {multiselect.includes(item) && <div>picked</div>}
-              {item.value}
-            </li>
-          ))}
-          <DropdownGroupTitle title="Others" />
-          {props.type.values.others.map((item) => (
-            <li
-              key={item.id}
-              className="dropdown-li grouped-li text-sm font-normal"
-              onClick={() => {
-                handlePick(item);
-              }}
-            >
-              {multiselect.includes(item) && <div>picked</div>}
-              {item.value}
-            </li>
-          ))}
-        </ul>
+      {isDropdownOpen && (
+        <DropdownList
+          values={props.type.values}
+          handlePick={handlePick}
+          type={props.type.key}
+          activeMultiOptions={activeMultiOptions}
+        />
       )}
     </div>
   );
