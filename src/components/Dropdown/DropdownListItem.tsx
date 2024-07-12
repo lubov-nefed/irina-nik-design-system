@@ -1,9 +1,10 @@
 import { type dropdownValue } from "./dropdownValue";
 import iconCheck from "../../assets/icons/input-icons/icon-check.svg";
+import { BaseSyntheticEvent } from "react";
 
 interface IDropdownListItemProps {
   item: dropdownValue;
-  onClick: () => void;
+  onClick: (e: BaseSyntheticEvent) => void;
   type: "simple" | "multiWithTags" | "multiNoTags" | "multiWithGroups";
   activeMultiOptions: dropdownValue[];
 }

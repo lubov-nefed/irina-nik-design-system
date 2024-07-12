@@ -1,13 +1,13 @@
 import { type dropdownValue } from "./dropdownValue";
 import { DropdownGroupTitle } from "./DropdownGroupTitle";
-
+import { BaseSyntheticEvent } from "react";
 import { DropdownListItem } from "./DropdownListItem";
 
 interface IDropdownListProps {
   values:
     | dropdownValue[]
     | { popular: dropdownValue[]; others: dropdownValue[] };
-  handlePick: (item: dropdownValue) => void;
+  handlePick: (item: dropdownValue, e: BaseSyntheticEvent) => void;
   type: "simple" | "multiWithTags" | "multiNoTags" | "multiWithGroups";
   activeMultiOptions: dropdownValue[];
 }
@@ -20,7 +20,7 @@ const DropdownList: React.FC<IDropdownListProps> = (props) => {
           <DropdownListItem
             key={item.id}
             item={item}
-            onClick={() => props.handlePick(item)}
+            onClick={(e) => props.handlePick(item, e)}
             type={props.type}
             activeMultiOptions={props.activeMultiOptions}
           />
@@ -36,7 +36,7 @@ const DropdownList: React.FC<IDropdownListProps> = (props) => {
           <DropdownListItem
             key={item.id}
             item={item}
-            onClick={() => props.handlePick(item)}
+            onClick={(e) => props.handlePick(item, e)}
             type={props.type}
             activeMultiOptions={props.activeMultiOptions}
           />
@@ -46,7 +46,7 @@ const DropdownList: React.FC<IDropdownListProps> = (props) => {
           <DropdownListItem
             key={item.id}
             item={item}
-            onClick={() => props.handlePick(item)}
+            onClick={(e) => props.handlePick(item, e)}
             type={props.type}
             activeMultiOptions={props.activeMultiOptions}
           />

@@ -1,6 +1,6 @@
 import "./Dropdown.css";
 import iconChevronDown from "../../assets/icons/input-icons/icon-chevron-down.svg";
-import { useState } from "react";
+import { BaseSyntheticEvent, useState } from "react";
 import { DropdownList } from "./DropdownList";
 import { DropdownTag } from "./DropdownTag";
 import { type dropdownValue } from "./dropdownValue";
@@ -45,7 +45,8 @@ const Dropdown: React.FC<IDropdownProps> = (props) => {
   const handleSinglePick = (item: dropdownValue) => {
     setActiveSingleOption(item);
   };
-  const handleMultiPick = (item: dropdownValue) => {
+  const handleMultiPick = (item: dropdownValue, e: BaseSyntheticEvent) => {
+    e.stopPropagation();
     if (activeMultiOptions.includes(item)) {
       if (
         props.type.key === "multiNoTags" ||
