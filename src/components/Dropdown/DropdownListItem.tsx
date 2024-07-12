@@ -1,4 +1,5 @@
 import { type dropdownValue } from "./dropdownValue";
+import iconCheck from "../../assets/icons/input-icons/icon-check.svg";
 
 interface IDropdownListItemProps {
   item: dropdownValue;
@@ -17,7 +18,9 @@ const DropdownListItem: React.FC<IDropdownListItemProps> = (props) => {
     >
       {props.type !== "simple" &&
         props.activeMultiOptions.length > 0 &&
-        props.activeMultiOptions.includes(props.item) && <div>picked</div>}
+        props.activeMultiOptions.includes(props.item) && (
+          <img src={iconCheck} />
+        )}
       {props.item.value}
     </li>
   );
