@@ -13,9 +13,12 @@ interface IDropdownListProps {
 }
 
 const DropdownList: React.FC<IDropdownListProps> = (props) => {
+  const classType =
+    props.type === "simple" ? "dropdown-ul--simple" : "dropdown-ul--multi";
+  const className = `dropdown-ul ${classType} text-base font-normal shadow-xl`;
   if (Array.isArray(props.values)) {
     return (
-      <ul className="dropdown-ul text-base font-normal shadow-xl">
+      <ul className={className}>
         {props.values.map((item) => (
           <DropdownListItem
             key={item.id}
@@ -30,7 +33,7 @@ const DropdownList: React.FC<IDropdownListProps> = (props) => {
   }
   if (!Array.isArray(props.values)) {
     return (
-      <ul className="dropdown-ul text-base font-normal shadow-xl">
+      <ul className={className}>
         <DropdownGroupTitle title="Popular" />
         {props.values.popular.map((item) => (
           <DropdownListItem

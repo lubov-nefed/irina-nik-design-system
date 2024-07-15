@@ -14,7 +14,6 @@
   color: var(--neutral-color-400);
 }
 
-
 .dropdown:active, .dropdown:focus, .dropdown:focus-visible {
   outline: solid 2px var(--brand-color-500);
 }
@@ -33,6 +32,11 @@
   cursor: pointer;
 }
 
+.dropdown-ul--multi > .dropdown-li {
+  position: relative;
+  padding-left: 42px;
+}
+
 .dropdown-group-title {
   text-align: left;
   color: var(--neutral-color-500);
@@ -40,10 +44,6 @@
   padding-top: 8px;
   padding-bottom: 8px;
   cursor: pointer;
-}
-
-.grouped-li {
-  padding-left: 42px;
 }
 
 .dropdown-tag {
@@ -57,4 +57,9 @@
 .close-tag-img {
   vertical-align: middle;
   margin-left: 4px;
+}
+
+.dropdown-checked-img {
+  position: absolute;
+  left: 16px;
 }

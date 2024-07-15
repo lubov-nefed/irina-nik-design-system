@@ -87,7 +87,7 @@ const Dropdown: React.FC<IDropdownProps> = (props) => {
         }
         isDropdownOpen={isDropdownOpen}
       />
-      {props.type.key === "multiWithTags" && (
+      {props.type.key === "multiWithTags" && !isDropdownOpen && (
         <div className="tags-container">
           {activeMultiOptions.map((item) => (
             <DropdownTag key={item.value} text={item.value} />

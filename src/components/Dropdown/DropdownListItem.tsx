@@ -11,16 +11,11 @@ interface IDropdownListItemProps {
 
 const DropdownListItem: React.FC<IDropdownListItemProps> = (props) => {
   return (
-    <li
-      className={`dropdown-li ${
-        props.type === "multiWithGroups" && "grouped-li"
-      } text-sm font-normal`}
-      onClick={props.onClick}
-    >
+    <li className={`dropdown-li text-sm font-normal`} onClick={props.onClick}>
       {props.type !== "simple" &&
         props.activeMultiOptions.length > 0 &&
         props.activeMultiOptions.includes(props.item) && (
-          <img src={iconCheck} />
+          <img src={iconCheck} className="dropdown-checked-img" />
         )}
       {props.item.value}
     </li>
