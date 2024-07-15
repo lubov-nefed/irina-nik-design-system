@@ -17,7 +17,7 @@ const fruitsWithGroups = {
   ],
 };
 
-function Dropdowns() {
+function DropdownsWithSearch() {
   return (
     <>
       Dropdowns
@@ -30,7 +30,7 @@ function Dropdowns() {
           key: "simple",
           values: fruits,
         }}
-        hasSearch={false}
+        hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
@@ -41,7 +41,7 @@ function Dropdowns() {
           key: "simple",
           values: fruits,
         }}
-        hasSearch={false}
+        hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
@@ -52,7 +52,7 @@ function Dropdowns() {
           key: "simple",
           values: fruits,
         }}
-        hasSearch={false}
+        hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
@@ -65,7 +65,7 @@ function Dropdowns() {
           key: "simple",
           values: fruits,
         }}
-        hasSearch={false}
+        hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
         leftIcon={iconHome}
@@ -77,7 +77,7 @@ function Dropdowns() {
           key: "simple",
           values: fruits,
         }}
-        hasSearch={false}
+        hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
         leftIcon={iconHome}
@@ -89,7 +89,7 @@ function Dropdowns() {
           key: "simple",
           values: fruits,
         }}
-        hasSearch={false}
+        hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
         leftIcon={iconHome}
@@ -103,7 +103,7 @@ function Dropdowns() {
           key: "multiWithTags",
           values: fruits,
         }}
-        hasSearch={false}
+        hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
@@ -114,7 +114,7 @@ function Dropdowns() {
           key: "multiWithTags",
           values: fruits,
         }}
-        hasSearch={false}
+        hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
@@ -125,7 +125,7 @@ function Dropdowns() {
           key: "multiWithTags",
           values: fruits,
         }}
-        hasSearch={false}
+        hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
@@ -139,7 +139,7 @@ function Dropdowns() {
           values: fruits,
           listName: "fruits",
         }}
-        hasSearch={false}
+        hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
@@ -151,7 +151,7 @@ function Dropdowns() {
           values: fruits,
           listName: "fruits",
         }}
-        hasSearch={false}
+        hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
@@ -163,7 +163,7 @@ function Dropdowns() {
           values: fruits,
           listName: "fruits",
         }}
-        hasSearch={false}
+        hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
@@ -177,7 +177,7 @@ function Dropdowns() {
           values: fruitsWithGroups,
           listName: "fruits",
         }}
-        hasSearch={false}
+        hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
@@ -189,7 +189,7 @@ function Dropdowns() {
           values: fruitsWithGroups,
           listName: "fruits",
         }}
-        hasSearch={false}
+        hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
@@ -201,7 +201,7 @@ function Dropdowns() {
           values: fruitsWithGroups,
           listName: "fruits",
         }}
-        hasSearch={false}
+        hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
@@ -210,4 +210,4 @@ function Dropdowns() {
   );
 }
 
-export { Dropdowns };
+export { DropdownsWithSearch };

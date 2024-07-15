@@ -1,7 +1,8 @@
 import { BaseSyntheticEvent, useState } from "react";
+import { useContext } from "react";
+import { InputPlaceholderContext, InputOnClickContext } from "./InputContexts";
 
 interface IInputProps {
-  placeholder: string;
   className: string;
   id?: string;
   icons?: { leftIconSrc?: string; rightIconSrc?: string };
@@ -11,6 +12,8 @@ interface IInputProps {
 }
 
 const Input: React.FC<IInputProps> = (props: IInputProps) => {
+  const placeholder = useContext(InputPlaceholderContext);
+  const onClick = useContext(InputOnClickContext);
   const [inputValue, setInputValue] = useState("");
   const value = props.value || inputValue;
   const handleInput = (e: BaseSyntheticEvent) => setInputValue(e.target.value);
@@ -26,11 +29,12 @@ const Input: React.FC<IInputProps> = (props: IInputProps) => {
       )}
       <input
         id={props.id}
-        placeholder={props.placeholder}
+        placeholder={placeholder}
         className={props.className}
         value={value}
         onInput={onInputFn}
         disabled={props.isDisabled}
+        onClick={onClick}
       />
       {props.icons && props.icons.rightIconSrc && (
         <img

@@ -1,5 +1,6 @@
 import { type dropdownValue } from "./dropdownValue";
-import { BaseInput } from "../Input/BaseInput";
+import { BasicInput } from "../Input/BasicInput";
+import { BaseSyntheticEvent } from "react";
 
 interface IDropdownInputProps {
   type: "simple" | "multiWithTags" | "multiNoTags" | "multiWithGroups";
@@ -13,60 +14,45 @@ interface IDropdownInputProps {
         rightIconSrc: string;
         leftIconSrc?: undefined;
       };
-  placeholder: string;
+  hasSearch: boolean;
+  value: string;
   validation: { isValid: boolean; validationText: string };
   isDropdownOpen: boolean;
-  activeSingleOption: dropdownValue;
-  activeMultiOptions: dropdownValue[];
+  activeOptions?: dropdownValue | dropdownValue[];
   listName?: string;
+  onInput: (e: BaseSyntheticEvent) => void;
 }
 
-function getInputValue(
-  activeOptions:
-    | { single: dropdownValue }
-    | { multi: dropdownValue[]; listName: string | undefined }
-) {
-  if ("single" in activeOptions) {
-    return activeOptions.single.value;
+function getInputValue(activeOptions: dropdownValue[], listName: string) {
+  const isNotPicked = activeOptions.length === 0;
+  const isJustOnePicked = activeOptions.length === 1;
+  const pluralValue = activeOptions.length.toString() + " " + listName;
+  const singularValue =
+    activeOptions.length.toString() + " " + listName.slice(0, -1);
+  if (isNotPicked) {
+    return "";
   }
-  if ("multi" in activeOptions) {
-    const isNotPicked = activeOptions.multi.length === 0;
-    const isJustOnePicked = activeOptions.multi.length === 1;
-    const pluralValue =
-      activeOptions.multi.length.toString() + " " + activeOptions.listName;
-    const singularValue =
-      activeOptions.multi.length.toString() +
-      " " +
-      activeOptions.listName?.slice(0, -1);
-    if (isNotPicked) {
-      return "";
-    }
-    if (isJustOnePicked) {
-      return singularValue;
-    }
-    return pluralValue;
+  if (isJustOnePicked) {
+    return singularValue;
   }
+  return pluralValue;
 }
 
 const DropdownInput: React.FC<IDropdownInputProps> = (props) => {
   const value =
-    props.type === "simple" || props.type === "multiWithTags"
-      ? getInputValue({ single: props.activeSingleOption })
-      : getInputValue({
-          multi: props.activeMultiOptions,
-          listName: props.listName,
-        });
+    Array.isArray(props.activeOptions) && props.listName && !props.hasSearch
+      ? getInputValue(props.activeOptions, props.listName)
+      : props.value;
   return (
-    <BaseInput
+    <BasicInput
       size={props.size}
       icons={props.icons}
-      placeholder={props.placeholder}
       validation={{
         isValid: props.validation.isValid,
         validationText: props.validation.validationText,
       }}
       value={value}
-      onInput={() => {}}
+      onInput={props.onInput}
       active={props.isDropdownOpen}
     />
   );

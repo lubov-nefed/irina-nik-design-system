@@ -1,11 +1,10 @@
 import { BaseSyntheticEvent } from "react";
-import "./BaseInput.css";
+import "./BasicInput.css";
 import { Input } from "./Input";
 import { InputLabel } from "./InputLabel";
 
-interface IBaseInputProps {
+interface IBasicInputProps {
   size: "medium" | "big" | "small";
-  placeholder: string;
   validation: { isValid: boolean; validationText: string };
   icons?: { leftIconSrc?: string; rightIconSrc?: string };
   label?: { labelText: string; labelFor: string };
@@ -15,7 +14,7 @@ interface IBaseInputProps {
   active?: boolean;
 }
 
-const BaseInput: React.FC<IBaseInputProps> = (props) => {
+const BasicInput: React.FC<IBasicInputProps> = (props) => {
   const textSize = props.size === "small" ? "text-sm" : "text-base";
   let className = props.validation.isValid
     ? `input input-${props.size} ${textSize} font-normal`
@@ -29,7 +28,6 @@ const BaseInput: React.FC<IBaseInputProps> = (props) => {
       {props.label && <InputLabel {...props.label} />}
       <Input
         icons={props.icons}
-        placeholder={props.placeholder}
         className={className}
         value={props.value}
         onInput={props.onInput}
@@ -45,4 +43,4 @@ const BaseInput: React.FC<IBaseInputProps> = (props) => {
   );
 };
 
-export { BaseInput };
+export { BasicInput };

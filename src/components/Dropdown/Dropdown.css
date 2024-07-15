@@ -6,6 +6,10 @@
   caret-color: transparent;
 }
 
+.dropdown-container--with-search .input  {
+  caret-color: auto;
+}
+
 .dropdown-ul { 
   padding: 4px; 
   border-radius: 8px;

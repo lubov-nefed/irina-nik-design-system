@@ -9,7 +9,7 @@ interface IDropdownListProps {
     | { popular: dropdownValue[]; others: dropdownValue[] };
   handlePick: (item: dropdownValue, e: BaseSyntheticEvent) => void;
   type: "simple" | "multiWithTags" | "multiNoTags" | "multiWithGroups";
-  activeMultiOptions: dropdownValue[];
+  activeMultiOptions?: dropdownValue[];
 }
 
 const DropdownList: React.FC<IDropdownListProps> = (props) => {

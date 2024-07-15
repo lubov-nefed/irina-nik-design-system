@@ -6,13 +6,14 @@ interface IDropdownListItemProps {
   item: dropdownValue;
   onClick: (e: BaseSyntheticEvent) => void;
   type: "simple" | "multiWithTags" | "multiNoTags" | "multiWithGroups";
-  activeMultiOptions: dropdownValue[];
+  activeMultiOptions: dropdownValue | dropdownValue[];
 }
 
 const DropdownListItem: React.FC<IDropdownListItemProps> = (props) => {
   return (
     <li className={`dropdown-li text-sm font-normal`} onClick={props.onClick}>
       {props.type !== "simple" &&
+        Array.isArray(props.activeMultiOptions) &&
         props.activeMultiOptions.length > 0 &&
         props.activeMultiOptions.includes(props.item) && (
           <img src={iconCheck} className="dropdown-checked-img" />
