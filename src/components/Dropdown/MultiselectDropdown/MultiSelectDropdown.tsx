@@ -63,29 +63,31 @@ const MultiSelectDropdown: React.FC<IMultiSelectDropdownProps> = (props) => {
         setActiveOptions([...activeOptions, item]);
       };
 
-  const onInput =
-    props.hasSearch && isDropdownOpen
-      ? (e: BaseSyntheticEvent) => {
-          const values = !Array.isArray(props.type.values)
-            ? ungroupValues(props.type.values)
-            : props.type.values;
-          if (e.target.value === "") {
-            setInputValue(e.target.value);
-            setListValues(props.type.values);
-            return;
-          }
-          setInputValue(e.target.value);
-          const newList = values.filter((item) =>
-            item.value.toLowerCase().includes(e.target.value.toLowerCase())
-          );
-          const noResults = newList.length === 0;
-          if (noResults) {
-            setListValues([{ id: "empty", value: "No results" }]);
-          } else {
-            setListValues(newList);
-          }
-        }
-      : () => {};
+  const handleSearch = (e: BaseSyntheticEvent) => {
+    const values = Array.isArray(props.type.values)
+      ? props.type.values
+      : ungroupValues(props.type.values);
+
+    setInputValue(e.target.value);
+
+    if (e.target.value === "") {
+      setListValues(props.type.values);
+      return;
+    }
+
+    const newList = values.filter((item) =>
+      item.value.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+
+    const noResults = newList.length === 0;
+    if (noResults) {
+      setListValues([{ id: "empty", value: "No results" }]);
+    } else {
+      setListValues(newList);
+    }
+  };
+
+  const onInput = props.hasSearch && isDropdownOpen ? handleSearch : () => {};
 
   return (
     <DropdownContainer hasSearch={props.hasSearch}>

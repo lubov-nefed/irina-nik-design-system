@@ -25,7 +25,7 @@ import { MultiSelectDropdown } from "./components/Dropdown/MultiselectDropdown/M
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <br />
-    Multi
+    Multi WithSearch
     <br />
     multiWithTags
     <br />
@@ -57,6 +57,44 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         listName: "fruits",
       }}
       hasSearch={true}
+      placeholder="Choose fruits"
+      validation={{ isValid: true, validationText: "Validation Text" }}
+    />
+    <br />
+    <br />
+    <br />
+    Multi Without Search
+    <br />
+    multiWithTags
+    <br />
+    <MultiSelectDropdown
+      size="medium"
+      type={{ key: "multiWithTags", values: fruits }}
+      hasSearch={false}
+      placeholder="Choose fruits"
+      validation={{ isValid: true, validationText: "Validation Text" }}
+    />
+    <br />
+    multiNoTags
+    <br />
+    <MultiSelectDropdown
+      size="medium"
+      type={{ key: "multiNoTags", values: fruits, listName: "fruits" }}
+      hasSearch={false}
+      placeholder="Choose fruits"
+      validation={{ isValid: true, validationText: "Validation Text" }}
+    />
+    <br />
+    multiWithGroups
+    <br />
+    <MultiSelectDropdown
+      size="medium"
+      type={{
+        key: "multiWithGroups",
+        values: fruitsWithGroups,
+        listName: "fruits",
+      }}
+      hasSearch={false}
       placeholder="Choose fruits"
       validation={{ isValid: true, validationText: "Validation Text" }}
     />

@@ -18,7 +18,7 @@ interface IDropdownInputProps {
   value: string;
   validation: { isValid: boolean; validationText: string };
   isDropdownOpen: boolean;
-  activeOptions?: dropdownValue | dropdownValue[];
+  activeOptions: dropdownValue[];
   listName?: string;
   onInput: (e: BaseSyntheticEvent) => void;
 }
@@ -56,7 +56,9 @@ function getInputValue(
 
 const MultiselectDropdownInput: React.FC<IDropdownInputProps> = (props) => {
   const value =
-    Array.isArray(props.activeOptions) && props.listName
+    Array.isArray(props.activeOptions) &&
+    props.listName &&
+    !props.isDropdownOpen
       ? getInputValue(
           props.type,
           props.activeOptions,
