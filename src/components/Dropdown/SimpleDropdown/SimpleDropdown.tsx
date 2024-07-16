@@ -5,7 +5,7 @@ import {
   InputPlaceholderContext,
   InputOnClickContext,
 } from "../Input/InputContexts";
-import { DropdownInput } from "./DropdownInput";
+import { SimpleDropdownInput } from "./SimpleDropdownInput";
 import iconChevronDown from "../../assets/icons/input-icons/icon-chevron-down.svg";
 import { DropdownList } from "./DropdownList";
 
@@ -20,11 +20,17 @@ interface ISimpleDropdownProps {
 
 const SimpleDropdown: React.FC<ISimpleDropdownProps> = (props) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [listValues, setListValues] = useState(props.values);
 
   const [inputValue, setInputValue] = useState("");
   const onInput = props.hasSearch
     ? (e: BaseSyntheticEvent) => {
         setInputValue(e.target.value);
+        setListValues(
+          props.values.filter((item) =>
+            item.value.toLowerCase().includes(e.target.value.toLowerCase())
+          )
+        );
       }
     : () => {};
 
@@ -46,8 +52,7 @@ const SimpleDropdown: React.FC<ISimpleDropdownProps> = (props) => {
               setIsDropdownOpen(!isDropdownOpen);
             }}
           >
-            <DropdownInput
-              type="simple"
+            <SimpleDropdownInput
               size={props.size}
               icons={icons}
               value={inputValue}
@@ -63,7 +68,7 @@ const SimpleDropdown: React.FC<ISimpleDropdownProps> = (props) => {
         </InputPlaceholderContext.Provider>
         {isDropdownOpen && (
           <DropdownList
-            values={props.values}
+            values={listValues}
             handlePick={handlePick}
             type="simple"
           />

@@ -1,4 +1,4 @@
-import iconCloseTag from "../../assets/icons/input-icons/icon-close-tag.svg";
+import iconCloseTag from "../../../assets/icons/input-icons/icon-close-tag.svg";
 
 interface IMultiselectTagProps {
   text: string;

@@ -18,21 +18,12 @@ const fruitsWithGroups = {
     { id: "8", value: "Plums" },
   ],
 };
-import { SimpleDropdown } from "./components/Dropdown/SimpleDropdown";
-import { MultiSelectDropdown } from "./components/Dropdown/MultiSelectDropdown";
+
+import { MultiSelectDropdown } from "./components/Dropdown/MultiselectDropdown/MultiSelectDropdown";
 /* === Cut above later === */
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    Simple
-    <br />
-    <SimpleDropdown
-      size="medium"
-      values={fruits}
-      hasSearch={false}
-      placeholder="Choose fruits"
-      validation={{ isValid: true, validationText: "Validation Text" }}
-    />
     <br />
     Multi
     <br />
@@ -41,8 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <MultiSelectDropdown
       size="medium"
       type={{ key: "multiWithTags", values: fruits }}
-      values={fruits}
-      hasSearch={false}
+      hasSearch={true}
       placeholder="Choose fruits"
       validation={{ isValid: true, validationText: "Validation Text" }}
     />
@@ -52,8 +42,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <MultiSelectDropdown
       size="medium"
       type={{ key: "multiNoTags", values: fruits, listName: "fruits" }}
-      values={fruits}
-      hasSearch={false}
+      hasSearch={true}
       placeholder="Choose fruits"
       validation={{ isValid: true, validationText: "Validation Text" }}
     />
@@ -67,8 +56,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         values: fruitsWithGroups,
         listName: "fruits",
       }}
-      values={fruits}
-      hasSearch={false}
+      hasSearch={true}
       placeholder="Choose fruits"
       validation={{ isValid: true, validationText: "Validation Text" }}
     />

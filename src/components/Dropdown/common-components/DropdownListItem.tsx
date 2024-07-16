@@ -1,5 +1,5 @@
 import { type dropdownValue } from "./dropdownValue";
-import iconCheck from "../../assets/icons/input-icons/icon-check.svg";
+import iconCheck from "../../../assets/icons/input-icons/icon-check.svg";
 import { BaseSyntheticEvent } from "react";
 
 interface IDropdownListItemProps {
