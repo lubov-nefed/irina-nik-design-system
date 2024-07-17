@@ -26,46 +26,31 @@ interface IDropdownInputProps {
 function getInputValue(
   type: "multiWithTags" | "multiNoTags" | "multiWithGroups",
   activeOptions: dropdownValue[],
-  listName: string,
-  isDropdownOpen: boolean
+  listName: string | undefined
 ) {
   const unpicked = activeOptions.length === 0;
   if (unpicked) {
     return "";
   }
-  if (!unpicked && !isDropdownOpen) {
-    if (type === "multiWithTags") {
-      return "";
+  if (type === "multiWithTags") {
+    return "";
+  }
+  if (listName) {
+    const isJustOnePicked = activeOptions.length === 1;
+    const pluralValue = activeOptions.length.toString() + " " + listName;
+    const singularValue =
+      activeOptions.length.toString() + " " + listName.slice(0, -1);
+    if (isJustOnePicked) {
+      return singularValue;
     }
-    if (Array.isArray(activeOptions) && listName) {
-      const isNotPicked = activeOptions.length === 0;
-      const isJustOnePicked = activeOptions.length === 1;
-      const pluralValue = activeOptions.length.toString() + " " + listName;
-      const singularValue =
-        activeOptions.length.toString() + " " + listName.slice(0, -1);
-      if (isNotPicked) {
-        return "";
-      }
-      if (isJustOnePicked) {
-        return singularValue;
-      }
-      return pluralValue;
-    }
+    return pluralValue;
   }
 }
 
 const MultiselectDropdownInput: React.FC<IDropdownInputProps> = (props) => {
-  const value =
-    Array.isArray(props.activeOptions) &&
-    props.listName &&
-    !props.isDropdownOpen
-      ? getInputValue(
-          props.type,
-          props.activeOptions,
-          props.listName,
-          props.isDropdownOpen
-        )
-      : props.value;
+  const value = !props.isDropdownOpen
+    ? getInputValue(props.type, props.activeOptions, props.listName)
+    : props.value;
   return (
     <BasicInput
       size={props.size}
