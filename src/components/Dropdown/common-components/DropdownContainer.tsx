@@ -3,6 +3,9 @@ interface IDropdownContainerProps {
   children: React.ReactNode;
   hasSearch: boolean;
 }
+//
+/*   ${!props.active && "input-container--inactive"
+} */
 const DropdownContainer: React.FC<IDropdownContainerProps> = (props) => {
   return (
     <div

@@ -1,5 +1,5 @@
 .input {
-  appearance: none;
+  outline: none;
   border: solid 1px var(--neutral-color-400);
   border-radius: 8px;
   width: 200px;
@@ -10,8 +10,13 @@
   border: solid 1px var(--neutral-color-500);
 }
 
+
 .input:active, .input:focus, .input:focus-visible, .input--active {
   outline: solid 2px var(--brand-color-500);
+}
+
+.input-container--inactive .input {
+  outline: none;
 }
 
 .input::placeholder {

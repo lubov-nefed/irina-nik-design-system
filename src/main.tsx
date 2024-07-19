@@ -20,10 +20,41 @@ const fruitsWithGroups = {
 };
 
 import { MultiSelectDropdown } from "./components/Dropdown/MultiselectDropdown/MultiSelectDropdown";
+import { BasicInput } from "./components/Input/BasicInput";
+import { SimpleDropdown } from "./components/Dropdown/SimpleDropdown/SimpleDropdown";
 /* === Cut above later === */
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
+    Basic Input
+    <br />
+    <BasicInput
+      size={"medium"}
+      validation={{ isValid: true, validationText: "" }}
+    />
+    <br />
+    <br />
+    SimpleDropdown No Search
+    <br />
+    <SimpleDropdown
+      size={"medium"}
+      values={fruits}
+      hasSearch={false}
+      placeholder="Choose fruits"
+      validation={{ isValid: true, validationText: "" }}
+    />
+    <br />
+    <br />
+    SimpleDropdown With Search
+    <br />
+    <SimpleDropdown
+      size={"medium"}
+      values={fruits}
+      hasSearch={true}
+      placeholder="Choose fruits"
+      validation={{ isValid: true, validationText: "" }}
+    />
+    <br />
     <br />
     Multi WithSearch
     <br />

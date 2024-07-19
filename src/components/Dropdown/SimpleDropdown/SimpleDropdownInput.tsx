@@ -1,6 +1,6 @@
-import { type dropdownValue } from "./dropdownValue";
-import { BasicInput } from "../Input/BasicInput";
 import { BaseSyntheticEvent } from "react";
+import { type dropdownValue } from "../common-components/dropdownValue";
+import { BasicInput } from "../../Input/BasicInput";
 
 interface ISimpleDropdownInputProps {
   size: "medium" | "big" | "small";

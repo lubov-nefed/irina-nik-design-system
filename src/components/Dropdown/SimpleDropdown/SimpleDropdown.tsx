@@ -1,13 +1,13 @@
-import { type dropdownValue } from "./dropdownValue";
+import { type dropdownValue } from "../common-components/dropdownValue";
 import { BaseSyntheticEvent, useState } from "react";
-import { DropdownContainer } from "./DropdownContainer";
+import { DropdownContainer } from "../common-components/DropdownContainer";
 import {
   InputPlaceholderContext,
   InputOnClickContext,
-} from "../Input/InputContexts";
+} from "../../Input/InputContexts";
 import { SimpleDropdownInput } from "./SimpleDropdownInput";
-import iconChevronDown from "../../assets/icons/input-icons/icon-chevron-down.svg";
-import { DropdownList } from "./DropdownList";
+import iconChevronDown from "../../../assets/icons/input-icons/icon-chevron-down.svg";
+import { DropdownList } from "../common-components/DropdownList";
 
 interface ISimpleDropdownProps {
   size: "medium" | "big" | "small";
