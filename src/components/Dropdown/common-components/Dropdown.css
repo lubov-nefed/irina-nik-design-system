@@ -6,11 +6,20 @@
   caret-color: transparent;
 }
 
-.dropdown-container--with-search .dropdown-input {
+.dropdown-container--with-search.dropdown-container--active .dropdown-input {
   caret-color: auto;
 }
 
-.dropdown-container--active .dropdown-input {
+.dropdown-container .dropdown-input:active,
+.dropdown-container .dropdown-input:focus,
+.dropdown-container .dropdown-input:focus-visible {
+  outline: none;
+}
+
+.dropdown-container--active .dropdown-input,
+.dropdown-container--active .dropdown-input:active,
+.dropdown-container--active .dropdown-input:focus,
+.dropdown-container--active .dropdown-input:focus-visible {
   outline: solid 2px var(--brand-color-500);
 }
 

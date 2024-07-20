@@ -7,6 +7,7 @@ import { InputIcon } from "./InputIcon";
 interface IBasicInputProps {
   size: "medium" | "big" | "small";
   validation: { isValid: boolean; validationText: string };
+  parentComponent: "dropdown" | undefined;
   icons?: { leftIconSrc?: string; rightIconSrc?: string };
   label?: { labelText: string; labelFor: string };
   value?: string;
@@ -22,9 +23,14 @@ const BasicInput: React.FC<IBasicInputProps> = (props) => {
   const handleInput = (e: BaseSyntheticEvent) => setInputValue(e.target.value);
   const onInputFn = props.onInput || handleInput;
   const textSize = props.size === "small" ? "text-sm" : "text-base";
-  let className = props.validation.isValid
-    ? `input input-${props.size} ${textSize} font-normal`
-    : `input input-${props.size} input--non-valid ${textSize} font-normal`;
+  let className =
+    props.parentComponent === undefined
+      ? "input basic-input"
+      : `input ${props.parentComponent}-input`;
+  className += ` input-${props.size} ${textSize} font-normal`;
+  if (!props.validation.isValid) {
+    className += " input--non-valid";
+  }
 
   return (
     <div className={`input-container input-container--${props.size}`}>

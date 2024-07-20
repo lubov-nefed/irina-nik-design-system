@@ -89,6 +89,7 @@ const MultiSelectDropdown: React.FC<IMultiSelectDropdownProps> = (props) => {
             }}
             value={value}
             onInput={handleInput}
+            parentComponent={"dropdown"}
           />
         </InputOnClickContext.Provider>
       </InputPlaceholderContext.Provider>

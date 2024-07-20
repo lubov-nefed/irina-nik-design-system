@@ -61,6 +61,7 @@ const SimpleDropdown: React.FC<ISimpleDropdownProps> = (props) => {
               }}
               value={inputValue}
               onInput={onInput}
+              parentComponent={"dropdown"}
             />
           </InputOnClickContext.Provider>
         </InputPlaceholderContext.Provider>
