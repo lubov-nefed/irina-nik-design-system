@@ -5,11 +5,12 @@ import {
   InputPlaceholderContext,
   InputOnClickContext,
 } from "../../Input/InputContexts";
-import { MultiselectDropdownInput } from "./MultiselectDropdownInput";
 import iconChevronDown from "../../../assets/icons/input-icons/icon-chevron-down.svg";
 import { DropdownList } from "../common-components/DropdownList";
 import { DropdownTag } from "../common-components/DropdownTag";
+import { BasicInput } from "../../Input/BasicInput";
 import { handleSearch } from "./handleSearch";
+import { getInputValue } from "./getInputValue";
 
 interface IMultiSelectDropdownProps {
   size: "medium" | "big" | "small";
@@ -62,6 +63,15 @@ const MultiSelectDropdown: React.FC<IMultiSelectDropdownProps> = (props) => {
           handleSearch(e, props.type.values, setInputValue, setListValues)
       : () => {};
 
+  const value = !isDropdownOpen
+    ? getInputValue(
+        props.type.key,
+        activeOptions,
+        props.type.key === "multiNoTags" || props.type.key === "multiWithGroups"
+          ? props.type.listName
+          : undefined
+      )
+    : inputValue;
   return (
     <DropdownContainer hasSearch={props.hasSearch} isActive={isDropdownOpen}>
       <InputPlaceholderContext.Provider value={props.placeholder}>
@@ -70,24 +80,14 @@ const MultiSelectDropdown: React.FC<IMultiSelectDropdownProps> = (props) => {
             setIsDropdownOpen(!isDropdownOpen);
           }}
         >
-          <MultiselectDropdownInput
-            type={props.type.key}
+          <BasicInput
             size={props.size}
             icons={icons}
-            value={inputValue}
             validation={{
               isValid: props.validation.isValid,
               validationText: props.validation.validationText,
             }}
-            activeOptions={activeOptions}
-            listName={
-              props.type.key === "multiNoTags" ||
-              props.type.key === "multiWithGroups"
-                ? props.type.listName
-                : undefined
-            }
-            isDropdownOpen={isDropdownOpen}
-            hasSearch={props.hasSearch}
+            value={value}
             onInput={handleInput}
           />
         </InputOnClickContext.Provider>
