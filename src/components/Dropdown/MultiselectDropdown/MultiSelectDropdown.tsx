@@ -9,6 +9,7 @@ import { MultiselectDropdownInput } from "./MultiselectDropdownInput";
 import iconChevronDown from "../../../assets/icons/input-icons/icon-chevron-down.svg";
 import { DropdownList } from "../common-components/DropdownList";
 import { DropdownTag } from "../common-components/DropdownTag";
+import { handleSearch } from "./handleSearch";
 
 interface IMultiSelectDropdownProps {
   size: "medium" | "big" | "small";
@@ -29,14 +30,6 @@ interface IMultiSelectDropdownProps {
   validation: { isValid: boolean; validationText: string };
   leftIcon?: string;
 }
-
-const ungroupValues = (groupedValues: {
-  popular: dropdownValue[];
-  others: dropdownValue[];
-}) => {
-  const ungroupedValues = groupedValues.popular.concat(groupedValues.others);
-  return ungroupedValues;
-};
 
 const MultiSelectDropdown: React.FC<IMultiSelectDropdownProps> = (props) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -63,34 +56,14 @@ const MultiSelectDropdown: React.FC<IMultiSelectDropdownProps> = (props) => {
         setActiveOptions([...activeOptions, item]);
       };
 
-  const handleSearch = (e: BaseSyntheticEvent) => {
-    const values = Array.isArray(props.type.values)
-      ? props.type.values
-      : ungroupValues(props.type.values);
-
-    setInputValue(e.target.value);
-
-    if (e.target.value === "") {
-      setListValues(props.type.values);
-      return;
-    }
-
-    const newList = values.filter((item) =>
-      item.value.toLowerCase().includes(e.target.value.toLowerCase())
-    );
-
-    const noResults = newList.length === 0;
-    if (noResults) {
-      setListValues([{ id: "empty", value: "No results" }]);
-    } else {
-      setListValues(newList);
-    }
-  };
-
-  const onInput = props.hasSearch && isDropdownOpen ? handleSearch : () => {};
+  const handleInput =
+    props.hasSearch && isDropdownOpen
+      ? (e: BaseSyntheticEvent) =>
+          handleSearch(e, props.type.values, setInputValue, setListValues)
+      : () => {};
 
   return (
-    <DropdownContainer hasSearch={props.hasSearch}>
+    <DropdownContainer hasSearch={props.hasSearch} isActive={isDropdownOpen}>
       <InputPlaceholderContext.Provider value={props.placeholder}>
         <InputOnClickContext.Provider
           value={() => {
@@ -115,7 +88,7 @@ const MultiSelectDropdown: React.FC<IMultiSelectDropdownProps> = (props) => {
             }
             isDropdownOpen={isDropdownOpen}
             hasSearch={props.hasSearch}
-            onInput={onInput}
+            onInput={handleInput}
           />
         </InputOnClickContext.Provider>
       </InputPlaceholderContext.Provider>

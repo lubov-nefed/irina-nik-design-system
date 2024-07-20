@@ -1,4 +1,4 @@
-import { BaseInput } from "../components/Input/BasicInput";
+import { BasicInput } from "../components/Input/BasicInput";
 import iconSearch from "../assets/icons/input-icons/icon-search.svg";
 import iconEye from "../assets/icons/input-icons/icon-eye.svg";
 import iconX from "../assets/icons/input-icons/icon-x.svg";
@@ -17,150 +17,124 @@ function Inputs() {
       <br />
       No Icons Valid
       <br />
-      <BaseInput
-        size="medium"
-        placeholder="Placeholder"
-        validation={validation}
-      />
+      <BasicInput size="medium" validation={validation} />
       <br />
-      <BaseInput size="big" placeholder="Placeholder" validation={validation} />
+      <BasicInput size="big" validation={validation} />
       <br />
-      <BaseInput
-        size="small"
-        placeholder="Placeholder"
-        validation={validation}
-      />
+      <BasicInput size="small" validation={validation} />
       <br />
       No Icons Invalid
       <br />
-      <BaseInput
+      <BasicInput
         size="medium"
-        placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
       />
       <br />
-      <BaseInput
+      <BasicInput
         size="big"
-        placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
       />
       <br />
-      <BaseInput
+      <BasicInput
         size="small"
-        placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
       />
       <br />
       One Icon Valid
       <br />
-      <BaseInput
+      <BasicInput
         size="medium"
         icons={{ leftIconSrc: iconSearch }}
-        placeholder="Placeholder"
         validation={validation}
       />
       <br />
-      <BaseInput
+      <BasicInput
         size="big"
         icons={{ leftIconSrc: iconSearch }}
-        placeholder="Placeholder"
         validation={validation}
       />
       <br />
-      <BaseInput
+      <BasicInput
         size="small"
         icons={{ leftIconSrc: iconSearch }}
-        placeholder="Placeholder"
         validation={validation}
       />
       <br />
-      <BaseInput
+      <BasicInput
         size="medium"
         icons={{ rightIconSrc: iconEye }}
-        placeholder="Placeholder"
         validation={validation}
       />
       <br />
-      <BaseInput
+      <BasicInput
         size="big"
         icons={{ rightIconSrc: iconEye }}
-        placeholder="Placeholder"
         validation={validation}
       />
       <br />
-      <BaseInput
+      <BasicInput
         size="small"
         icons={{ rightIconSrc: iconEye }}
-        placeholder="Placeholder"
         validation={validation}
       />
       <br />
       One Icon Invalid
       <br />
-      <BaseInput
+      <BasicInput
         size="medium"
         icons={{ leftIconSrc: iconSearch }}
-        placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
       />
       <br />
-      <BaseInput
+      <BasicInput
         size="big"
         icons={{ leftIconSrc: iconSearch }}
-        placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
       />
       <br />
-      <BaseInput
+      <BasicInput
         size="small"
         icons={{ leftIconSrc: iconSearch }}
-        placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
       />
       <br />
       Two Icons Valid
       <br />
-      <BaseInput
+      <BasicInput
         size="medium"
         icons={{ leftIconSrc: iconSearch, rightIconSrc: iconX }}
-        placeholder="Placeholder"
         validation={validation}
       />
       <br />
-      <BaseInput
+      <BasicInput
         size="big"
         icons={{ leftIconSrc: iconSearch, rightIconSrc: iconX }}
-        placeholder="Placeholder"
         validation={validation}
       />
       <br />
-      <BaseInput
+      <BasicInput
         size="small"
         icons={{ leftIconSrc: iconSearch, rightIconSrc: iconX }}
-        placeholder="Placeholder"
         validation={validation}
       />
       <br />
       Two Icons Invalid
       <br />
-      <BaseInput
+      <BasicInput
         size="medium"
         icons={{ leftIconSrc: iconSearch, rightIconSrc: iconX }}
-        placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
       />
       <br />
-      <BaseInput
+      <BasicInput
         size="big"
         icons={{ leftIconSrc: iconSearch, rightIconSrc: iconX }}
-        placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
       />
       <br />
-      <BaseInput
+      <BasicInput
         size="small"
         icons={{ leftIconSrc: iconSearch, rightIconSrc: iconX }}
-        placeholder="Placeholder"
         validation={{ isValid: false, validationText: "validationText" }}
       />
       <br />

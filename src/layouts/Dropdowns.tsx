@@ -1,4 +1,5 @@
-import { Dropdown } from "../components/Dropdown/Dropdown";
+import { SimpleDropdown } from "../components/Dropdown/SimpleDropdown/SimpleDropdown";
+import { MultiSelectDropdown } from "../components/Dropdown/MultiselectDropdown/MultiSelectDropdown";
 import iconHome from "../assets/icons/input-icons/icon-home.svg";
 const fruits = [
   { id: "1", value: "Apples" },
@@ -20,38 +21,29 @@ const fruitsWithGroups = {
 function Dropdowns() {
   return (
     <>
-      Dropdowns
+      Dropdowns No Search
       <br />
       Simple
       <br />
-      <Dropdown
+      <SimpleDropdown
         size="medium"
-        type={{
-          key: "simple",
-          values: fruits,
-        }}
+        values={fruits}
         hasSearch={false}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
       <br />
-      <Dropdown
+      <SimpleDropdown
         size="big"
-        type={{
-          key: "simple",
-          values: fruits,
-        }}
+        values={fruits}
         hasSearch={false}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
       <br />
-      <Dropdown
+      <SimpleDropdown
         size="small"
-        type={{
-          key: "simple",
-          values: fruits,
-        }}
+        values={fruits}
         hasSearch={false}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
@@ -59,36 +51,27 @@ function Dropdowns() {
       <br />
       Simple With Icon
       <br />
-      <Dropdown
+      <SimpleDropdown
         size="medium"
-        type={{
-          key: "simple",
-          values: fruits,
-        }}
+        values={fruits}
         hasSearch={false}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
         leftIcon={iconHome}
       />
       <br />
-      <Dropdown
+      <SimpleDropdown
         size="big"
-        type={{
-          key: "simple",
-          values: fruits,
-        }}
+        values={fruits}
         hasSearch={false}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
         leftIcon={iconHome}
       />
       <br />
-      <Dropdown
+      <SimpleDropdown
         size="small"
-        type={{
-          key: "simple",
-          values: fruits,
-        }}
+        values={fruits}
         hasSearch={false}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
@@ -97,7 +80,7 @@ function Dropdowns() {
       <br />
       Multiselect With Tags
       <br />
-      <Dropdown
+      <MultiSelectDropdown
         size="medium"
         type={{
           key: "multiWithTags",
@@ -108,7 +91,7 @@ function Dropdowns() {
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
       <br />
-      <Dropdown
+      <MultiSelectDropdown
         size="big"
         type={{
           key: "multiWithTags",
@@ -119,7 +102,7 @@ function Dropdowns() {
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
       <br />
-      <Dropdown
+      <MultiSelectDropdown
         size="small"
         type={{
           key: "multiWithTags",
@@ -132,7 +115,7 @@ function Dropdowns() {
       <br />
       Multiselect No Tags
       <br />
-      <Dropdown
+      <MultiSelectDropdown
         size="medium"
         type={{
           key: "multiNoTags",
@@ -144,7 +127,7 @@ function Dropdowns() {
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
       <br />
-      <Dropdown
+      <MultiSelectDropdown
         size="big"
         type={{
           key: "multiNoTags",
@@ -156,7 +139,7 @@ function Dropdowns() {
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
       <br />
-      <Dropdown
+      <MultiSelectDropdown
         size="small"
         type={{
           key: "multiNoTags",
@@ -170,7 +153,7 @@ function Dropdowns() {
       <br />
       Multiselect With Groups
       <br />
-      <Dropdown
+      <MultiSelectDropdown
         size="medium"
         type={{
           key: "multiWithGroups",
@@ -182,7 +165,7 @@ function Dropdowns() {
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
       <br />
-      <Dropdown
+      <MultiSelectDropdown
         size="big"
         type={{
           key: "multiWithGroups",
@@ -194,7 +177,7 @@ function Dropdowns() {
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
       <br />
-      <Dropdown
+      <MultiSelectDropdown
         size="small"
         type={{
           key: "multiWithGroups",

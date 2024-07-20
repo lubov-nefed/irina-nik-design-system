@@ -1,5 +1,7 @@
-import { Dropdown } from "../components/Dropdown/Dropdown";
-import iconHome from "../assets/icons/input-icons/icon-home.svg";
+import { BasicInput } from "../components/Input/BasicInput";
+import { SimpleDropdown } from "../components/Dropdown/SimpleDropdown/SimpleDropdown";
+import { MultiSelectDropdown } from "../components/Dropdown/MultiselectDropdown/MultiSelectDropdown";
+
 const fruits = [
   { id: "1", value: "Apples" },
   { id: "2", value: "Bananas" },
@@ -20,157 +22,61 @@ const fruitsWithGroups = {
 function DropdownsWithSearch() {
   return (
     <>
-      Dropdowns
+      Basic Input
       <br />
-      Simple
+      <BasicInput
+        size={"medium"}
+        validation={{ isValid: true, validationText: "" }}
+      />
       <br />
-      <Dropdown
+      <br />
+      SimpleDropdown No Search
+      <br />
+      <SimpleDropdown
+        size={"medium"}
+        values={fruits}
+        hasSearch={false}
+        placeholder="Choose fruits"
+        validation={{ isValid: true, validationText: "" }}
+      />
+      <br />
+      <br />
+      SimpleDropdown With Search
+      <br />
+      <SimpleDropdown
+        size={"medium"}
+        values={fruits}
+        hasSearch={true}
+        placeholder="Choose fruits"
+        validation={{ isValid: true, validationText: "" }}
+      />
+      <br />
+      <br />
+      Multi WithSearch
+      <br />
+      multiWithTags
+      <br />
+      <MultiSelectDropdown
         size="medium"
-        type={{
-          key: "simple",
-          values: fruits,
-        }}
+        type={{ key: "multiWithTags", values: fruits }}
         hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
       <br />
-      <Dropdown
-        size="big"
-        type={{
-          key: "simple",
-          values: fruits,
-        }}
-        hasSearch={true}
-        placeholder="Choose fruits"
-        validation={{ isValid: true, validationText: "Validation Text" }}
-      />
+      multiNoTags
       <br />
-      <Dropdown
-        size="small"
-        type={{
-          key: "simple",
-          values: fruits,
-        }}
-        hasSearch={true}
-        placeholder="Choose fruits"
-        validation={{ isValid: true, validationText: "Validation Text" }}
-      />
-      <br />
-      Simple With Icon
-      <br />
-      <Dropdown
+      <MultiSelectDropdown
         size="medium"
-        type={{
-          key: "simple",
-          values: fruits,
-        }}
-        hasSearch={true}
-        placeholder="Choose fruits"
-        validation={{ isValid: true, validationText: "Validation Text" }}
-        leftIcon={iconHome}
-      />
-      <br />
-      <Dropdown
-        size="big"
-        type={{
-          key: "simple",
-          values: fruits,
-        }}
-        hasSearch={true}
-        placeholder="Choose fruits"
-        validation={{ isValid: true, validationText: "Validation Text" }}
-        leftIcon={iconHome}
-      />
-      <br />
-      <Dropdown
-        size="small"
-        type={{
-          key: "simple",
-          values: fruits,
-        }}
-        hasSearch={true}
-        placeholder="Choose fruits"
-        validation={{ isValid: true, validationText: "Validation Text" }}
-        leftIcon={iconHome}
-      />
-      <br />
-      Multiselect With Tags
-      <br />
-      <Dropdown
-        size="medium"
-        type={{
-          key: "multiWithTags",
-          values: fruits,
-        }}
+        type={{ key: "multiNoTags", values: fruits, listName: "fruits" }}
         hasSearch={true}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
       <br />
-      <Dropdown
-        size="big"
-        type={{
-          key: "multiWithTags",
-          values: fruits,
-        }}
-        hasSearch={true}
-        placeholder="Choose fruits"
-        validation={{ isValid: true, validationText: "Validation Text" }}
-      />
+      multiWithGroups
       <br />
-      <Dropdown
-        size="small"
-        type={{
-          key: "multiWithTags",
-          values: fruits,
-        }}
-        hasSearch={true}
-        placeholder="Choose fruits"
-        validation={{ isValid: true, validationText: "Validation Text" }}
-      />
-      <br />
-      Multiselect No Tags
-      <br />
-      <Dropdown
-        size="medium"
-        type={{
-          key: "multiNoTags",
-          values: fruits,
-          listName: "fruits",
-        }}
-        hasSearch={true}
-        placeholder="Choose fruits"
-        validation={{ isValid: true, validationText: "Validation Text" }}
-      />
-      <br />
-      <Dropdown
-        size="big"
-        type={{
-          key: "multiNoTags",
-          values: fruits,
-          listName: "fruits",
-        }}
-        hasSearch={true}
-        placeholder="Choose fruits"
-        validation={{ isValid: true, validationText: "Validation Text" }}
-      />
-      <br />
-      <Dropdown
-        size="small"
-        type={{
-          key: "multiNoTags",
-          values: fruits,
-          listName: "fruits",
-        }}
-        hasSearch={true}
-        placeholder="Choose fruits"
-        validation={{ isValid: true, validationText: "Validation Text" }}
-      />
-      <br />
-      Multiselect With Groups
-      <br />
-      <Dropdown
+      <MultiSelectDropdown
         size="medium"
         type={{
           key: "multiWithGroups",
@@ -182,30 +88,43 @@ function DropdownsWithSearch() {
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
       <br />
-      <Dropdown
-        size="big"
+      <br />
+      <br />
+      Multi Without Search
+      <br />
+      multiWithTags
+      <br />
+      <MultiSelectDropdown
+        size="medium"
+        type={{ key: "multiWithTags", values: fruits }}
+        hasSearch={false}
+        placeholder="Choose fruits"
+        validation={{ isValid: true, validationText: "Validation Text" }}
+      />
+      <br />
+      multiNoTags
+      <br />
+      <MultiSelectDropdown
+        size="medium"
+        type={{ key: "multiNoTags", values: fruits, listName: "fruits" }}
+        hasSearch={false}
+        placeholder="Choose fruits"
+        validation={{ isValid: true, validationText: "Validation Text" }}
+      />
+      <br />
+      multiWithGroups
+      <br />
+      <MultiSelectDropdown
+        size="medium"
         type={{
           key: "multiWithGroups",
           values: fruitsWithGroups,
           listName: "fruits",
         }}
-        hasSearch={true}
+        hasSearch={false}
         placeholder="Choose fruits"
         validation={{ isValid: true, validationText: "Validation Text" }}
       />
-      <br />
-      <Dropdown
-        size="small"
-        type={{
-          key: "multiWithGroups",
-          values: fruitsWithGroups,
-          listName: "fruits",
-        }}
-        hasSearch={true}
-        placeholder="Choose fruits"
-        validation={{ isValid: true, validationText: "Validation Text" }}
-      />
-      <br />
     </>
   );
 }

@@ -61,7 +61,6 @@ const MultiselectDropdownInput: React.FC<IDropdownInputProps> = (props) => {
       }}
       value={value}
       onInput={props.onInput}
-      active={props.isDropdownOpen}
     />
   );
 };

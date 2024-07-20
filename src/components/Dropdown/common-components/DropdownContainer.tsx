@@ -2,22 +2,18 @@ import "./Dropdown.css";
 interface IDropdownContainerProps {
   children: React.ReactNode;
   hasSearch: boolean;
+  isActive: boolean;
 }
-//
-/*   ${!props.active && "input-container--inactive"
-} */
 const DropdownContainer: React.FC<IDropdownContainerProps> = (props) => {
-  return (
-    <div
-      className={`${
-        props.hasSearch
-          ? "dropdown-container dropdown-container--with-search"
-          : "dropdown-container"
-      }`}
-    >
-      {props.children}
-    </div>
-  );
+  let className = "dropdown-container";
+  if (props.hasSearch) {
+    className += " dropdown-container--with-search";
+  }
+  if (props.isActive) {
+    className += " dropdown-container--active";
+  }
+
+  return <div className={className}>{props.children}</div>;
 };
 
 export { DropdownContainer };

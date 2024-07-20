@@ -1,7 +1,8 @@
-import { BaseSyntheticEvent } from "react";
+import { BaseSyntheticEvent, useState, useContext } from "react";
 import "./BasicInput.css";
-import { Input } from "./Input";
+import { InputPlaceholderContext, InputOnClickContext } from "./InputContexts";
 import { InputLabel } from "./InputLabel";
+import { InputIcon } from "./InputIcon";
 
 interface IBasicInputProps {
   size: "medium" | "big" | "small";
@@ -11,29 +12,43 @@ interface IBasicInputProps {
   value?: string;
   isDisabled?: boolean;
   onInput?: (e: BaseSyntheticEvent) => void;
-  active?: boolean;
 }
 
 const BasicInput: React.FC<IBasicInputProps> = (props) => {
+  const placeholder = useContext(InputPlaceholderContext);
+  const onClick = useContext(InputOnClickContext);
+  const [inputValue, setInputValue] = useState("");
+  const value = props.value || inputValue;
+  const handleInput = (e: BaseSyntheticEvent) => setInputValue(e.target.value);
+  const onInputFn = props.onInput || handleInput;
   const textSize = props.size === "small" ? "text-sm" : "text-base";
   let className = props.validation.isValid
     ? `input input-${props.size} ${textSize} font-normal`
     : `input input-${props.size} input--non-valid ${textSize} font-normal`;
-  if (props.active) {
-    className += " input--active";
-  }
 
   return (
     <div className={`input-container input-container--${props.size}`}>
       {props.label && <InputLabel {...props.label} />}
-      <Input
-        icons={props.icons}
-        className={className}
-        value={props.value}
-        onInput={props.onInput}
-        isDisabled={props.isDisabled}
-        id={props.label?.labelFor}
-      />
+      <>
+        {props.icons && props.icons.leftIconSrc && (
+          <InputIcon iconPosition={"left"} iconSrc={props.icons.leftIconSrc} />
+        )}
+        <input
+          id={props.label?.labelText}
+          placeholder={placeholder}
+          className={className}
+          value={value}
+          onInput={onInputFn}
+          disabled={props.isDisabled}
+          onClick={onClick}
+        />
+        {props.icons && props.icons.rightIconSrc && (
+          <InputIcon
+            iconPosition={"right"}
+            iconSrc={props.icons.rightIconSrc}
+          />
+        )}
+      </>
       {!props.validation.isValid && (
         <p className="input-validation-text text-xs font-normal">
           {props.validation.validationText}

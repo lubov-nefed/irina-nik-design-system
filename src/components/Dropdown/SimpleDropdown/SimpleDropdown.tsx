@@ -5,7 +5,7 @@ import {
   InputPlaceholderContext,
   InputOnClickContext,
 } from "../../Input/InputContexts";
-import { SimpleDropdownInput } from "./SimpleDropdownInput";
+import { BasicInput } from "../../Input/BasicInput";
 import iconChevronDown from "../../../assets/icons/input-icons/icon-chevron-down.svg";
 import { DropdownList } from "../common-components/DropdownList";
 
@@ -45,23 +45,21 @@ const SimpleDropdown: React.FC<ISimpleDropdownProps> = (props) => {
 
   return (
     <>
-      <DropdownContainer hasSearch={props.hasSearch}>
+      <DropdownContainer hasSearch={props.hasSearch} isActive={isDropdownOpen}>
         <InputPlaceholderContext.Provider value={props.placeholder}>
           <InputOnClickContext.Provider
             value={() => {
               setIsDropdownOpen(!isDropdownOpen);
             }}
           >
-            <SimpleDropdownInput
+            <BasicInput
               size={props.size}
               icons={icons}
-              value={inputValue}
               validation={{
                 isValid: props.validation.isValid,
                 validationText: props.validation.validationText,
               }}
-              isDropdownOpen={isDropdownOpen}
-              hasSearch={props.hasSearch}
+              value={inputValue}
               onInput={onInput}
             />
           </InputOnClickContext.Provider>

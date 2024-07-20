@@ -2,23 +2,29 @@
   display: inline-block;
 }
 
-.dropdown-container .input  {
+.dropdown-container .dropdown-input {
   caret-color: transparent;
 }
 
-.dropdown-container--with-search .input  {
+.dropdown-container--with-search .dropdown-input {
   caret-color: auto;
 }
 
-.dropdown-ul { 
-  padding: 4px; 
+.dropdown-container--active .dropdown-input {
+  outline: solid 2px var(--brand-color-500);
+}
+
+.dropdown-ul {
+  padding: 4px;
   border-radius: 8px;
   width: 200px;
   background-color: var(--white-color);
   color: var(--neutral-color-400);
 }
 
-.dropdown:active, .dropdown:focus, .dropdown:focus-visible {
+.dropdown:active,
+.dropdown:focus,
+.dropdown:focus-visible {
   outline: solid 2px var(--brand-color-500);
 }
 

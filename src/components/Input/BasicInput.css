@@ -6,17 +6,14 @@
   background-color: var(--white-color);
 }
 
-.input:hover {  
+.input:hover {
   border: solid 1px var(--neutral-color-500);
 }
 
-
-.input:active, .input:focus, .input:focus-visible, .input--active {
+.input:active,
+.input:focus,
+.input:focus-visible {
   outline: solid 2px var(--brand-color-500);
-}
-
-.input-container--inactive .input {
-  outline: none;
 }
 
 .input::placeholder {
@@ -36,7 +33,8 @@
   padding-bottom: 16px;
 }
 
-.input-medium::placeholder, .input-big::placeholder {
+.input-medium::placeholder,
+.input-big::placeholder {
   font-size: 16px;
   line-height: 24px;
 }
@@ -62,8 +60,8 @@
 }
 
 .input-container {
- display: inline-block;
- position: relative;
+  display: inline-block;
+  position: relative;
 }
 
 .input-icon {
@@ -84,7 +82,9 @@
   top: 8px;
 }
 
-.input-icon--left+.input-medium, .input-icon--left+.input-big, .input-icon--left+.input-small {
+.input-icon--left + .input-medium,
+.input-icon--left + .input-big,
+.input-icon--left + .input-small {
   padding-left: 38px;
 }
 
@@ -109,14 +109,20 @@
   text-align: left;
 }
 
-.input-container--medium .input-label+.input-icon--left, .input-label+.input-medium+.input-icon--right, .input-label+.input-icon--left+.input-medium+.input-icon--right {
- top: 32px;
+.input-container--medium .input-label + .input-icon--left,
+.input-label + .input-medium + .input-icon--right,
+.input-label + .input-icon--left + .input-medium + .input-icon--right {
+  top: 32px;
 }
 
-.input-container--big .input-label+.input-icon--left, .input-label+.input-big+.input-icon--right, .input-label+.input-icon--left+.input-big+.input-icon--right {
+.input-container--big .input-label + .input-icon--left,
+.input-label + .input-big + .input-icon--right,
+.input-label + .input-icon--left + .input-big + .input-icon--right {
   top: 38px;
- }
+}
 
-.input-container--small .input-label+.input-icon--left, .input-label+.input-small+.input-icon--right, .input-label+.input-icon--left+.input-small+.input-icon--right {
+.input-container--small .input-label + .input-icon--left,
+.input-label + .input-small + .input-icon--right,
+.input-label + .input-icon--left + .input-small + .input-icon--right {
   top: 28px;
 }
