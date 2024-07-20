@@ -45,13 +45,18 @@ const MultiSelectDropdown: React.FC<IMultiSelectDropdownProps> = (props) => {
   const noSearchResults =
     Array.isArray(listValues) && listValues[0].id === "empty";
 
+  const handleRemove = (
+    item: dropdownValue,
+    activeOptions: dropdownValue[]
+  ) => {
+    setActiveOptions(activeOptions.filter((option) => option.id !== item.id));
+  };
+
   const handlePick = noSearchResults
     ? () => {}
     : (item: dropdownValue) => {
         if (activeOptions.includes(item)) {
-          setActiveOptions(
-            activeOptions.filter((option) => option.id !== item.id)
-          );
+          handleRemove(item, activeOptions);
           return;
         }
         setActiveOptions([...activeOptions, item]);
@@ -98,7 +103,11 @@ const MultiSelectDropdown: React.FC<IMultiSelectDropdownProps> = (props) => {
         !isDropdownOpen && (
           <div className="tags-container">
             {activeOptions.map((item) => (
-              <DropdownTag key={item.value} text={item.value} />
+              <DropdownTag
+                key={item.value}
+                text={item.value}
+                handleRemove={() => handleRemove(item, activeOptions)}
+              />
             ))}
           </div>
         )}

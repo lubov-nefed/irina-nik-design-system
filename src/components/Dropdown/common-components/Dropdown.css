@@ -76,6 +76,7 @@
 .close-tag-img {
   vertical-align: middle;
   margin-left: 4px;
+  cursor: pointer;
 }
 
 .dropdown-checked-img {
