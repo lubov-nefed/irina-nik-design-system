@@ -13,6 +13,7 @@ interface IBasicInputProps {
   value?: string;
   isDisabled?: boolean;
   onInput?: (e: BaseSyntheticEvent) => void;
+  inputType?: "password";
 }
 
 const BasicInput: React.FC<IBasicInputProps> = (props) => {
@@ -47,6 +48,7 @@ const BasicInput: React.FC<IBasicInputProps> = (props) => {
           onInput={onInputFn}
           disabled={props.isDisabled}
           onClick={onClick}
+          type={props.inputType}
         />
         {props.icons && props.icons.rightIconSrc && (
           <InputIcon

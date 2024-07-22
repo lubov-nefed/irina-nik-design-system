@@ -2,9 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-import { DropdownsWithSearch } from "./layouts/DropdownsWithSearch";
+import { PasswordInputs } from "./layouts/PasswordInputs";
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <DropdownsWithSearch />
+    <PasswordInputs />
   </React.StrictMode>
 );
