@@ -6,7 +6,7 @@ interface IDropdownListItemProps {
   item: dropdownValue;
   onClick: (e: BaseSyntheticEvent) => void;
   type: "simple" | "multiWithTags" | "multiNoTags" | "multiWithGroups";
-  activeMultiOptions: dropdownValue | dropdownValue[];
+  activeMultiOptions?: dropdownValue[];
 }
 
 const DropdownListItem: React.FC<IDropdownListItemProps> = (props) => {
