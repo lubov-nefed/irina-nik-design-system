@@ -1,0 +1,30 @@
+.tag {
+  display: inline-block;
+  background-color: var(--neutral-color-100);
+  color: var(--neutral-color-600);
+}
+.tag-icon {
+  vertical-align: middle;
+}
+
+.tag-medium {
+  border-radius: 26px;
+  padding: 8px 12px;
+}
+
+.tag-small {
+  border-radius: 16px;
+  padding: 6px 8px;
+}
+
+.tag-big {
+  border-radius: 26px;
+  padding: 10px 12px;
+}
+
+.tag-left-img {
+  margin-right: 4px;
+}
+.tag-right-img {
+  margin-left: 4px;
+}
