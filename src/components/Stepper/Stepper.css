@@ -1,0 +1,15 @@
+.stepper-btn {
+  display: inline-block;
+}
+
+.stepper-btn  .button {
+  border-radius: 50%;
+}
+
+
+.stepper-medium .input, .stepper-big .input {
+  width: 85px;
+}
+.stepper-small .input {
+  width: 72px;
+}
