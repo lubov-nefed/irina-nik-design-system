@@ -26,18 +26,27 @@ const SimpleDropdown: React.FC<ISimpleDropdownProps> = (props) => {
   const onInput = props.hasSearch
     ? (e: BaseSyntheticEvent) => {
         setInputValue(e.target.value);
-        setListValues(
-          props.values.filter((item) =>
-            item.value.toLowerCase().includes(e.target.value.toLowerCase())
-          )
+        const newList = props.values.filter((item) =>
+          item.value.toLowerCase().includes(e.target.value.toLowerCase())
         );
+        const noResults = newList.length === 0;
+        if (noResults) {
+          setListValues([{ id: "empty", value: "No results" }]);
+        } else {
+          setListValues(newList);
+        }
       }
     : () => {};
 
-  const handlePick = (item: dropdownValue) => {
-    setInputValue(item.value);
-    setIsDropdownOpen(false);
-  };
+  const noSearchResults =
+    Array.isArray(listValues) && listValues[0].id === "empty";
+
+  const handlePick = noSearchResults
+    ? () => {}
+    : (item: dropdownValue) => {
+        setInputValue(item.value);
+        setIsDropdownOpen(false);
+      };
 
   const icons = props.leftIcon
     ? { leftIconSrc: props.leftIcon, rightIconSrc: iconChevronDown }

@@ -9,7 +9,7 @@ import iconChevronDown from "../../../assets/icons/input-icons/icon-chevron-down
 import { DropdownList } from "../common-components/DropdownList";
 import { DropdownTag } from "../common-components/DropdownTag";
 import { BasicInput } from "../../Input/BasicInput";
-import { handleSearch } from "./handleSearch";
+import { handleSearch } from "../handleSearch";
 import { getInputValue } from "./getInputValue";
 
 interface IMultiSelectDropdownProps {

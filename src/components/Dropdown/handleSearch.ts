@@ -1,4 +1,4 @@
-import { type dropdownValue } from "../common-components/dropdownValue";
+import { type dropdownValue } from "./common-components/dropdownValue";
 import { BaseSyntheticEvent } from "react";
 
 const ungroupValues = (groupedValues: {
@@ -18,15 +18,13 @@ const handleSearch = (
         others: dropdownValue[];
       },
   setInputValue: React.Dispatch<React.SetStateAction<string>>,
-  setListValues: React.Dispatch<
-    React.SetStateAction<
-      | dropdownValue[]
-      | {
-          popular: dropdownValue[];
-          others: dropdownValue[];
-        }
-    >
-  >
+  setListValues: React.Dispatch<React.SetStateAction<
+    | dropdownValue[]
+    | {
+        popular: dropdownValue[];
+        others: dropdownValue[];
+      }
+  >>
 ) => {
   const ungroupedValues = Array.isArray(values)
     ? values
