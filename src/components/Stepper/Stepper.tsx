@@ -40,7 +40,6 @@ const Stepper: React.FC<IStepperProps> = (props) => {
           size={props.size}
           validation={{ isValid: true, validationText: "" }}
           value={value}
-          parentComponent={undefined}
           isDisabled={false}
           onInput={onInput}
         />

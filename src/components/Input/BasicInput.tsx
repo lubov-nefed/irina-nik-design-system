@@ -7,7 +7,7 @@ import { InputIcon } from "./InputIcon";
 interface IBasicInputProps {
   size: "medium" | "big" | "small";
   validation: { isValid: boolean; validationText: string };
-  parentComponent: "dropdown" | undefined;
+  parentComponent?: "dropdown";
   icons?: { leftIconSrc?: string; rightIconSrc?: string };
   label?: { labelText: string; labelFor: string };
   value?: string;

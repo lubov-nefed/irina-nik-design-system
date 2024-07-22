@@ -6,11 +6,12 @@ import {
   InputOnClickContext,
 } from "../../Input/InputContexts";
 import iconChevronDown from "../../../assets/icons/input-icons/icon-chevron-down.svg";
+import iconCloseTag from "../../../assets/icons/input-icons/icon-close-tag.svg";
 import { DropdownList } from "../common-components/DropdownList";
-import { DropdownTag } from "../common-components/DropdownTag";
 import { BasicInput } from "../../Input/BasicInput";
 import { handleSearch } from "../handleSearch";
 import { getInputValue } from "./getInputValue";
+import { Tag } from "../../Tag/Tag";
 
 interface IMultiSelectDropdownProps {
   size: "medium" | "big" | "small";
@@ -103,9 +104,11 @@ const MultiSelectDropdown: React.FC<IMultiSelectDropdownProps> = (props) => {
         !isDropdownOpen && (
           <div className="tags-container">
             {activeOptions.map((item) => (
-              <DropdownTag
+              <Tag
+                size={props.size}
                 key={item.value}
                 text={item.value}
+                icon={{ position: "right", iconSrc: iconCloseTag }}
                 handleRemove={() => handleRemove(item, activeOptions)}
               />
             ))}

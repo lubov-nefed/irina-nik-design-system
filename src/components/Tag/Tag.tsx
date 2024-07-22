@@ -3,6 +3,7 @@ interface ITagProps {
   size: "medium" | "big" | "small";
   text: string;
   icon?: { position: "left" | "right"; iconSrc: string };
+  handleRemove?: () => void;
 }
 const Tag: React.FC<ITagProps> = (props) => {
   let className = "tag font-semibold";
@@ -30,6 +31,7 @@ const Tag: React.FC<ITagProps> = (props) => {
           className="tag-icon tag-right-img"
           src={props.icon.iconSrc}
           alt="Tag icon"
+          onClick={props.handleRemove}
         />
       )}
     </div>
