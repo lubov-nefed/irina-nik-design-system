@@ -8,6 +8,54 @@ import { PasswordStrength } from "./PasswordStrength";
 interface IPasswordInputProps {
   size: "medium" | "big" | "small";
 }
+
+const checkStrength = (input: string) => {
+  const numberMatches = input.match(/[0-9]/g);
+  const lettersMatches = input.match(/[A-Z]/gi);
+
+  const mediumLetters = lettersMatches && lettersMatches.length < 5;
+  const meduimNumbers = numberMatches && numberMatches.length < 5;
+
+  if (
+    (mediumLetters && meduimNumbers) ||
+    (mediumLetters &&
+      meduimNumbers &&
+      (input.includes("#") ||
+        input.includes("@") ||
+        input.includes("&") ||
+        input.includes("!")))
+  ) {
+    return "medium";
+  }
+
+  const goodLetters = lettersMatches && lettersMatches.length > 4;
+  const goodnumbers = numberMatches && numberMatches.length > 4;
+  if (
+    (goodLetters && goodnumbers && input.length < 13) ||
+    (input.length < 13 &&
+      (mediumLetters || goodLetters) &&
+      (meduimNumbers || goodnumbers) &&
+      (input.includes("#") ||
+        input.includes("@") ||
+        input.includes("&") ||
+        input.includes("!")))
+  ) {
+    return "good";
+  }
+  if (
+    input.length > 12 &&
+    goodLetters &&
+    goodnumbers &&
+    (input.includes("#") ||
+      input.includes("@") ||
+      input.includes("&") ||
+      input.includes("!"))
+  ) {
+    return "great";
+  }
+  return "weak";
+};
+
 const PasswordInput: React.FC<IPasswordInputProps> = (props) => {
   const [value, setValue] = useState("");
 
@@ -21,30 +69,6 @@ const PasswordInput: React.FC<IPasswordInputProps> = (props) => {
   const [strength, setStrength] = useState<
     "unset" | "weak" | "medium" | "good" | "great"
   >("unset");
-
-  const checkStrength = (input: string) => {
-    const numberMatches = input.match(/[0-9]/);
-    if (input.length < 5) {
-      return "weak";
-    }
-    const mediumOrGoodLength = input.length < 9;
-    if (mediumOrGoodLength && numberMatches && numberMatches.length < 4) {
-      return "medium";
-    }
-    if (mediumOrGoodLength && numberMatches && numberMatches.length > 4) {
-      return "good";
-    }
-    if (
-      input.length >= 9 &&
-      (input.includes("#") ||
-        input.includes("@") ||
-        input.includes("&") ||
-        input.includes("!"))
-    ) {
-      return "great";
-    }
-    return "weak";
-  };
 
   const handleInput = (e: BaseSyntheticEvent) => {
     setValue(e.target.value);
