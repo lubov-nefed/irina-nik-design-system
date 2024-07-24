@@ -72,6 +72,10 @@ const PasswordInput: React.FC<IPasswordInputProps> = (props) => {
 
   const handleInput = (e: BaseSyntheticEvent) => {
     setValue(e.target.value);
+    if (e.target.value === "") {
+      setStrength("unset");
+      return;
+    }
     const nextStrength = checkStrength(e.target.value);
     setStrength(nextStrength);
   };

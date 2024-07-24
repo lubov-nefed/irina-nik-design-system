@@ -3,10 +3,11 @@ function PasswordInputs() {
   return (
     <>
       <PasswordInput size={"small"} />
+      {/* 
       <br />
       <PasswordInput size={"medium"} />
       <br />
-      <PasswordInput size={"big"} />
+      <PasswordInput size={"big"} /> */}
     </>
   );
 }
