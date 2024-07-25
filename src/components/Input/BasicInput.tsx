@@ -7,13 +7,13 @@ import { InputIcon } from "./InputIcon";
 interface IBasicInputProps {
   size: "medium" | "big" | "small";
   validation: { isValid: boolean; validationText: string };
-  parentComponent?: "dropdown";
+  parentComponent?: "dropdown" | "phone-number";
   icons?: { leftIconSrc?: string; rightIconSrc?: string };
   label?: { labelText: string; labelFor: string };
-  value?: string;
+  value?: string | number;
   isDisabled?: boolean;
   onInput?: (e: BaseSyntheticEvent) => void;
-  inputType?: "password";
+  inputType?: "password" | "number" | "tel";
 }
 
 const BasicInput: React.FC<IBasicInputProps> = (props) => {
@@ -34,7 +34,9 @@ const BasicInput: React.FC<IBasicInputProps> = (props) => {
   }
 
   return (
-    <div className={`input-container input-container--${props.size}`}>
+    <div
+      className={`input-container input-container-${props.parentComponent} input-container--${props.size}`}
+    >
       {props.label && <InputLabel {...props.label} />}
       <>
         {props.icons && props.icons.leftIconSrc && (

@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-import { PasswordInputs } from "./layouts/PasswordInputs";
+import { PhoneNumberInput } from "./components/Input/PhoneNumberInput/PhoneNumberInput";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <PasswordInputs />
+    <PhoneNumberInput size="medium" />
   </React.StrictMode>
 );

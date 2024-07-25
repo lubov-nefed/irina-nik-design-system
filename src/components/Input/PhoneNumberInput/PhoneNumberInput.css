@@ -1,0 +1,79 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.phone-number-input-container {
+  display: inline-block;
+  position: relative;
+}
+
+.country-code-input-container {
+  position: relative; 
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.country-code-input-container--active .country-code-input {
+  border: solid 2px var(--brand-color-500);
+}
+
+.country-code-list {
+  position: absolute;
+  width: 100%;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.country-code-li {
+  padding: 9px 0 9px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.country-code-list-flag {
+  margin-right: 8px;
+}
+
+.country-code-li:hover {
+  background-color: var(--brand-color-100);
+}
+
+.input-container-phone-number {
+  vertical-align: middle;
+}
+
+.country-code-input { 
+  border: solid 1px var(--neutral-color-400);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding: 14px 40px 14px 16px;
+  vertical-align: middle;
+}
+
+.country-code-input-icon {
+  position: absolute;
+  top: 13px;
+  right: 8px;
+}
+
+.phone-number-input {  
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.phone-number-input:active,
+.phone-number-input:focus,
+.phone-number-input:focus-visible {  
+  border: solid 2px var(--brand-color-500);
+}
