@@ -10,6 +10,7 @@ import finlandFlag from "../../../../assets/icons/input-icons/icon-finland.svg";
 import franceFlag from "../../../../assets/icons/input-icons/icon-france.svg";
 import germanyFlag from "../../../../assets/icons/input-icons/icon-germany.svg";
 import greeceFlag from "../../../../assets/icons/input-icons/icon-greece.svg";
+import invalidFlag from "../../../../assets/icons/input-icons/icon-flag-invalid.svg";
 
 const flags = {
   austriaFlag: austriaFlag,
@@ -24,6 +25,7 @@ const flags = {
   franceFlag: franceFlag,
   germanyFlag: germanyFlag,
   greeceFlag: greeceFlag,
+  invalidFlag: invalidFlag,
 };
 
 export { flags };

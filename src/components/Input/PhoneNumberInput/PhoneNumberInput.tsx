@@ -6,6 +6,7 @@ import {
   NumberDropdownValue,
 } from "./CountryCodeDropdown/CountryCodeDropdown";
 import { phoneCodes } from "./CountryCodeDropdown/phoneCodes";
+import { flags } from "./CountryCodeDropdown/flagImages";
 
 interface IPhoneNumberInputProps {
   size: "medium" | "big" | "small";
@@ -44,18 +45,34 @@ const PhoneNumberInput: React.FC<IPhoneNumberInputProps> = (props) => {
     };
     allowOnlyNumbers(inputValue);
 
-    const handlePhoneCodeInput = (inputValue: string) => {
-      const inputIsCode = inputValue.length === 4 || inputValue.length === 3;
-
+    const handlePhoneCodeInput = () => {
+      const inputIsPhoneCode = phoneCodes.find(
+        (item) => `+${item.code}` === inputValue
+      );
+      const handleTwoDigitsCode = () => {
+        const twoDigitsCode = inputValue.length === 3;
+        if (inputIsPhoneCode && twoDigitsCode) {
+          console.log("twoDigitsCode", inputValue);
+        }
+        const handleInvalidPhoneCodeInput = () => {
+          if (!inputIsPhoneCode && twoDigitsCode) {
+            setIsValid(false);
+            setActiveValue({ ...activeValue, flagImg: flags.invalidFlag });
+          }
+        };
+        handleInvalidPhoneCodeInput();
+      };
+      handleTwoDigitsCode();
+      /* const inputIsPhoneCode =
+        inputValue.length === 4 || inputValue.length === 3;
       const validCodeInput = phoneCodes.find(
         (item) => `+${item.code}` === inputValue
       );
-
       if (validCodeInput) {
         onPick(validCodeInput);
-      } else if (inputIsCode) setIsValid(false);
+      } */
     };
-    handlePhoneCodeInput(inputValue);
+    handlePhoneCodeInput();
   };
 
   const onPick = (item: NumberDropdownValue) => {
