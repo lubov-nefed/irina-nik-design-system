@@ -1,17 +1,18 @@
 import { CountryCodeInput } from "./CountryCodeInput";
-import usaFlag from "../../../../assets/icons/input-icons/icon-usa.svg";
 import { CountryCodeList } from "./CountryCodeList";
 
 type NumberDropdownValue = { code: string; country: string; flagImg: string };
 
-interface IPhoneNumberDropdownProps {
+interface ICountryCodeDropdownProps {
   size: "medium" | "big" | "small";
   values: NumberDropdownValue[];
+  activeValue: string;
   isDropdownOpen: boolean;
   onClick: () => void;
+  onPick: (item: NumberDropdownValue) => void;
 }
 
-const CountryCodeDropdown: React.FC<IPhoneNumberDropdownProps> = (props) => {
+const CountryCodeDropdown: React.FC<ICountryCodeDropdownProps> = (props) => {
   return (
     <>
       <CountryCodeInput
@@ -20,12 +21,12 @@ const CountryCodeDropdown: React.FC<IPhoneNumberDropdownProps> = (props) => {
           isValid: true,
           validationText: "Country code is not recognized",
         }}
-        flag={usaFlag}
+        flag={props.activeValue}
         onClick={props.onClick}
         isActive={props.isDropdownOpen}
       />
       {props.isDropdownOpen && (
-        <CountryCodeList values={props.values} handlePick={() => {}} />
+        <CountryCodeList values={props.values} handlePick={props.onPick} />
       )}
     </>
   );

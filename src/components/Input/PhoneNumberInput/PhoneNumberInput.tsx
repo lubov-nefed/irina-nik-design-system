@@ -1,10 +1,11 @@
 import { BaseSyntheticEvent, useState } from "react";
 import { BasicInput } from "../BasicInput";
 import "./PhoneNumberInput.css";
-import { CountryCodeDropdown } from "./CountryCodeDropdown/CountryCodeDropdown";
+import {
+  CountryCodeDropdown,
+  NumberDropdownValue,
+} from "./CountryCodeDropdown/CountryCodeDropdown";
 import { phoneCodes } from "./CountryCodeDropdown/phoneCodes";
-
-const codes = phoneCodes.map((obj) => obj.code);
 
 interface IPhoneNumberInputProps {
   size: "medium" | "big" | "small";
@@ -16,18 +17,52 @@ const PhoneNumberInput: React.FC<IPhoneNumberInputProps> = (props) => {
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  const [isValid, setIsValid] = useState(true);
+  const resetInvalidState = () => {
+    if (!isValid) setIsValid(true);
+  };
+
   const handleInput = (e: BaseSyntheticEvent) => {
-    console.log(e.target.value);
-    const inputIsEmpty = e.target.value === "";
-    const inputIsNumber = !isNaN(Number(e.target.value)) && !inputIsEmpty;
-    if (inputIsNumber || e.target.value === "+") {
-      console.log("number");
-      setValue(e.target.value);
-      return;
-    } /* 
-    if (codes.includes(e.target.value)) {
-      console.log("display");
-    } */
+    const inputValue = e.target.value;
+
+    resetInvalidState();
+
+    const pereventPlusRemove = (inputValue: string) => {
+      const inputIsEmpty = inputValue === "";
+      if (inputIsEmpty) {
+        return;
+      }
+    };
+    pereventPlusRemove(inputValue);
+
+    const allowOnlyNumbers = (inputValue: string) => {
+      const inputIsNumber = !isNaN(Number(inputValue));
+      const InputIsPlus = inputValue === "+";
+      if (inputIsNumber || InputIsPlus) {
+        setValue(inputValue);
+      }
+    };
+    allowOnlyNumbers(inputValue);
+
+    const handlePhoneCodeInput = (inputValue: string) => {
+      const inputIsCode = inputValue.length === 4 || inputValue.length === 3;
+
+      const validCodeInput = phoneCodes.find(
+        (item) => `+${item.code}` === inputValue
+      );
+
+      if (validCodeInput) {
+        onPick(validCodeInput);
+      } else if (inputIsCode) setIsValid(false);
+    };
+    handlePhoneCodeInput(inputValue);
+  };
+
+  const onPick = (item: NumberDropdownValue) => {
+    setActiveValue(item);
+    setValue(`+${item.code}`);
+    setIsDropdownOpen(false);
+    resetInvalidState();
   };
 
   return (
@@ -35,19 +70,22 @@ const PhoneNumberInput: React.FC<IPhoneNumberInputProps> = (props) => {
       <CountryCodeDropdown
         size={props.size}
         values={phoneCodes}
+        activeValue={activeValue.flagImg}
         isDropdownOpen={isDropdownOpen}
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+        onPick={onPick}
       />
       <BasicInput
         size={props.size}
         validation={{
-          isValid: true,
+          isValid: isValid,
           validationText: "Country code is not recognized",
         }}
         inputType={"tel"}
         parentComponent={"phone-number"}
         value={value}
         onInput={handleInput}
+        maxLength={20}
       />
     </div>
   );

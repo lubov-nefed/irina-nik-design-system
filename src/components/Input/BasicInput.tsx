@@ -14,6 +14,7 @@ interface IBasicInputProps {
   isDisabled?: boolean;
   onInput?: (e: BaseSyntheticEvent) => void;
   inputType?: "password" | "number" | "tel";
+  maxLength?: number;
 }
 
 const BasicInput: React.FC<IBasicInputProps> = (props) => {
@@ -51,6 +52,7 @@ const BasicInput: React.FC<IBasicInputProps> = (props) => {
           disabled={props.isDisabled}
           onClick={onClick}
           type={props.inputType}
+          maxLength={props.maxLength}
         />
         {props.icons && props.icons.rightIconSrc && (
           <InputIcon

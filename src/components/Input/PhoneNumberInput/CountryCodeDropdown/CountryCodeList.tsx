@@ -1,16 +1,19 @@
 import type { NumberDropdownValue } from "./CountryCodeDropdown";
-import { BaseSyntheticEvent } from "react";
 
 interface ICountryCodeListProps {
   values: NumberDropdownValue[];
-  handlePick: (item: NumberDropdownValue, e: BaseSyntheticEvent) => void;
+  handlePick: (item: NumberDropdownValue) => void;
 }
 
 const CountryCodeList: React.FC<ICountryCodeListProps> = (props) => {
   return (
     <ul className="country-code-list shadow-lg ">
       {props.values.map((item) => (
-        <li key={item.country} className="country-code-li">
+        <li
+          key={item.country}
+          className="country-code-li"
+          onClick={() => props.handlePick(item)}
+        >
           <img
             className="country-code-list-flag"
             src={item.flagImg}

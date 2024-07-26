@@ -29,9 +29,11 @@ input[type=number] {
 
 .country-code-list {
   position: absolute;
+  z-index: 1;
   width: 100%;
   border-radius: 8px;
   padding: 4px;
+  background-color: var(--white-color);
 }
 
 .country-code-li {
@@ -76,4 +78,10 @@ input[type=number] {
 .phone-number-input:focus,
 .phone-number-input:focus-visible {  
   border: solid 2px var(--brand-color-500);
+}
+
+.phone-number-input-container .input-validation-text {
+  position: absolute;
+  margin-left: -80px;
+  margin-top: 2px;
 }
