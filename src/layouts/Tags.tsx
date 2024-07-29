@@ -6,11 +6,13 @@ function Tags() {
     <>
       <Tag size={"medium"} text={"Tag item"} />
       <br />
+      <br />
       <Tag
         size={"big"}
         text={"Tag item"}
         icon={{ position: "left", iconSrc: iconArrowLeft }}
       />
+      <br />
       <br />
       <Tag
         size={"small"}

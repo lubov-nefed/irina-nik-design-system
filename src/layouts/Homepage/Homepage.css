@@ -1,0 +1,16 @@
+.navigation-menu-list {
+  position: absolute;
+  display: inline-block;
+  left: 32px;
+  text-align: left;
+  border: solid 1px var(--neutral-color-200);
+  border-radius: 8px;
+}
+
+.navigation-menu-li:hover {
+  background-color: var(--neutral-color-100);
+}
+
+.navigation-menu-li--active, .navigation-menu-li--active:hover, .navigation-menu-li--active .button:hover {
+  background-color: var(--neutral-color-200);
+}
