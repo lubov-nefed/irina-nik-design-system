@@ -5,6 +5,7 @@ import { ProjectDescription } from "./ProjectDescription";
 import { Button } from "../../components/Button/Button";
 import { Buttons } from "../Buttons";
 import { Inputs } from "../Inputs";
+import { InputsWithLabels } from "../InputsWithLabels";
 import { Stepper } from "../../components/Stepper/Stepper";
 import { Tags } from "../Tags";
 import { Textarea } from "../../components/Textarea/Textarea";
@@ -57,6 +58,7 @@ const Homepage: React.FC = () => {
         {activeLayout === "Home" && <ProjectDescription />}
         {activeLayout === "Buttons" && <Buttons />}
         {activeLayout === "Inputs" && <Inputs />}
+        {activeLayout === "Inputs" && <InputsWithLabels />}
         {activeLayout === "Stepper" && <Stepper size="medium" />}
         {activeLayout === "Tags" && <Tags />}
         {activeLayout === "Textarea" && (

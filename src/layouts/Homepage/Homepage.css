@@ -1,12 +1,13 @@
 .homepage {
   max-width: 1552px;
   min-height: 95%;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 20% 80%;
-  grid-template-rows: 90% 10%;
-  grid-template-areas: 
-  "navigation-menu-list homepage-content"
-  ". homepage-footer";
+  grid-template-columns: 15% 75%;
+  grid-template-rows: max-content min-content;
+  grid-template-areas:
+    "navigation-menu-list homepage-content"
+    ". homepage-footer";
   justify-items: center;
 }
 
@@ -17,7 +18,7 @@
   border-radius: 8px;
   grid-area: navigation-menu-list;
   align-self: start;
-  margin-top: 48px;
+  margin-top: 88px;
 }
 
 .navigation-menu-li {
@@ -28,7 +29,9 @@
   background-color: var(--neutral-color-100);
 }
 
-.navigation-menu-li--active, .navigation-menu-li--active:hover, .navigation-menu-li--active .button:hover {
+.navigation-menu-li--active,
+.navigation-menu-li--active:hover,
+.navigation-menu-li--active .button:hover {
   background-color: var(--neutral-color-200);
 }
 
@@ -46,8 +49,7 @@
 
 .project-description {
   max-width: 1120px;
-  margin: 0 auto;
-  padding: 16px 32px;
+  padding: 16px 16px 32px 104px;
 }
 .project-description-hr {
   margin: 40px auto;
