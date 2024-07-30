@@ -1,10 +1,27 @@
+.homepage {
+  max-width: 1552px;
+  min-height: 95%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 90% 10%;
+  grid-template-areas: 
+  "navigation-menu-list homepage-content"
+  ". homepage-footer";
+  justify-items: center;
+}
+
 .navigation-menu-list {
-  position: absolute;
   display: inline-block;
-  left: 32px;
   text-align: left;
   border: solid 1px var(--neutral-color-200);
   border-radius: 8px;
+  grid-area: navigation-menu-list;
+  align-self: start;
+  margin-top: 48px;
+}
+
+.navigation-menu-li {
+  cursor: pointer;
 }
 
 .navigation-menu-li:hover {
@@ -13,4 +30,67 @@
 
 .navigation-menu-li--active, .navigation-menu-li--active:hover, .navigation-menu-li--active .button:hover {
   background-color: var(--neutral-color-200);
+}
+
+.navigation-menu-li-home .button {
+  padding-right: 8px;
+}
+.navigation-menu-li-icon {
+  vertical-align: middle;
+}
+
+.homepage-content {
+  grid-area: homepage-content;
+  padding-top: 16px;
+}
+
+.project-description {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px 32px;
+}
+
+.project-description-h1 {
+  padding: 8px;
+}
+
+.project-description-icon {
+  width: 50px;
+  height: 50px;
+  vertical-align: top;
+  margin-left: 8px;
+}
+
+.project-description-article {
+  margin-top: 32px;
+}
+
+.project-description-paragraph {
+  margin-top: 16px;
+}
+
+.project-name-span {
+  font-weight: 700;
+}
+
+.project-description a {
+  color: var(--brand-color-500);
+  font-weight: 500;
+  text-decoration-thickness: 2px;
+}
+
+.project-description a:visited {
+  color: var(--brand-color-800);
+}
+
+.project-description-tech {
+  font-weight: 600;
+}
+
+.homepage-footer {
+  margin-top: 64px;
+  padding: 32px;
+  color: var(--neutral-color-500);
+  grid-area: homepage-footer;
+  align-self: center;
 }

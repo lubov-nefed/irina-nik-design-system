@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./Homepage.css";
+import iconHome from "../../assets/icons/button-icons/icon-home.svg";
+import { ProjectDescription } from "./ProjectDescription";
 import { Button } from "../../components/Button/Button";
 import { Buttons } from "../Buttons";
 import { Inputs } from "../Inputs";
@@ -9,6 +11,7 @@ import { Textarea } from "../../components/Textarea/Textarea";
 import { Dropdowns } from "../Dropdowns";
 
 const layouts = [
+  "Home",
   "Buttons",
   "Inputs",
   "Stepper",
@@ -18,24 +21,9 @@ const layouts = [
 ];
 
 const Homepage: React.FC = () => {
-  const [activeLayout, setActiveLayout] = useState(layouts[0]);
+  const [activeLayout, setActiveLayout] = useState("Home");
   return (
-    <>
-      Welcome to UI-Lib - UI-Library based on Free Accessible Design System
-      designed by Irina Nik (YT channel) and developed by junior-frontend
-      developer Lubov Nefed (CV & GitHub).
-      <br />
-      Добро пожаловать в проект UI-Lib -- UI-библиотеку React-компонентов
-      основанную на Бесплатной Доступной Дизайн-системе дизайнера Irina Nik (YT
-      channel & Design System on Figma Community) и разработанную
-      джуниор-фронтенд разработчиком Lubov Nefed (CV & GitHub).
-      <br />
-      UI-Lib это учебный проект, основная цель которого применить навыки работы
-      с React, TypeScript и Figma. Задачи проекта: научиться создавать
-      переиспользуемые компоненты, отдавать приоритет дизайну в спорных
-      ситуациях реализации, развивать навыки написания самодокументируемого и
-      понятного кода.
-      <br />
+    <div className="homepage">
       <ul className="navigation-menu-list">
         {layouts.map((item) => (
           <li
@@ -43,6 +31,9 @@ const Homepage: React.FC = () => {
             className={`navigation-menu-li navigation-menu-li-${item.toLowerCase()}${
               item === activeLayout ? " navigation-menu-li--active" : ""
             }`}
+            onClick={() => {
+              setActiveLayout(item);
+            }}
           >
             <Button
               size={"big"}
@@ -50,20 +41,41 @@ const Homepage: React.FC = () => {
               type={{ noIcon: { text: item } }}
               loading={false}
               disabled={false}
-              onClick={() => {
-                setActiveLayout(item);
-              }}
+              onClick={() => {}}
             />
+            {item === "Home" && (
+              <img
+                className="navigation-menu-li-icon"
+                src={iconHome}
+                alt="Heart icon"
+              />
+            )}
           </li>
         ))}
       </ul>
-      {activeLayout === "Buttons" && <Buttons />}
-      {activeLayout === "Inputs" && <Inputs />}
-      {activeLayout === "Stepper" && <Stepper size="medium" />}
-      {activeLayout === "Tags" && <Tags />}
-      {activeLayout === "Textarea" && <Textarea placeholder={"Placeholder"} />}
-      {activeLayout === "Dropdowns" && <Dropdowns />}
-    </>
+      <div className="homepage-content">
+        {activeLayout === "Home" && <ProjectDescription />}
+        {activeLayout === "Buttons" && <Buttons />}
+        {activeLayout === "Inputs" && <Inputs />}
+        {activeLayout === "Stepper" && <Stepper size="medium" />}
+        {activeLayout === "Tags" && <Tags />}
+        {activeLayout === "Textarea" && (
+          <Textarea placeholder={"Placeholder"} />
+        )}
+        {activeLayout === "Dropdowns" && <Dropdowns />}
+      </div>
+      <footer className="homepage-footer">
+        <p>
+          <span className="project-name-span">UI-Lib</span> is a pet project of{" "}
+          <a
+            title="Link to my CV"
+            href="https://lubov-nefed.github.io/my-cv/index.html"
+          >
+            Lubov Nefed
+          </a>
+        </p>
+      </footer>
+    </div>
   );
 };
 
