@@ -26,16 +26,17 @@ const ProjectDescription: React.FC = () => {
           ).
         </p>
         <p className="project-description-paragraph">
-          To view a component, pick it on the menu.
+          To view a component, pick it on the left menu.
         </p>
       </article>
+      <hr className="project-description-hr" />
       <article className="project-description-article project-description-ru">
         <p className="project-description-paragraph">
           Добро пожаловать в проект{" "}
           <span className="project-name-span">UI-Lib</span> -- UI-библиотеку
-          React-компонентов основанную на Бесплатной Доступной Дизайн-системе
-          дизайнера Irina Nik (
-          <a href="https://www.youtube.com/@irina_nik">YT channel</a> &{" "}
+          React-компонентов основанную на Бесплатной Доступной Дизайн-системе от
+          Irina Nik (<a href="https://www.youtube.com/@irina_nik">YT channel</a>{" "}
+          &{" "}
           <a href="https://www.figma.com/community/file/1131891137727824106/free-accessible-design-system">
             Design System on Figma Community
           </a>
@@ -45,16 +46,17 @@ const ProjectDescription: React.FC = () => {
           ).
         </p>
         <p className="project-description-paragraph">
-          UI-Lib это учебный проект, основная цель которого применить навыки
-          работы с <span className="project-description-tech">React</span>,{" "}
+          <span className="project-name-span">UI-Lib</span> это учебный проект,
+          основная цель которого применить навыки работы с{" "}
+          <span className="project-description-tech">React</span>,{" "}
           <span className="project-description-tech">TypeScript</span> и{" "}
-          <span className="project-description-tech">Figma</span>. Задачи
-          проекта: научиться создавать переиспользуемые компоненты, отдавать
-          приоритет дизайну в спорных ситуациях реализации, развивать навыки
-          написания самодокументируемого и понятного кода.
+          <span className="project-description-tech">Figma</span>. <br /> Задачи
+          проекта: научиться создавать переиспользуемые компоненты, максимально
+          точно реализовывая дизайн и оттачивая навыки написания понятного и
+          работающего кода.
         </p>
         <p className="project-description-paragraph">
-          Для просмотра компонета выберите его в меню.
+          Для просмотра компонента выберите его в меню слева.
         </p>
       </article>
     </section>
