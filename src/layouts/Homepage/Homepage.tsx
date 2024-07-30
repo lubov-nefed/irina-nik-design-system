@@ -66,7 +66,7 @@ const Homepage: React.FC = () => {
       </div>
       <footer className="homepage-footer">
         <p>
-          <span className="project-name-span">UI-Lib</span> is a pet project of{" "}
+          <span className="project-name-span">UI-Lib</span> is created by{" "}
           <a
             title="Link to my CV"
             href="https://lubov-nefed.github.io/my-cv/index.html"

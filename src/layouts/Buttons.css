@@ -1,0 +1,20 @@
+.buttons-layout-section {
+  margin-bottom: 40px;
+}
+
+.buttons-layout-div {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 8px;
+  margin: 8px;
+}
+
+.buttons-layout-div .button {
+  justify-self: center;
+}
+
+.buttons-layout-heading {  
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
