@@ -1,7 +1,6 @@
-import { useState } from "react";
+/* import { useState } from "react"; */
 import "./Buttons.css";
 import { Button } from "../components/Button/Button";
-import { Heading } from "../components/Heading/Heading";
 /* === Primary Button Icons === */
 import iconPrimaryLeftAdd from "../assets/icons/button-icons/icon-primary-left-add.svg";
 import iconPrimaryRightArrow from "../assets/icons/button-icons/icon-primary-right-arrow.svg";
@@ -28,8 +27,10 @@ import iconTertiaryRightArrowDisabled from "../assets/icons/button-icons/icon-te
 import iconTertiarySettingsDisabled from "../assets/icons/button-icons/icon-tertiary-settings--disabled.svg";
 
 function Buttons() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(false);
+  const isLoading = false;
+  const isDisabled = false;
+  /* const [isLoading, setIsLoading] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false); */
   return (
     <>
       <section className="buttons-layout-section">

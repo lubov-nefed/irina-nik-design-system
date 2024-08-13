@@ -2,13 +2,17 @@ import { BasicInput } from "../components/Input/BasicInput";
 import iconSearch from "../assets/icons/input-icons/icon-search.svg";
 import iconEye from "../assets/icons/input-icons/icon-eye.svg";
 import iconX from "../assets/icons/input-icons/icon-x.svg";
-import { useState } from "react";
+/* import { useState } from "react"; */
 
 function Inputs() {
-  const [validation, setValidation] = useState({
+  const validation = {
     isValid: true,
     validationText: "",
-  });
+  };
+  /* const [validation, setValidation] = useState({
+    isValid: true,
+    validationText: "",
+  }); */
   //isValid: false, validationText: "Validation Text"
   //isValid: true, validationText: "",
   return (
